@@ -1,142 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>70 años de la UNNE</title>
+    <title>70 años de la UNNE</title>
 
-<style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-body{
-    font-family:'Lato', sans-serif;
-    overflow-x:hidden;
-}
+    <style>
 
-.hero{
-    height:100vh;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-    background:url("imagenes/imagenes/11.png");
+        body{
+            font-family:'Lato', sans-serif;
+            overflow-x:hidden;
+        }
 
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+        .hero{
+            width:100%;
+            height:100vh;
 
-    display:flex;
-    align-items:flex-end;
+            background-image:url("imagenes/imagenes/11.png");
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
 
-    padding-left:8%;
-    padding-bottom:12%;
-}
+            display:flex;
+            align-items:flex-end;
 
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+            padding-left:7%;
+            padding-bottom:10%;
+        }
 
-    display:flex;
-    align-items:center;
-    padding-left:8%;
-}
+        .contenido{
+            max-width:650px;
+        }
 
-.contenido{
-    max-width:650px;
-    color:white;
-}
+        h1{
+            font-family:'Merriweather', serif;
+            font-size:6rem;
+            color:white;
+            line-height:0.9;
+            font-weight:400;
+            margin-bottom:20px;
+        }
 
-h1{
-    font-family:'Merriweather', serif;
-    font-size:5.5rem;
-    line-height:0.95;
-    margin-bottom:25px;
-    color:white;
-    font-weight:400;
-}
+        h1 em{
+            font-style:italic;
+            font-weight:300;
+        }
 
-.subtitulo{
-    font-family:'Merriweather', serif;
-    font-size:1.9rem;
-    color:#F2C94C;
-    margin-bottom:25px;
-    font-style:italic;
-}
+        .subtitulo{
+            font-family:'Merriweather', serif;
+            font-style:italic;
+            font-size:2rem;
+            color:#F2C94C;
 
-.descripcion{
-    font-size:1.25rem;
-    line-height:1.6;
-    margin-bottom:35px;
-}
+            margin-bottom:25px;
+        }
 
-@media(max-width:768px){
+        .descripcion{
+            font-family:'Lato', sans-serif;
+            color:white;
+            font-size:1.3rem;
+            line-height:1.5;
 
-    .hero{
-        padding:30px;
-        text-align:center;
-        justify-content:center;
-    }
+            max-width:600px;
+        }
 
-    h1{
-        font-size:3rem;
-    }
+        @media (max-width:768px){
 
-    .subtitulo{
-        font-size:1.5rem;
-    }
+            .hero{
+                padding:25px;
+                padding-bottom:80px;
+            }
 
-    .descripcion{
-        font-size:1rem;
-    }
+            h1{
+                font-size:3.5rem;
+            }
 
-}
+            .subtitulo{
+                font-size:1.5rem;
+            }
 
-</style>
+            .descripcion{
+                font-size:1rem;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
 <section class="hero">
 
-<div class="contenido">
+    <div class="contenido">
 
-<span class="etiqueta">
-UNNE · 70 años
-</span>
+        <h1>
+            Donde empieza<br>
+            <em>el futuro</em>
+        </h1>
 
-<h1>
-Donde empieza el futuro
-<h1>
-Donde empieza<br>
-<em>el futuro</em>
-h1 em{
-    font-style:italic;
-    font-weight:300;
-}
+        <p class="subtitulo">
+            Estudiar sin mudarse
+        </p>
 
-<p class="subtitulo">
-Estudiar sin mudarse
-</p>
+        <p class="descripcion">
+            Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
+        </p>
 
-<p class="descripcion">
-Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
-</p>
-
-<a href="#" class="boton">
-Explorar historia
-</a>
-
-</div>
+    </div>
 
 </section>
 
 </body>
-</html> 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+</html>
