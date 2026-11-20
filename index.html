@@ -1,43 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNNE 70 años</title>
+
+<title>70 años de la UNNE</title>
 
 <style>
-body{
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial, sans-serif;
+    overflow-x:hidden;
 }
 
 .hero{
     height:100vh;
-    background:#0A6575;
-    color:white;
+
+    background:
+    linear-gradient(
+        rgba(0, 89, 110, 0.55),
+        rgba(0, 89, 110, 0.55)
+    ),
+    url("imagenes/imagenes/11.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
     display:flex;
-    justify-content:center;
     align-items:center;
-    flex-direction:column;
+    padding-left:8%;
+}
+
+.contenido{
+    max-width:650px;
+    color:white;
+}
+
+.etiqueta{
+    display:inline-block;
+    background:#e2b91d;
+    color:#003544;
+
+    padding:8px 18px;
+    border-radius:40px;
+
+    font-weight:bold;
+    margin-bottom:25px;
 }
 
 h1{
-    font-size:4rem;
+    font-size:5rem;
+    line-height:1;
+    margin-bottom:20px;
 }
 
-p{
-    font-size:1.5rem;
+.subtitulo{
+    font-size:2rem;
+    color:#ffd44d;
+    margin-bottom:25px;
 }
+
+.descripcion{
+    font-size:1.25rem;
+    line-height:1.6;
+    margin-bottom:35px;
+}
+
+.boton{
+    display:inline-block;
+
+    background:#00c5e4;
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 30px;
+    border-radius:40px;
+
+    transition:0.3s;
+}
+
+.boton:hover{
+    background:#00dfff;
+}
+
+@media(max-width:768px){
+
+    .hero{
+        padding:30px;
+        text-align:center;
+        justify-content:center;
+    }
+
+    h1{
+        font-size:3rem;
+    }
+
+    .subtitulo{
+        font-size:1.5rem;
+    }
+
+    .descripcion{
+        font-size:1rem;
+    }
+
+}
+
 </style>
-
 </head>
 
 <body>
 
 <section class="hero">
-<h1>70 años de la UNNE</h1>
-<p>Donde empieza el futuro</p>
+
+<div class="contenido">
+
+<span class="etiqueta">
+UNNE · 70 años
+</span>
+
+<h1>
+Donde empieza el futuro
+</h1>
+
+<p class="subtitulo">
+Estudiar sin mudarse
+</p>
+
+<p class="descripcion">
+Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
+</p>
+
+<a href="#" class="boton">
+Explorar historia
+</a>
+
+</div>
+
 </section>
 
 </body>
