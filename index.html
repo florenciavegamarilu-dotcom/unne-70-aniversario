@@ -239,6 +239,459 @@ y dio forma a su perfil regional con diversas modalidades.
 
 </section>
 
+  <!-- ---------------- TERCERA SECCION: ALCANCE REGIONAL ---------------- -->
+
+<section class="alcance" id="alcance">
+
+    <div class="alcance-contenedor">
+
+        <h2 class="alcance-titulo">Alcance regional</h2>
+
+        <!-- GRILLA DE 12 COLUMNAS -->
+        <div class="alcance-grilla">
+
+            <!-- IMAGEN REFERENCIAL INTERACTIVA -->
+            <div class="alcance-referencia">
+                <img src="im/refe.png" alt="Mapa de las provincias del Nordeste y distribución territorial de la UNNE" usemap="#mapa-alcance">
+
+                <!-- BOTONES SOBRE LA IMAGEN -->
+                <map name="mapa-alcance">
+                    <area shape="rect" coords="0,0,1000,1000" href="#centros-regionales" alt="Centros Regionales Universitarios">
+                </map>
+            </div>
+
+            <!-- CARRUSEL -->
+            <div class="alcance-carrusel">
+
+                <div class="carrusel-contenedor">
+
+                    <div class="carrusel-slide activo">
+                        <img src="im/map 1.jpg" alt="Mapa de Centros Regionales Universitarios">
+                    </div>
+
+                    <div class="carrusel-slide">
+                        <img src="im/map 2.jpg" alt="Mapa de Extensiones Áulicas">
+                    </div>
+
+                    <div class="carrusel-slide">
+                        <img src="im/map 3.jpg" alt="Mapa de Sedes Principales">
+                    </div>
+
+                    <div class="carrusel-slide">
+                        <img src="im/map 4.jpg" alt="Mapa de Unidad Especial">
+                    </div>
+
+                </div>
+
+                <!-- CONTROLES -->
+                <button class="carrusel-btn anterior" onclick="cambiarSlide(-1)" aria-label="Imagen anterior">&#10094;</button>
+                <button class="carrusel-btn siguiente" onclick="cambiarSlide(1)" aria-label="Imagen siguiente">&#10095;</button>
+
+                <!-- INDICADORES -->
+                <div class="carrusel-indicadores">
+                    <span class="indicador activo" onclick="irSlide(0)"></span>
+                    <span class="indicador" onclick="irSlide(1)"></span>
+                    <span class="indicador" onclick="irSlide(2)"></span>
+                    <span class="indicador" onclick="irSlide(3)"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PILARES INTERACTIVOS -->
+        <div class="alcance-pilares" id="pilares">
+
+            <img src="im/pilares.png" alt="Pilares institucionales de la UNNE" class="pilares-imagen">
+
+            <!-- ZONAS INTERACTIVAS -->
+            <div class="pilares-botones">
+
+                <a href="#centros-regionales" class="pilar-link pilar-centros" aria-label="Centros Regionales Universitarios"></a>
+
+                <a href="#extensiones" class="pilar-link pilar-extensiones" aria-label="Extensiones Áulicas"></a>
+
+                <a href="#sedes" class="pilar-link pilar-sedes" aria-label="Sedes Principales"></a>
+
+                <a href="#unidad-especial" class="pilar-link pilar-unidad" aria-label="Unidad Especial"></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ---------------- CONTENIDO DE DESTINO ---------------- -->
+
+<section class="alcance-destinos">
+
+    <div id="centros-regionales" class="destino">
+        <h3>Centros Regionales Universitarios</h3>
+    </div>
+
+    <div id="extensiones" class="destino">
+        <h3>Extensiones Áulicas</h3>
+    </div>
+
+    <div id="sedes" class="destino">
+        <h3>Sedes Principales</h3>
+    </div>
+
+    <div id="unidad-especial" class="destino">
+        <h3>Unidad Especial</h3>
+    </div>
+
+</section>
+
+
+<style>
+
+/* ---------------- ALCANCE REGIONAL ---------------- */
+
+.alcance{
+
+    min-height:100vh;
+
+    background-image:url("im/03.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:100px 7%;
+}
+
+.alcance-contenedor{
+
+    max-width:1400px;
+    margin:auto;
+}
+
+.alcance-titulo{
+
+    font-family:'Merriweather',serif;
+    font-size:3rem;
+    font-weight:400;
+
+    color:#1f1f1f;
+
+    margin-bottom:50px;
+}
+
+/* GRILLA */
+
+.alcance-grilla{
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    gap:30px;
+
+    align-items:center;
+}
+
+/* REFERENCIA */
+
+.alcance-referencia{
+
+    grid-column:span 6;
+
+    position:relative;
+}
+
+.alcance-referencia img{
+
+    width:100%;
+    height:auto;
+
+    display:block;
+}
+
+/* CARRUSEL */
+
+.alcance-carrusel{
+
+    grid-column:span 6;
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+}
+
+.carrusel-contenedor{
+
+    position:relative;
+}
+
+.carrusel-slide{
+
+    display:none;
+}
+
+.carrusel-slide.activo{
+
+    display:block;
+}
+
+.carrusel-slide img{
+
+    width:100%;
+    height:auto;
+
+    display:block;
+}
+
+/* BOTONES CARRUSEL */
+
+.carrusel-btn{
+
+    position:absolute;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    border:none;
+
+    background:rgba(25,40,40,0.65);
+
+    color:white;
+
+    font-size:25px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    z-index:5;
+}
+
+.carrusel-btn:hover{
+
+    background:rgba(25,40,40,0.9);
+}
+
+.anterior{
+
+    left:15px;
+}
+
+.siguiente{
+
+    right:15px;
+}
+
+/* INDICADORES */
+
+.carrusel-indicadores{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:20px 0;
+}
+
+.indicador{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#999;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.indicador.activo{
+
+    background:#007b8a;
+
+    transform:scale(1.2);
+}
+
+/* PILARES */
+
+.alcance-pilares{
+
+    position:relative;
+
+    margin-top:70px;
+
+    width:100%;
+}
+
+.pilares-imagen{
+
+    width:100%;
+
+    display:block;
+}
+
+/* ZONAS CLICKEABLES SOBRE PILARES.PNG */
+
+.pilares-botones{
+
+    position:absolute;
+
+    inset:0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+
+}
+
+/* BOTONES INVISIBLES */
+
+.pilar-link{
+
+    display:block;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.pilar-link:hover{
+
+    background:rgba(255,255,255,0.12);
+}
+
+/* ---------------- FONDO SEGUNDA PARTE ---------------- */
+
+.alcance-destinos{
+
+    background-image:url("im/04.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:100px 7%;
+}
+
+/* DESTINOS */
+
+.destino{
+
+    min-height:400px;
+
+    padding:60px 0;
+
+    scroll-margin-top:40px;
+}
+
+.destino h3{
+
+    font-family:'Merriweather',serif;
+    font-size:2.5rem;
+
+    color:#1f1f1f;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:900px){
+
+    .alcance-grilla{
+
+        grid-template-columns:1fr;
+    }
+
+    .alcance-referencia,
+    .alcance-carrusel{
+
+        grid-column:span 12;
+    }
+
+    .alcance-titulo{
+
+        font-size:2.5rem;
+    }
+
+    .alcance{
+
+        padding:70px 5%;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .alcance-titulo{
+
+        font-size:2rem;
+    }
+
+    .carrusel-btn{
+
+        width:35px;
+        height:35px;
+
+        font-size:18px;
+    }
+
+    .alcance-pilares{
+
+        margin-top:40px;
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* ---------------- CARRUSEL ---------------- */
+
+let slideActual = 0;
+
+const slides = document.querySelectorAll(".carrusel-slide");
+const indicadores = document.querySelectorAll(".indicador");
+
+function mostrarSlide(numero){
+
+    slides.forEach(slide => slide.classList.remove("activo"));
+    indicadores.forEach(indicador => indicador.classList.remove("activo"));
+
+    slideActual = (numero + slides.length) % slides.length;
+
+    slides[slideActual].classList.add("activo");
+    indicadores[slideActual].classList.add("activo");
+
+}
+
+function cambiarSlide(direccion){
+
+    mostrarSlide(slideActual + direccion);
+
+}
+
+function irSlide(numero){
+
+    mostrarSlide(numero);
+
+}
+
+</script>
 </body>
 
 </html>
