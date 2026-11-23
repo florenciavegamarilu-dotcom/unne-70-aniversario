@@ -753,6 +753,611 @@ function irSlide(numero){
 
 </script>
 
+<!-- ---------------- QUINTA SECCION: EDUCACION CON PROPOSITO ---------------- -->
+
+<section class="educacion" id="educacion">
+
+    <div class="educacion-contenedor">
+
+        <!-- INTRODUCCION -->
+
+        <div class="educacion-intro">
+
+            <h2 class="educacion-titulo">
+                Educación con propósito
+            </h2>
+
+            <p class="educacion-descripcion">
+
+                La UNNE no solo transmite conocimientos, sino que plantea formación personal con ética, pensamiento crítico y compromiso social. Esto se transmite a través de sus pilares institucionales principales.
+
+            </p>
+
+            <p class="educacion-destacada">
+
+                Porque la educación no es únicamente enseñar. También es transformar realidades.
+
+            </p>
+
+        </div>
+
+
+        <!-- PILARES INSTITUCIONALES -->
+
+        <div class="pilares-educacion">
+
+            <!-- COLUMNA MISION -->
+
+            <article class="pilar-card" data-gif="mision">
+
+                <span class="pilar-numero">01</span>
+
+                <h3>Misión</h3>
+
+                <p>
+                    La UNNE tiene como misión generar y transmitir conocimientos, formar profesionales y personas con valores, y contribuir a resolver los problemas y necesidades de la región. Busca que sus integrantes desarrollen pensamiento crítico, responsabilidad social y respeto por la democracia, la libertad, la igualdad y la diversidad de opiniones.
+                </p>
+
+                <button class="ver-animacion" type="button" onclick="mostrarPilar('mision')">
+                    Ver animación
+                    <span>↗</span>
+                </button>
+
+            </article>
+
+
+            <!-- COLUMNA VISION -->
+
+            <article class="pilar-card" data-gif="vision">
+
+                <span class="pilar-numero">02</span>
+
+                <h3>Visión</h3>
+
+                <p>
+                    La UNNE aspira a ser una universidad inclusiva y de calidad, que ayude a construir una sociedad más justa. Busca formar profesionales y ciudadanos comprometidos, promover la ciencia, la tecnología y el desarrollo sostenible, y contribuir al crecimiento de Chaco, Corrientes y el país. También defiende una educación pública, gratuita, autónoma y participativa.
+                </p>
+
+                <button class="ver-animacion" type="button" onclick="mostrarPilar('vision')">
+                    Ver animación
+                    <span>↗</span>
+                </button>
+
+            </article>
+
+
+            <!-- COLUMNA VALORES -->
+
+            <article class="pilar-card" data-gif="valores">
+
+                <span class="pilar-numero">03</span>
+
+                <h3>Valores</h3>
+
+                <ul>
+                    <li>Justicia</li>
+                    <li>Igualdad</li>
+                    <li>Solidaridad</li>
+                    <li>Participación</li>
+                    <li>Inclusión</li>
+                    <li>Desarrollo sostenible</li>
+                </ul>
+
+                <button class="ver-animacion" type="button" onclick="mostrarPilar('valores')">
+                    Ver animación
+                    <span>↗</span>
+                </button>
+
+            </article>
+
+        </div>
+
+
+        <!-- PANEL DE ANIMACIONES -->
+
+        <div class="educacion-visual" id="educacion-visual">
+
+            <div class="visual-mensaje" id="visual-mensaje">
+
+                <span>LOS PILARES DE LA UNNE</span>
+
+                <p>
+                    Tres principios que construyen la identidad de nuestra universidad.
+                </p>
+
+                <span class="visual-indicacion">
+                    Seleccioná un pilar para descubrirlo
+                </span>
+
+            </div>
+
+
+            <div class="visual-gif" id="visual-gif">
+
+                <img id="gif-pilar" src="" alt="Animación del pilar institucional seleccionado">
+
+                <span id="gif-titulo"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* ---------------- EDUCACION CON PROPOSITO ---------------- */
+
+.educacion{
+
+    background-image:url("im/05.jpg");
+
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    padding:90px 7%;
+
+}
+
+.educacion-contenedor{
+
+    max-width:1400px;
+    margin:auto;
+
+}
+
+
+/* ---------------- INTRODUCCION ---------------- */
+
+.educacion-intro{
+
+    max-width:850px;
+
+    margin-bottom:65px;
+
+}
+
+.educacion-titulo{
+
+    font-family:'Merriweather',serif;
+    font-size:2.4rem;
+    font-weight:700;
+
+    color:#1f1f1f;
+
+    margin-bottom:25px;
+
+    text-align:left;
+
+}
+
+.educacion-descripcion{
+
+    font-family:'Lato',sans-serif;
+    font-size:1.05rem;
+    font-weight:400;
+
+    line-height:1.8;
+
+    color:#1f1f1f;
+
+    margin-bottom:20px;
+
+}
+
+.educacion-destacada{
+
+    font-family:'Lato',sans-serif;
+    font-size:1.15rem;
+    font-weight:700;
+
+    line-height:1.6;
+
+    color:#1f1f1f;
+
+    max-width:700px;
+
+}
+
+
+/* ---------------- PILARES ---------------- */
+
+.pilares-educacion{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-bottom:35px;
+
+}
+
+.pilar-card{
+
+    display:flex;
+    flex-direction:column;
+
+    padding:30px;
+
+    background:rgba(255,255,255,0.55);
+
+    border-top:3px solid #B58A2B;
+
+    transition:0.3s;
+
+}
+
+.pilar-card:hover{
+
+    background:rgba(255,255,255,0.85);
+
+    transform:translateY(-5px);
+
+}
+
+.pilar-numero{
+
+    font-family:'Lato',sans-serif;
+    font-size:0.85rem;
+    font-weight:700;
+
+    color:#A17A24;
+
+    margin-bottom:20px;
+
+}
+
+.pilar-card h3{
+
+    font-family:'Merriweather',serif;
+    font-size:1.7rem;
+    font-weight:700;
+
+    color:#1f1f1f;
+
+    margin-bottom:20px;
+
+}
+
+.pilar-card p,
+.pilar-card li{
+
+    font-family:'Lato',sans-serif;
+    font-size:0.95rem;
+    font-weight:400;
+
+    line-height:1.75;
+
+    color:#333;
+
+}
+
+.pilar-card p{
+
+    margin-bottom:25px;
+
+}
+
+.pilar-card ul{
+
+    padding-left:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ---------------- BOTONES ---------------- */
+
+.ver-animacion{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:13px 0;
+
+    border:none;
+
+    border-top:1px solid rgba(0,0,0,0.25);
+
+    background:transparent;
+
+    font-family:'Lato',sans-serif;
+    font-size:0.95rem;
+    font-weight:700;
+
+    color:#735619;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.ver-animacion span{
+
+    font-size:1.3rem;
+
+}
+
+.ver-animacion:hover{
+
+    color:#B58A2B;
+
+    padding-left:8px;
+
+}
+
+
+/* ---------------- PANEL DE ANIMACIONES ---------------- */
+
+.educacion-visual{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    min-height:280px;
+
+    background:rgba(255,255,255,0.45);
+
+    overflow:hidden;
+
+}
+
+.visual-mensaje{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:45px;
+
+}
+
+.visual-mensaje span:first-child{
+
+    font-family:'Lato',sans-serif;
+    font-size:0.8rem;
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:#967329;
+
+    margin-bottom:20px;
+
+}
+
+.visual-mensaje p{
+
+    font-family:'Merriweather',serif;
+    font-size:1.5rem;
+    font-weight:400;
+
+    line-height:1.5;
+
+    color:#1f1f1f;
+
+}
+
+.visual-indicacion{
+
+    font-family:'Lato',sans-serif;
+    font-size:0.85rem;
+
+    color:#555;
+
+    margin-top:25px;
+
+}
+
+
+/* GIF */
+
+.visual-gif{
+
+    display:none;
+
+    position:relative;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:280px;
+
+    overflow:hidden;
+
+}
+
+.visual-gif.visible{
+
+    display:flex;
+
+}
+
+.visual-gif img{
+
+    width:100%;
+    height:100%;
+
+    max-height:420px;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+.visual-gif span{
+
+    position:absolute;
+
+    bottom:15px;
+    left:15px;
+
+    padding:8px 15px;
+
+    background:rgba(0,0,0,0.65);
+
+    color:white;
+
+    font-family:'Lato',sans-serif;
+    font-size:0.9rem;
+    font-weight:700;
+
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:900px){
+
+    .pilares-educacion{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .educacion-intro{
+
+        margin-bottom:40px;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .educacion{
+
+        padding:55px 5%;
+
+    }
+
+    .educacion-titulo{
+
+        font-size:1.9rem;
+
+    }
+
+    .educacion-descripcion{
+
+        font-size:1rem;
+
+    }
+
+    .educacion-destacada{
+
+        font-size:1.05rem;
+
+    }
+
+    .pilar-card{
+
+        padding:25px;
+
+    }
+
+    .educacion-visual{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .visual-mensaje{
+
+        padding:30px;
+
+    }
+
+    .visual-mensaje p{
+
+        font-size:1.25rem;
+
+    }
+
+    .visual-gif{
+
+        min-height:220px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* ---------------- INTERACTIVIDAD DE PILARES ---------------- */
+
+function mostrarPilar(pilar){
+
+    const mensaje = document.getElementById("visual-mensaje");
+
+    const visual = document.getElementById("visual-gif");
+
+    const imagen = document.getElementById("gif-pilar");
+
+    const titulo = document.getElementById("gif-titulo");
+
+
+    const gifs = {
+
+        mision:{
+            src:"im/1.gif",
+            titulo:"Misión"
+        },
+
+        vision:{
+            src:"im/2.gif",
+            titulo:"Visión"
+        },
+
+        valores:{
+            src:"im/3.gif",
+            titulo:"Valores"
+        }
+
+    };
+
+
+    if(!gifs[pilar]) return;
+
+
+    imagen.src = gifs[pilar].src;
+
+    imagen.alt = "Animación institucional: " + gifs[pilar].titulo;
+
+    titulo.textContent = gifs[pilar].titulo;
+
+
+    mensaje.style.display = "none";
+
+    visual.classList.add("visible");
+
+}
+
+</script>
+
 </body>
 
 </html>
