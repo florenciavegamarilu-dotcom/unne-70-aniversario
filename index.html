@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,107 +15,161 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Lato',sans-serif;
-    overflow-x:hidden;
+font-family:'Lato',sans-serif;
+overflow-x:hidden;
 }
+
+/* ---------------- INICIO ---------------- */
 
 .hero{
 
-    width:100%;
-    height:100vh;
+height:100vh;
 
-    background-image:url("imágenes/01.jpg");
+background-image:url("imágenes/imagenes/01.jpg");
 
-    background-size:cover;
-    background-position:center center;
-    background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 
-    display:flex;
-    align-items:flex-end;
+display:flex;
+align-items:flex-end;
 
-    padding-left:7%;
-    padding-bottom:10%;
+padding-left:7%;
+padding-bottom:10%;
 }
 
 .contenido{
-    max-width:900px;
+
+max-width:900px;
 }
 
 h1{
 
-    font-family:'Merriweather',serif;
+font-family:'Merriweather',serif;
+font-size:5rem;
+font-weight:400;
+color:white;
+line-height:1;
 
-    font-size:5rem;
-
-    font-weight:400;
-
-    color:white;
-
-    line-height:1;
-
-    margin-bottom:15px;
+margin-bottom:15px;
 }
 
 h1 em{
 
-    font-style:italic;
-
-    font-weight:300;
+font-style:italic;
+font-weight:300;
 }
 
 .subtitulo{
 
-    font-family:'Merriweather',serif;
+font-family:'Merriweather',serif;
+font-size:2rem;
+font-style:italic;
 
-    font-size:2rem;
+color:#E3B539;
 
-    font-style:italic;
-
-    color:#E3B539;
-
-    margin-bottom:25px;
+margin-bottom:25px;
 }
 
 .descripcion{
 
-    font-family:'Lato',sans-serif;
+font-size:1.25rem;
+line-height:1.5;
 
-    font-size:1.25rem;
+color:white;
 
-    color:white;
+max-width:650px;
+}
 
-    line-height:1.5;
+/* ---------------- SEGUNDA SECCION ---------------- */
 
-    max-width:650px;
+.regional{
+
+min-height:100vh;
+
+background-image:url("imágenes/imagenes/02.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+display:flex;
+align-items:center;
+
+padding-left:7%;
+padding-right:7%;
+}
+
+.regional-contenido{
+
+max-width:700px;
+}
+
+.regional h2{
+
+font-family:'Merriweather',serif;
+font-size:3rem;
+font-weight:700;
+
+color:#1f1f1f;
+
+margin-bottom:40px;
+}
+
+.regional p{
+
+font-family:'Lato',sans-serif;
+font-size:1.2rem;
+line-height:1.8;
+
+color:#1f1f1f;
+}
+
+.regional strong{
+
+font-weight:700;
 }
 
 @media(max-width:768px){
 
-    .hero{
+.hero{
 
-        padding-left:30px;
-        padding-right:30px;
+padding-left:30px;
+padding-bottom:80px;
+}
 
-        padding-bottom:80px;
-    }
+h1{
+font-size:3.3rem;
+}
 
-    h1{
-        font-size:3.3rem;
-    }
+.subtitulo{
+font-size:1.5rem;
+}
 
-    .subtitulo{
-        font-size:1.5rem;
-    }
+.descripcion{
+font-size:1rem;
+}
 
-    .descripcion{
-        font-size:1rem;
-    }
+.regional{
+
+padding:40px 30px;
+}
+
+.regional h2{
+
+font-size:2rem;
+}
+
+.regional p{
+
+font-size:1rem;
+}
 
 }
 
@@ -128,74 +181,62 @@ h1 em{
 
 <section class="hero">
 
-    <div class="contenido">
+<div class="contenido">
 
-        <h1>
-            Donde empieza
-            <br>
-            <em>el futuro</em>
-        </h1>
+<h1>
+Donde empieza<br>
+<em>el futuro</em>
+</h1>
 
-        <p class="subtitulo">
-            Estudiar sin mudarse
-        </p>
+<p class="subtitulo">
+Estudiar sin mudarse
+</p>
 
-        <p class="descripcion">
-            Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
-        </p>
+<p class="descripcion">
+Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
+</p>
 
-    </div>
+</div>
 
 </section>
-    .regional{
 
-    min-height:100vh;
+<section class="regional">
 
-    background-image:url("imágenes/02.jpg");
+<div class="regional-contenido">
 
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+<h2>
+Una universidad para el Nordeste
+</h2>
 
-    display:flex;
-    align-items:center;
+<p>
 
-    padding-left:7%;
-    padding-right:7%;
-}
+Cuando el decreto de 1956 creó la
+<strong>Universidad Nacional del Nordeste</strong>,
+no se hablaba de dos ciudades, sino de cuatro provincias:
+Chaco, Corrientes, Formosa y Misiones.
 
-.regional-contenido{
+<br><br>
 
-    max-width:700px;
-}
+<strong>
+Su objetivo era claro: evitar que los jóvenes tuvieran que abandonar su lugar de origen para acceder a estudios universitarios.
+</strong>
 
-.regional h2{
+<br><br>
 
-    font-family:'Merriweather', serif;
-    font-weight:700;
+Con el tiempo, su núcleo quedó repartido entre Corrientes y Resistencia, con dos campus en cada ciudad capital.
 
-    font-size:3rem;
+<strong>
+Esa red es la base desde la que la UNNE salió después hacia múltiples ciudades del nordeste argentino
+</strong>
 
-    color:white;
+y dio forma a su perfil regional con diversas modalidades.
 
-    margin-bottom:40px;
-}
+</p>
 
-.regional p{
+</div>
 
-    font-family:'Lato', sans-serif;
+</section>
 
-    font-size:1.2rem;
-
-    line-height:1.8;
-
-    color:white;
-}
-
-.regional strong{
-
-    font-weight:700;
-}    
 </body>
 
 </html>
