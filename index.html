@@ -1012,6 +1012,655 @@ margin-top: -180px;
 
 </script>
 
+<!-- ---------------- SEXTA SECCION: UNA COMUNIDAD QUE CRECE ---------------- -->
+
+<section class="comunidad" id="comunidad">
+
+    <div class="comunidad-contenedor">
+
+        <!-- INTRODUCCION -->
+
+        <div class="comunidad-intro">
+
+            <h2 class="comunidad-titulo">
+                Una comunidad que crece
+            </h2>
+
+            <p class="comunidad-descripcion">
+                La presencia de la UNNE puede verse reflejada a través de las personas que forman parte de ella.
+            </p>
+
+            <p class="comunidad-informe">
+                El presente informe constituye una herramienta fundamental de transparencia y gestión institucional, permitiendo una lectura cuantitativa del volumen de la UNNE 2025.
+            </p>
+
+        </div>
+
+
+        <!-- VISUALIZACION -->
+
+        <div class="comunidad-visual">
+
+            <!-- LAPIZ -->
+
+            <div class="comunidad-lapiz">
+
+                <img
+                    src="im/lapizx.png"
+                    alt="Ilustración de un lápiz con diferentes segmentos de color"
+                    class="lapiz-imagen"
+                >
+
+                <!-- ILUMINACION -->
+
+                <div class="lapiz-iluminacion" id="lapiz-iluminacion">
+
+                    <div class="lapiz-zona zona-grado"></div>
+
+                    <div class="lapiz-zona zona-posgrado"></div>
+
+                    <div class="lapiz-zona zona-graduados"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATOS -->
+
+            <div class="comunidad-datos">
+
+
+                <!-- GRADO -->
+
+                <button
+                    class="comunidad-dato dato-grado"
+                    type="button"
+                    onmouseenter="activarDato('grado')"
+                    onmouseleave="desactivarDato()"
+                    onfocus="activarDato('grado')"
+                    onblur="desactivarDato()"
+                >
+
+                    <span class="dato-categoria">
+                        ESTUDIANTES DE GRADO
+                    </span>
+
+                    <span class="dato-total">
+                        62.481
+                    </span>
+
+                    <span class="dato-desglose">
+                        46.330 Reinscriptos
+                    </span>
+
+                    <span class="dato-desglose">
+                        16.151 Nuevos alumnos
+                    </span>
+
+                    <span class="dato-desglose">
+                        512 Estudiantes extranjeros
+                    </span>
+
+                </button>
+
+
+                <!-- POSGRADO -->
+
+                <button
+                    class="comunidad-dato dato-posgrado"
+                    type="button"
+                    onmouseenter="activarDato('posgrado')"
+                    onmouseleave="desactivarDato()"
+                    onfocus="activarDato('posgrado')"
+                    onblur="desactivarDato()"
+                >
+
+                    <span class="dato-categoria">
+                        ESTUDIANTES DE POSGRADO
+                    </span>
+
+                    <span class="dato-total">
+                        3.523
+                    </span>
+
+                    <span class="dato-desglose">
+                        2.478 Reinscriptos
+                    </span>
+
+                    <span class="dato-desglose">
+                        1.045 Nuevos alumnos
+                    </span>
+
+                </button>
+
+
+                <!-- GRADUADOS -->
+
+                <button
+                    class="comunidad-dato dato-graduados"
+                    type="button"
+                    onmouseenter="activarDato('graduados')"
+                    onmouseleave="desactivarDato()"
+                    onfocus="activarDato('graduados')"
+                    onblur="desactivarDato()"
+                >
+
+                    <span class="dato-categoria">
+                        GRADUADOS
+                    </span>
+
+                    <span class="dato-total">
+                        4.032
+                    </span>
+
+                    <span class="dato-desglose">
+                        3.771 Graduados de grado
+                    </span>
+
+                    <span class="dato-desglose">
+                        261 Graduados de posgrado
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* ---------------- SEXTA SECCION ---------------- */
+
+.comunidad {
+
+    background-image: url("im/06.jpg");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 90px 7%;
+
+}
+
+.comunidad-contenedor {
+
+    max-width: 1400px;
+    margin: auto;
+
+}
+
+
+/* ---------------- TITULO Y TEXTO ---------------- */
+
+.comunidad-intro {
+
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    margin-bottom: 50px;
+
+}
+
+.comunidad-titulo {
+
+    grid-column: 1 / 7;
+
+    font-family: 'Merriweather', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    color: #1f1f1f;
+
+    margin-bottom: 20px;
+
+}
+
+.comunidad-descripcion {
+
+    grid-column: 1 / 7;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    color: #1f1f1f;
+
+    margin-bottom: 18px;
+
+}
+
+.comunidad-informe {
+
+    grid-column: 1 / 7;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    color: #1f1f1f;
+
+}
+
+
+/* ---------------- VISUALIZACION ---------------- */
+
+.comunidad-visual {
+
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 35px;
+
+    align-items: center;
+
+}
+
+
+/* ---------------- LAPIZ ---------------- */
+
+.comunidad-lapiz {
+
+    grid-column: 1 / 6;
+
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.lapiz-imagen {
+
+    display: block;
+
+    width: 100%;
+    max-width: 500px;
+
+    height: auto;
+
+}
+
+
+/* ---------------- ZONAS ILUMINADAS ---------------- */
+
+.lapiz-iluminacion {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+.lapiz-zona {
+
+    position: absolute;
+
+    opacity: 0;
+
+    transition: opacity 0.4s, filter 0.4s;
+
+    border-radius: 30px;
+
+    filter: blur(12px);
+
+}
+
+
+/* ZONA GRADO */
+
+.zona-grado {
+
+    background: rgba(225, 190, 45, 0.65);
+
+    width: 18%;
+    height: 48%;
+
+    top: 18%;
+    left: 41%;
+
+}
+
+
+/* ZONA POSGRADO */
+
+.zona-posgrado {
+
+    background: rgba(50, 145, 205, 0.65);
+
+    width: 18%;
+    height: 20%;
+
+    top: 65%;
+    left: 41%;
+
+}
+
+
+/* ZONA GRADUADOS */
+
+.zona-graduados {
+
+    background: rgba(205, 90, 75, 0.65);
+
+    width: 18%;
+    height: 12%;
+
+    top: 85%;
+    left: 41%;
+
+}
+
+
+/* ILUMINACION ACTIVA */
+
+.comunidad-lapiz.grado-activo .zona-grado {
+
+    opacity: 1;
+
+}
+
+.comunidad-lapiz.posgrado-activo .zona-posgrado {
+
+    opacity: 1;
+
+}
+
+.comunidad-lapiz.graduados-activo .zona-graduados {
+
+    opacity: 1;
+
+}
+
+
+/* ---------------- DATOS ---------------- */
+
+.comunidad-datos {
+
+    grid-column: 6 / 13;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+/* TARJETAS */
+
+.comunidad-dato {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: left;
+
+    width: 100%;
+
+    padding: 25px 30px;
+
+    background: rgba(255,255,255,0.65);
+
+    border: none;
+
+    border-left: 4px solid transparent;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+/* GRADO */
+
+.dato-grado {
+
+    border-left-color: #B58A2B;
+
+}
+
+.dato-grado:hover,
+.dato-grado:focus {
+
+    background: rgba(255,255,255,0.9);
+
+    border-left-color: #B58A2B;
+
+}
+
+
+/* POSGRADO */
+
+.dato-posgrado {
+
+    border-left-color: #328FC5;
+
+}
+
+.dato-posgrado:hover,
+.dato-posgrado:focus {
+
+    background: rgba(255,255,255,0.9);
+
+    border-left-color: #328FC5;
+
+}
+
+
+/* GRADUADOS */
+
+.dato-graduados {
+
+    border-left-color: #C65B4B;
+
+}
+
+.dato-graduados:hover,
+.dato-graduados:focus {
+
+    background: rgba(255,255,255,0.9);
+
+    border-left-color: #C65B4B;
+
+}
+
+
+/* TEXTO DE LOS DATOS */
+
+.dato-categoria {
+
+    font-family: 'Lato', sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #555;
+
+    margin-bottom: 8px;
+
+}
+
+.dato-total {
+
+    font-family: 'Merriweather', serif;
+
+    font-size: 2.2rem;
+
+    font-weight: 700;
+
+    color: #1f1f1f;
+
+    margin-bottom: 12px;
+
+}
+
+.dato-desglose {
+
+    font-family: 'Lato', sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: #333;
+
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+
+    .comunidad-titulo,
+    .comunidad-descripcion,
+    .comunidad-informe {
+
+        grid-column: 1 / 13;
+
+    }
+
+    .comunidad-visual {
+
+        grid-template-columns: repeat(12, 1fr);
+
+    }
+
+    .comunidad-lapiz {
+
+        grid-column: 1 / 6;
+
+    }
+
+    .comunidad-datos {
+
+        grid-column: 6 / 13;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .comunidad {
+
+        padding: 55px 5%;
+
+    }
+
+    .comunidad-titulo {
+
+        font-size: 1.9rem;
+
+    }
+
+    .comunidad-descripcion,
+    .comunidad-informe {
+
+        font-size: 1rem;
+
+    }
+
+    .comunidad-visual {
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+    .comunidad-lapiz {
+
+        width: 70%;
+
+    }
+
+    .comunidad-datos {
+
+        width: 100%;
+
+    }
+
+    .dato-total {
+
+        font-size: 1.8rem;
+
+    }
+
+    .comunidad-dato {
+
+        padding: 20px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* ---------------- INTERACTIVIDAD DEL LAPIZ ---------------- */
+
+function activarDato(dato) {
+
+    const lapiz = document.querySelector(".comunidad-lapiz");
+
+    lapiz.classList.remove(
+        "grado-activo",
+        "posgrado-activo",
+        "graduados-activo"
+    );
+
+    lapiz.classList.add(dato + "-activo");
+
+}
+
+
+function desactivarDato() {
+
+    const lapiz = document.querySelector(".comunidad-lapiz");
+
+    lapiz.classList.remove(
+        "grado-activo",
+        "posgrado-activo",
+        "graduados-activo"
+    );
+
+}
+
+</script>
+
 </body>
 
 </html>
