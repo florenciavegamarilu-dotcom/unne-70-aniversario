@@ -239,7 +239,8 @@ y dio forma a su perfil regional con diversas modalidades.
 
 </section>
 
-  <!-- ---------------- TERCERA SECCION: ALCANCE REGIONAL ---------------- -->
+
+<!-- ---------------- TERCERA SECCION: ALCANCE REGIONAL ---------------- -->
 
 <section class="alcance" id="alcance">
 
@@ -247,73 +248,74 @@ y dio forma a su perfil regional con diversas modalidades.
 
         <h2 class="alcance-titulo">Alcance regional</h2>
 
-        <!-- GRILLA DE 12 COLUMNAS -->
+        <!-- GRILLA: REFERENCIA + CARRUSEL -->
+
         <div class="alcance-grilla">
 
-            <!-- IMAGEN REFERENCIAL INTERACTIVA -->
-            <div class="alcance-referencia">
-                <img src="im/refe.png" alt="Mapa de las provincias del Nordeste y distribución territorial de la UNNE" usemap="#mapa-alcance">
+            <!-- IMAGEN REFERENCIA -->
 
-                <!-- BOTONES SOBRE LA IMAGEN -->
-                <map name="mapa-alcance">
-                    <area shape="rect" coords="0,0,1000,1000" href="#centros-regionales" alt="Centros Regionales Universitarios">
-                </map>
+            <div class="alcance-referencia">
+
+                <img src="im/refe.png" alt="Mapa de la distribución territorial de la UNNE" class="refe-imagen">
+
+                <!-- BOTONES INVISIBLES SOBRE LOS 4 BOTONES DE REFE.PNG -->
+
+                <div class="refe-links">
+
+                    <a href="#pilar-centros" class="refe-link" aria-label="Centros Regionales Universitarios"></a>
+
+                    <a href="#pilar-extensiones" class="refe-link" aria-label="Extensiones Áulicas"></a>
+
+                    <a href="#pilar-sedes" class="refe-link" aria-label="Sedes Principales"></a>
+
+                    <a href="#pilar-unidad" class="refe-link" aria-label="Unidad Especial"></a>
+
+                </div>
+
             </div>
+
 
             <!-- CARRUSEL -->
+
             <div class="alcance-carrusel">
 
-                <div class="carrusel-contenedor">
-
-                    <div class="carrusel-slide activo">
-                        <img src="im/map 1.jpg" alt="Mapa de Centros Regionales Universitarios">
-                    </div>
-
-                    <div class="carrusel-slide">
-                        <img src="im/map 2.jpg" alt="Mapa de Extensiones Áulicas">
-                    </div>
-
-                    <div class="carrusel-slide">
-                        <img src="im/map 3.jpg" alt="Mapa de Sedes Principales">
-                    </div>
-
-                    <div class="carrusel-slide">
-                        <img src="im/map 4.jpg" alt="Mapa de Unidad Especial">
-                    </div>
-
+                <div class="carrusel-slide activo">
+                    <img src="im/map 1.jpg" alt="Mapa territorial de la UNNE, primera vista">
                 </div>
 
-                <!-- CONTROLES -->
+                <div class="carrusel-slide">
+                    <img src="im/map 2.jpg" alt="Mapa territorial de la UNNE, segunda vista">
+                </div>
+
+                <div class="carrusel-slide">
+                    <img src="im/map 3.jpg" alt="Mapa territorial de la UNNE, tercera vista">
+                </div>
+
+                <div class="carrusel-slide">
+                    <img src="im/map 4.jpg" alt="Mapa territorial de la UNNE, cuarta vista">
+                </div>
+
+
+                <!-- FLECHAS -->
+
                 <button class="carrusel-btn anterior" onclick="cambiarSlide(-1)" aria-label="Imagen anterior">&#10094;</button>
+
                 <button class="carrusel-btn siguiente" onclick="cambiarSlide(1)" aria-label="Imagen siguiente">&#10095;</button>
 
+
                 <!-- INDICADORES -->
+
                 <div class="carrusel-indicadores">
+
                     <span class="indicador activo" onclick="irSlide(0)"></span>
+
                     <span class="indicador" onclick="irSlide(1)"></span>
+
                     <span class="indicador" onclick="irSlide(2)"></span>
+
                     <span class="indicador" onclick="irSlide(3)"></span>
+
                 </div>
-
-            </div>
-
-        </div>
-
-        <!-- PILARES INTERACTIVOS -->
-        <div class="alcance-pilares" id="pilares">
-
-            <img src="im/pilares.png" alt="Pilares institucionales de la UNNE" class="pilares-imagen">
-
-            <!-- ZONAS INTERACTIVAS -->
-            <div class="pilares-botones">
-
-                <a href="#centros-regionales" class="pilar-link pilar-centros" aria-label="Centros Regionales Universitarios"></a>
-
-                <a href="#extensiones" class="pilar-link pilar-extensiones" aria-label="Extensiones Áulicas"></a>
-
-                <a href="#sedes" class="pilar-link pilar-sedes" aria-label="Sedes Principales"></a>
-
-                <a href="#unidad-especial" class="pilar-link pilar-unidad" aria-label="Unidad Especial"></a>
 
             </div>
 
@@ -324,24 +326,28 @@ y dio forma a su perfil regional con diversas modalidades.
 </section>
 
 
-<!-- ---------------- CONTENIDO DE DESTINO ---------------- -->
+<!-- ---------------- CUARTA SECCION: PILARES ---------------- -->
 
-<section class="alcance-destinos">
+<section class="alcance-pilares-seccion" id="pilares">
 
-    <div id="centros-regionales" class="destino">
-        <h3>Centros Regionales Universitarios</h3>
-    </div>
+    <div class="pilares-contenedor">
 
-    <div id="extensiones" class="destino">
-        <h3>Extensiones Áulicas</h3>
-    </div>
+        <img src="im/pilares.png" alt="Distribución de Centros Regionales Universitarios, Extensiones Áulicas, Sedes Principales y Unidad Especial" class="pilares-imagen">
 
-    <div id="sedes" class="destino">
-        <h3>Sedes Principales</h3>
-    </div>
+        <!-- ANCLAS INVISIBLES SOBRE CADA BLOQUE DE PILARES.PNG -->
 
-    <div id="unidad-especial" class="destino">
-        <h3>Unidad Especial</h3>
+        <div class="pilares-anclas">
+
+            <span id="pilar-centros" class="pilar-ancla"></span>
+
+            <span id="pilar-extensiones" class="pilar-ancla"></span>
+
+            <span id="pilar-sedes" class="pilar-ancla"></span>
+
+            <span id="pilar-unidad" class="pilar-ancla"></span>
+
+        </div>
+
     </div>
 
 </section>
@@ -353,15 +359,13 @@ y dio forma a su perfil regional con diversas modalidades.
 
 .alcance{
 
-    min-height:100vh;
-
     background-image:url("im/03.jpg");
 
-    background-size:cover;
-    background-position:center;
     background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
 
-    padding:100px 7%;
+    padding:80px 7%;
 }
 
 .alcance-contenedor{
@@ -373,15 +377,16 @@ y dio forma a su perfil regional con diversas modalidades.
 .alcance-titulo{
 
     font-family:'Merriweather',serif;
-    font-size:3rem;
-    font-weight:400;
+    font-size:2.4rem;
+    font-weight:700;
 
     color:#1f1f1f;
 
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
-/* GRILLA */
+
+/* ---------------- GRILLA ---------------- */
 
 .alcance-grilla{
 
@@ -389,21 +394,24 @@ y dio forma a su perfil regional con diversas modalidades.
 
     grid-template-columns:repeat(12,1fr);
 
-    gap:30px;
+    gap:25px;
 
     align-items:center;
 }
 
-/* REFERENCIA */
+
+/* ---------------- REFERENCIA ---------------- */
 
 .alcance-referencia{
 
-    grid-column:span 6;
+    grid-column:span 4;
 
     position:relative;
+
+    width:100%;
 }
 
-.alcance-referencia img{
+.refe-imagen{
 
     width:100%;
     height:auto;
@@ -411,32 +419,66 @@ y dio forma a su perfil regional con diversas modalidades.
     display:block;
 }
 
-/* CARRUSEL */
+
+/* BOTONES SOBRE REFE.PNG */
+
+.refe-links{
+
+    position:absolute;
+
+    left:2.5%;
+    width:84%;
+
+    top:68%;
+    height:29%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+
+}
+
+.refe-link{
+
+    display:block;
+
+    cursor:pointer;
+
+    transition:background 0.3s;
+
+}
+
+.refe-link:hover{
+
+    background:rgba(255,255,255,0.15);
+
+}
+
+
+/* ---------------- CARRUSEL ---------------- */
 
 .alcance-carrusel{
 
-    grid-column:span 6;
+    grid-column:span 8;
 
     position:relative;
-
-    overflow:hidden;
 
     width:100%;
-}
+    overflow:hidden;
 
-.carrusel-contenedor{
-
-    position:relative;
 }
 
 .carrusel-slide{
 
     display:none;
+
 }
 
 .carrusel-slide.activo{
 
     display:block;
+
 }
 
 .carrusel-slide img{
@@ -445,9 +487,11 @@ y dio forma a su perfil regional con diversas modalidades.
     height:auto;
 
     display:block;
+
 }
 
-/* BOTONES CARRUSEL */
+
+/* FLECHAS */
 
 .carrusel-btn{
 
@@ -474,22 +518,27 @@ y dio forma a su perfil regional con diversas modalidades.
     transition:0.3s;
 
     z-index:5;
+
 }
 
 .carrusel-btn:hover{
 
     background:rgba(25,40,40,0.9);
+
 }
 
 .anterior{
 
     left:15px;
+
 }
 
 .siguiente{
 
     right:15px;
+
 }
+
 
 /* INDICADORES */
 
@@ -502,6 +551,7 @@ y dio forma a su perfil regional con diversas modalidades.
     gap:12px;
 
     padding:20px 0;
+
 }
 
 .indicador{
@@ -516,6 +566,7 @@ y dio forma a su perfil regional con diversas modalidades.
     cursor:pointer;
 
     transition:0.3s;
+
 }
 
 .indicador.activo{
@@ -523,29 +574,47 @@ y dio forma a su perfil regional con diversas modalidades.
     background:#007b8a;
 
     transform:scale(1.2);
+
 }
 
-/* PILARES */
 
-.alcance-pilares{
+/* ---------------- PILARES ---------------- */
+
+.alcance-pilares-seccion{
+
+    background-image:url("im/04.jpg");
+
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+
+    padding:70px 7%;
+
+}
+
+.pilares-contenedor{
+
+    max-width:1400px;
+
+    margin:auto;
 
     position:relative;
 
-    margin-top:70px;
-
-    width:100%;
 }
 
 .pilares-imagen{
 
-    width:100%;
-
     display:block;
+
+    width:100%;
+    height:auto;
+
 }
 
-/* ZONAS CLICKEABLES SOBRE PILARES.PNG */
 
-.pilares-botones{
+/* ANCLAS SOBRE PILARES */
+
+.pilares-anclas{
 
     position:absolute;
 
@@ -558,53 +627,14 @@ y dio forma a su perfil regional con diversas modalidades.
 
 }
 
-/* BOTONES INVISIBLES */
-
-.pilar-link{
+.pilar-ancla{
 
     display:block;
 
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.pilar-link:hover{
-
-    background:rgba(255,255,255,0.12);
-}
-
-/* ---------------- FONDO SEGUNDA PARTE ---------------- */
-
-.alcance-destinos{
-
-    background-image:url("im/04.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    padding:100px 7%;
-}
-
-/* DESTINOS */
-
-.destino{
-
-    min-height:400px;
-
-    padding:60px 0;
-
     scroll-margin-top:40px;
+
 }
 
-.destino h3{
-
-    font-family:'Merriweather',serif;
-    font-size:2.5rem;
-
-    color:#1f1f1f;
-}
 
 /* ---------------- RESPONSIVE ---------------- */
 
@@ -613,31 +643,52 @@ y dio forma a su perfil regional con diversas modalidades.
     .alcance-grilla{
 
         grid-template-columns:1fr;
+
     }
 
-    .alcance-referencia,
+    .alcance-referencia{
+
+        grid-column:span 12;
+
+        max-width:550px;
+
+        margin:auto;
+
+    }
+
     .alcance-carrusel{
 
         grid-column:span 12;
+
     }
-
-    .alcance-titulo{
-
-        font-size:2.5rem;
-    }
-
-    .alcance{
-
-        padding:70px 5%;
-    }
-
-}
-
-@media(max-width:600px){
 
     .alcance-titulo{
 
         font-size:2rem;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .alcance{
+
+        padding:50px 5%;
+
+    }
+
+    .alcance-pilares-seccion{
+
+        padding:40px 5%;
+
+    }
+
+    .alcance-titulo{
+
+        font-size:1.8rem;
+
     }
 
     .carrusel-btn{
@@ -646,11 +697,7 @@ y dio forma a su perfil regional con diversas modalidades.
         height:35px;
 
         font-size:18px;
-    }
 
-    .alcance-pilares{
-
-        margin-top:40px;
     }
 
 }
@@ -664,26 +711,32 @@ y dio forma a su perfil regional con diversas modalidades.
 
 let slideActual = 0;
 
-const slides = document.querySelectorAll(".carrusel-slide");
-const indicadores = document.querySelectorAll(".indicador");
+const slides = document.querySelectorAll(".alcance-carrusel .carrusel-slide");
+
+const indicadores = document.querySelectorAll(".alcance-carrusel .indicador");
+
 
 function mostrarSlide(numero){
 
     slides.forEach(slide => slide.classList.remove("activo"));
+
     indicadores.forEach(indicador => indicador.classList.remove("activo"));
 
     slideActual = (numero + slides.length) % slides.length;
 
     slides[slideActual].classList.add("activo");
+
     indicadores[slideActual].classList.add("activo");
 
 }
+
 
 function cambiarSlide(direccion){
 
     mostrarSlide(slideActual + direccion);
 
 }
+
 
 function irSlide(numero){
 
@@ -692,6 +745,7 @@ function irSlide(numero){
 }
 
 </script>
+
 </body>
 
 </html>
