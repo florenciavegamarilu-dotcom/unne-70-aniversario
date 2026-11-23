@@ -753,142 +753,6 @@ function irSlide(numero){
 
 </script>
 
-<!-- ---------------- QUINTA SECCION: EDUCACION CON PROPOSITO ---------------- -->
-
-<section class="educacion" id="educacion">
-
-    <div class="educacion-contenedor">
-
-        <!-- INTRODUCCION -->
-
-        <div class="educacion-intro">
-
-            <h2 class="educacion-titulo">
-                Educación con propósito
-            </h2>
-
-            <p class="educacion-descripcion">
-
-                La UNNE no solo transmite conocimientos, sino que plantea formación personal con ética, pensamiento crítico y compromiso social. Esto se transmite a través de sus pilares institucionales principales.
-
-            </p>
-
-            <p class="educacion-destacada">
-
-                Porque la educación no es únicamente enseñar. También es transformar realidades.
-
-            </p>
-
-        </div>
-
-
-        <!-- PILARES INSTITUCIONALES -->
-
-        <div class="pilares-educacion">
-
-            <!-- COLUMNA MISION -->
-
-            <article class="pilar-card" data-gif="mision">
-
-                <span class="pilar-numero">01</span>
-
-                <h3>Misión</h3>
-
-                <p>
-                    La UNNE tiene como misión generar y transmitir conocimientos, formar profesionales y personas con valores, y contribuir a resolver los problemas y necesidades de la región. Busca que sus integrantes desarrollen pensamiento crítico, responsabilidad social y respeto por la democracia, la libertad, la igualdad y la diversidad de opiniones.
-                </p>
-
-                <button class="ver-animacion" type="button" onclick="mostrarPilar('mision')">
-                    Ver animación
-                    <span>↗</span>
-                </button>
-
-            </article>
-
-
-            <!-- COLUMNA VISION -->
-
-            <article class="pilar-card" data-gif="vision">
-
-                <span class="pilar-numero">02</span>
-
-                <h3>Visión</h3>
-
-                <p>
-                    La UNNE aspira a ser una universidad inclusiva y de calidad, que ayude a construir una sociedad más justa. Busca formar profesionales y ciudadanos comprometidos, promover la ciencia, la tecnología y el desarrollo sostenible, y contribuir al crecimiento de Chaco, Corrientes y el país. También defiende una educación pública, gratuita, autónoma y participativa.
-                </p>
-
-                <button class="ver-animacion" type="button" onclick="mostrarPilar('vision')">
-                    Ver animación
-                    <span>↗</span>
-                </button>
-
-            </article>
-
-
-            <!-- COLUMNA VALORES -->
-
-            <article class="pilar-card" data-gif="valores">
-
-                <span class="pilar-numero">03</span>
-
-                <h3>Valores</h3>
-
-                <ul>
-                    <li>Justicia</li>
-                    <li>Igualdad</li>
-                    <li>Solidaridad</li>
-                    <li>Participación</li>
-                    <li>Inclusión</li>
-                    <li>Desarrollo sostenible</li>
-                </ul>
-
-                <button class="ver-animacion" type="button" onclick="mostrarPilar('valores')">
-                    Ver animación
-                    <span>↗</span>
-                </button>
-
-            </article>
-
-        </div>
-
-
-        <!-- PANEL DE ANIMACIONES -->
-
-        <div class="educacion-visual" id="educacion-visual">
-
-            <div class="visual-mensaje" id="visual-mensaje">
-
-                <span>LOS PILARES DE LA UNNE</span>
-
-                <p>
-                    Tres principios que construyen la identidad de nuestra universidad.
-                </p>
-
-                <span class="visual-indicacion">
-                    Seleccioná un pilar para descubrirlo
-                </span>
-
-            </div>
-
-
-            <div class="visual-gif" id="visual-gif">
-
-                <img id="gif-pilar" src="" alt="Animación del pilar institucional seleccionado">
-
-                <span id="gif-titulo"></span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<style>
-
 
 <!-- ---------------- QUINTA SECCION: EDUCACION CON PROPOSITO ---------------- -->
 
@@ -914,12 +778,11 @@ function irSlide(numero){
 
         </div>
 
-
         <!-- IMAGEN Y PANEL INTERACTIVO -->
 
         <div class="educacion-grilla">
 
-            <!-- COLUMNA IZQUIERDA: IMAGEN Y BOTONES -->
+            <!-- IMAGEN Y BOTONES -->
 
             <div class="educacion-columna">
 
@@ -929,51 +792,39 @@ function irSlide(numero){
                     class="columnas-imagen"
                 >
 
-                <!-- BOTONES -->
-
                 <div class="educacion-botones">
 
-                    <button
-                        class="educacion-boton"
+                    <button class="educacion-boton"
                         type="button"
                         onmouseenter="mostrarEducacion('mision')"
                         onfocus="mostrarEducacion('mision')"
-                        onclick="mostrarEducacion('mision')"
-                    >
-                        Misión
-                        <span>↗</span>
+                        onclick="mostrarEducacion('mision')">
+                        Misión <span>↗</span>
                     </button>
 
-                    <button
-                        class="educacion-boton"
+                    <button class="educacion-boton"
                         type="button"
                         onmouseenter="mostrarEducacion('vision')"
                         onfocus="mostrarEducacion('vision')"
-                        onclick="mostrarEducacion('vision')"
-                    >
-                        Visión
-                        <span>↗</span>
+                        onclick="mostrarEducacion('vision')">
+                        Visión <span>↗</span>
                     </button>
 
-                    <button
-                        class="educacion-boton"
+                    <button class="educacion-boton"
                         type="button"
                         onmouseenter="mostrarEducacion('valores')"
                         onfocus="mostrarEducacion('valores')"
-                        onclick="mostrarEducacion('valores')"
-                    >
-                        Valores
-                        <span>↗</span>
+                        onclick="mostrarEducacion('valores')">
+                        Valores <span>↗</span>
                     </button>
 
                 </div>
 
             </div>
 
+            <!-- PANEL DE GIF -->
 
-            <!-- COLUMNA DERECHA: GIF -->
-
-            <div class="educacion-panel" id="educacion-panel">
+            <div class="educacion-panel">
 
                 <div class="educacion-mensaje" id="educacion-mensaje">
 
@@ -990,7 +841,6 @@ function irSlide(numero){
                     </span>
 
                 </div>
-
 
                 <div class="educacion-gif" id="educacion-gif">
 
@@ -1015,403 +865,259 @@ function irSlide(numero){
 
 <style>
 
-/* ---------------- QUINTA SECCION ---------------- */
+/* QUINTA SECCION */
 
-.educacion{
-
-    background-image:url("im/05.jpg");
-
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-
-    padding:90px 7%;
-
+.educacion {
+    background-image: url("im/05.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 90px 7%;
 }
 
-.educacion-contenedor{
-
-    max-width:1400px;
-    margin:auto;
-
+.educacion-contenedor {
+    max-width: 1400px;
+    margin: auto;
 }
 
+/* TITULO Y TEXTO */
 
-/* ---------------- TITULO Y TEXTO ---------------- */
-
-.educacion-intro{
-
-    display:grid;
-
-    grid-template-columns:repeat(12,1fr);
-
-    margin-bottom:45px;
-
+.educacion-intro {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 45px;
 }
 
-.educacion-titulo{
-
-    grid-column:2 / 10;
-
-    font-family:'Merriweather',serif;
-    font-size:2.4rem;
-    font-weight:700;
-
-    color:#1f1f1f;
-
-    text-align:left;
-
-    margin-bottom:20px;
-
+.educacion-titulo {
+  grid-column: 2 / 7;
+    font-family: 'Merriweather', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-.educacion-descripcion{
-
-    grid-column:2 / 10;
-
-    font-family:'Lato',sans-serif;
-    font-size:1.05rem;
-    font-weight:400;
-
-    line-height:1.8;
-
-    color:#1f1f1f;
-
-    margin-bottom:18px;
-
+.educacion-descripcion {
+  grid-column: 2 / 7;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #1f1f1f;
+    margin-bottom: 18px;
 }
 
-.educacion-destacada{
-
-    grid-column:2 / 10;
-
-    font-family:'Lato',sans-serif;
-    font-size:1.05rem;
-    font-weight:700;
-
-    line-height:1.8;
-
-    color:#1f1f1f;
-
+.educacion-destacada {
+  grid-column: 2 / 7;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #1f1f1f;
 }
 
+/* GRILLA */
 
-/* ---------------- GRILLA INTERACTIVA ---------------- */
-
-.educacion-grilla{
-
-    display:grid;
-
-    grid-template-columns:repeat(12,1fr);
-
-    gap:30px;
-
-    align-items:center;
-
+.educacion-grilla {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    align-items: center;
 }
 
+/* IMAGEN */
 
-/* ---------------- IMAGEN COLUMNAS ---------------- */
-
-.educacion-columna{
-
-    grid-column:span 7;
-
-    width:100%;
-
+.educacion-columna {
+    grid-column: span 7;
+    width: 100%;
 }
 
-.columnas-imagen{
-
-    display:block;
-
-    width:100%;
-    height:auto;
-
+.columnas-imagen {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
+/* BOTONES */
 
-/* ---------------- BOTONES ---------------- */
-
-.educacion-botones{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:15px;
-
-    margin-top:20px;
-
+.educacion-botones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.educacion-boton{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    padding:15px 18px;
-
-    background:rgba(255,255,255,0.65);
-
-    border:none;
-    border-bottom:2px solid #B58A2B;
-
-    font-family:'Lato',sans-serif;
-    font-size:1rem;
-    font-weight:700;
-
-    color:#292929;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
+.educacion-boton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 18px;
+    background: rgba(255,255,255,0.65);
+    border: none;
+    border-bottom: 2px solid #B58A2B;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #292929;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.educacion-boton span{
-
-    font-size:1.2rem;
-
+.educacion-boton span {
+    font-size: 1.2rem;
 }
 
 .educacion-boton:hover,
-.educacion-boton:focus{
-
-    background:#B58A2B;
-
-    color:white;
-
-    padding-left:23px;
-
-    outline:none;
-
+.educacion-boton:focus {
+    background: #B58A2B;
+    color: white;
+    padding-left: 23px;
+    outline: none;
 }
 
+/* PANEL DERECHO */
 
-/* ---------------- PANEL DERECHO ---------------- */
-
-.educacion-panel{
-
-    grid-column:span 5;
-
-    position:relative;
-
-    min-height:380px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(255,255,255,0.45);
-
-    overflow:hidden;
-
+.educacion-panel {
+    grid-column: span 5;
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.45);
+    overflow: hidden;
 }
-
 
 /* MENSAJE INICIAL */
 
-.educacion-mensaje{
-
-    padding:40px;
-
-    text-align:left;
-
+.educacion-mensaje {
+    padding: 40px;
+    text-align: left;
 }
 
-.panel-etiqueta{
-
-    display:block;
-
-    font-family:'Lato',sans-serif;
-    font-size:0.8rem;
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    color:#967329;
-
-    margin-bottom:20px;
-
+.panel-etiqueta {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #967329;
+    margin-bottom: 20px;
 }
 
-.educacion-mensaje p{
-
-    font-family:'Merriweather',serif;
-    font-size:1.5rem;
-    font-weight:400;
-
-    line-height:1.6;
-
-    color:#1f1f1f;
-
+.educacion-mensaje p {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #1f1f1f;
 }
 
-.panel-indicacion{
-
-    display:block;
-
-    font-family:'Lato',sans-serif;
-    font-size:0.9rem;
-
-    color:#555;
-
-    margin-top:25px;
-
+.panel-indicacion {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 25px;
 }
 
+/* GIF */
 
-/* ---------------- GIF ---------------- */
-
-.educacion-gif{
-
-    display:none;
-
-    width:100%;
-    height:100%;
-
-    position:absolute;
-
-    inset:0;
-
-    align-items:center;
-    justify-content:center;
-
+.educacion-gif {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
 }
 
-.educacion-gif.visible{
-
-    display:flex;
-
+.educacion-gif.visible {
+    display: flex;
 }
 
-.educacion-gif img{
-
-    display:block;
-
-    width:100%;
-    height:100%;
-
-    max-height:450px;
-
-    object-fit:contain;
-
+.educacion-gif img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 450px;
+    object-fit: contain;
 }
 
-.educacion-gif span{
-
-    position:absolute;
-
-    left:15px;
-    bottom:15px;
-
-    padding:10px 18px;
-
-    background:rgba(0,0,0,0.7);
-
-    color:white;
-
-    font-family:'Lato',sans-serif;
-    font-weight:700;
-
+.educacion-gif span {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    padding: 10px 18px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
 }
 
+/* TABLET */
 
-/* ---------------- RESPONSIVE ---------------- */
-
-@media(max-width:900px){
-
-    .educacion-intro{
-
-        grid-template-columns:repeat(12,1fr);
-
-    }
+@media (max-width: 900px) {
 
     .educacion-titulo,
     .educacion-descripcion,
-    .educacion-destacada{
-
-        grid-column:1 / 12;
-
+    .educacion-destacada {
+        grid-column: 1 / 13;
     }
 
-    .educacion-grilla{
-
-        grid-template-columns:1fr;
-
+    .educacion-grilla {
+        grid-template-columns: 1fr;
     }
 
     .educacion-columna,
-    .educacion-panel{
-
-        grid-column:span 12;
-
+    .educacion-panel {
+        grid-column: 1 / -1;
     }
 
-    .educacion-panel{
-
-        min-height:350px;
-
+    .educacion-panel {
+        min-height: 350px;
     }
 
 }
 
+/* CELULAR */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
 
-    .educacion{
-
-        padding:55px 5%;
-
+    .educacion {
+        padding: 55px 5%;
     }
 
-    .educacion-titulo{
-
-        font-size:1.9rem;
-
+    .educacion-titulo {
+        font-size: 1.9rem;
     }
 
     .educacion-descripcion,
-    .educacion-destacada{
-
-        font-size:1rem;
-
+    .educacion-destacada {
+        font-size: 1rem;
     }
 
-    .educacion-botones{
-
-        grid-template-columns:1fr;
-
-        gap:10px;
-
+    .educacion-botones {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
-    .educacion-boton{
-
-        padding:13px 16px;
-
+    .educacion-boton {
+        padding: 13px 16px;
     }
 
-    .educacion-panel{
-
-        min-height:260px;
-
+    .educacion-panel {
+        min-height: 260px;
     }
 
-    .educacion-mensaje{
-
-        padding:25px;
-
+    .educacion-mensaje {
+        padding: 25px;
     }
 
-    .educacion-mensaje p{
-
-        font-size:1.25rem;
-
+    .educacion-mensaje p {
+        font-size: 1.25rem;
     }
 
 }
@@ -1421,51 +1127,41 @@ function irSlide(numero){
 
 <script>
 
-/* ---------------- INTERACTIVIDAD DE LOS PILARES ---------------- */
+/* INTERACTIVIDAD DE LOS PILARES */
 
-function mostrarEducacion(pilar){
+function mostrarEducacion(pilar) {
 
     const mensaje = document.getElementById("educacion-mensaje");
-
     const panel = document.getElementById("educacion-gif");
-
     const imagen = document.getElementById("gif-institucional");
-
     const nombre = document.getElementById("gif-nombre");
-
 
     const animaciones = {
 
-        mision:{
-            imagen:"im/1.gif",
-            nombre:"Misión"
+        mision: {
+            imagen: "im/1.gif",
+            nombre: "Misión"
         },
 
-        vision:{
-            imagen:"im/2.gif",
-            nombre:"Visión"
+        vision: {
+            imagen: "im/2.gif",
+            nombre: "Visión"
         },
 
-        valores:{
-            imagen:"im/3.gif",
-            nombre:"Valores"
+        valores: {
+            imagen: "im/3.gif",
+            nombre: "Valores"
         }
 
     };
 
-
-    if(!animaciones[pilar]) return;
-
+    if (!animaciones[pilar]) return;
 
     imagen.src = animaciones[pilar].imagen;
-
     imagen.alt = "Animación institucional: " + animaciones[pilar].nombre;
-
     nombre.textContent = animaciones[pilar].nombre;
 
-
     mensaje.style.display = "none";
-
     panel.classList.add("visible");
 
 }
