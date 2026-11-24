@@ -1387,6 +1387,604 @@ function mostrarDatoComunidad(numero) {
 
 </script>
 
+<!-- ================================================== -->
+<!-- SEPTIMA SECCION: EL CAMINO DE UN ESTUDIANTE -->
+<!-- ================================================== -->
+
+<section class="camino" id="camino">
+
+  <div class="camino-contenedor">
+
+    <!-- TITULO Y TEXTO -->
+    <div class="camino-intro">
+
+      <h2 class="camino-titulo">
+        El camino de un estudiante
+      </h2>
+
+      <p class="camino-descripcion">
+        Análisis cuantitativo de la cantidad de estudiantes que superan las diferentes etapas del universitario, desde su ingreso como aspirante, su continuidad o reinscripción para seguir la trayectoria, hasta su graduación.
+      </p>
+
+    </div>
+
+    <!-- CARRUSEL DE IMAGENES -->
+    <div class="camino-carrusel">
+
+      <!-- BOTON ANTERIOR -->
+      <button
+        class="camino-flecha camino-anterior"
+        type="button"
+        onclick="cambiarCamino(-1)"
+        aria-label="Imagen anterior"
+      >
+        &#10094;
+      </button>
+
+      <!-- IMAGEN PRINCIPAL -->
+      <div class="camino-marco">
+
+        <img
+          id="camino-imagen"
+          src="im/carru%201.png"
+          alt="El camino de un estudiante de la UNNE"
+        >
+
+      </div>
+
+      <!-- BOTON SIGUIENTE -->
+      <button
+        class="camino-flecha camino-siguiente"
+        type="button"
+        onclick="cambiarCamino(1)"
+        aria-label="Imagen siguiente"
+      >
+        &#10095;
+      </button>
+
+    </div>
+
+    <!-- INDICADORES DEL CARRUSEL -->
+    <div class="camino-indicadores">
+
+      <button
+        class="camino-indicador activo"
+        type="button"
+        onclick="seleccionarCamino(0)"
+        aria-label="Mostrar imagen 1"
+      ></button>
+
+      <button
+        class="camino-indicador"
+        type="button"
+        onclick="seleccionarCamino(1)"
+        aria-label="Mostrar imagen 2"
+      ></button>
+
+      <button
+        class="camino-indicador"
+        type="button"
+        onclick="seleccionarCamino(2)"
+        aria-label="Mostrar imagen 3"
+      ></button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================== -->
+<!-- OCTAVA SECCION: CIERRE -->
+<!-- ================================================== -->
+
+<section class="cierre" id="cierre">
+
+  <div class="cierre-contenedor">
+
+    <h2 class="cierre-titulo">
+      70 años acercando oportunidades
+    </h2>
+
+    <p class="cierre-texto">
+      Porque la UNNE sigue escribiéndose en cada estudiante, docente, graduado y ciudadano que encuentra en ella una oportunidad para crecer.
+    </p>
+
+    <p class="cierre-destacado">
+      Y porque, cada aula, cada proyecto y cada historia personal son parte de una misión que trasciende generaciones: acercar educación, conocimiento y futuro a toda la región.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================== -->
+<!-- ESTILOS DE LA SEPTIMA Y OCTAVA SECCION -->
+<!-- ================================================== -->
+
+<style>
+
+/* ==========================================
+   SEPTIMA SECCION
+   EL CAMINO DE UN ESTUDIANTE
+========================================== */
+
+.camino {
+
+  background-image: url("im/07.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 90px 7%;
+
+}
+
+.camino-contenedor {
+
+  max-width: 1400px;
+  margin: auto;
+
+}
+
+
+/* TITULO */
+
+.camino-intro {
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin-bottom: 40px;
+
+}
+
+.camino-titulo {
+
+  grid-column: 1 / 7;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+
+  color: #1f1f1f;
+
+  text-align: left;
+
+  margin-bottom: 20px;
+
+}
+
+
+/* DESCRIPCION */
+
+.camino-descripcion {
+
+  grid-column: 1 / 7;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: #1f1f1f;
+
+}
+
+
+/* CARRUSEL */
+
+.camino-carrusel {
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+}
+
+.camino-marco {
+
+  width: 85%;
+  max-width: 1100px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+}
+
+.camino-marco img {
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  transition: opacity 0.3s ease;
+
+}
+
+
+/* FLECHAS */
+
+.camino-flecha {
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.75);
+
+  color: #333;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.3s ease,
+              transform 0.3s ease;
+
+}
+
+.camino-flecha:hover {
+
+  background: rgba(255,255,255,0.95);
+
+  transform: scale(1.08);
+
+}
+
+
+/* INDICADORES */
+
+.camino-indicadores {
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+}
+
+.camino-indicador {
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(50,50,50,0.35);
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease,
+              background 0.3s ease;
+
+}
+
+.camino-indicador.activo {
+
+  background: #333;
+
+  transform: scale(1.25);
+
+}
+
+
+/* RESPONSIVE SEPTIMA */
+
+@media (max-width: 900px) {
+
+  .camino-titulo,
+  .camino-descripcion {
+
+    grid-column: 1 / 13;
+
+  }
+
+  .camino-carrusel {
+
+    gap: 12px;
+
+  }
+
+  .camino-marco {
+
+    width: 90%;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .camino {
+
+    padding: 55px 5%;
+
+  }
+
+  .camino-titulo {
+
+    font-size: 1.9rem;
+
+  }
+
+  .camino-descripcion {
+
+    font-size: 1rem;
+
+  }
+
+  .camino-carrusel {
+
+    gap: 8px;
+
+  }
+
+  .camino-marco {
+
+    width: 85%;
+
+  }
+
+  .camino-flecha {
+
+    width: 35px;
+    height: 35px;
+
+    font-size: 1rem;
+
+  }
+
+  .camino-indicadores {
+
+    margin-top: 20px;
+
+  }
+
+}
+
+
+/* ==========================================
+   OCTAVA SECCION
+   70 AÑOS ACERCANDO OPORTUNIDADES
+========================================== */
+
+.cierre {
+
+  background-image: url("im/08.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 120px 7%;
+
+}
+
+.cierre-contenedor {
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+}
+
+
+/* TITULO DEL CIERRE */
+
+.cierre-titulo {
+
+  grid-column: 1 / 9;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  color: #1f1f1f;
+
+  margin-bottom: 30px;
+
+}
+
+
+/* PRIMER TEXTO */
+
+.cierre-texto {
+
+  grid-column: 1 / 9;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+
+  line-height: 1.9;
+
+  color: #1f1f1f;
+
+  margin-bottom: 25px;
+
+}
+
+
+/* SEGUNDO TEXTO DESTACADO */
+
+.cierre-destacado {
+
+  grid-column: 1 / 9;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  line-height: 1.9;
+
+  color: #1f1f1f;
+
+}
+
+
+/* RESPONSIVE OCTAVA */
+
+@media (max-width: 900px) {
+
+  .cierre-titulo,
+  .cierre-texto,
+  .cierre-destacado {
+
+    grid-column: 1 / 13;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .cierre {
+
+    padding: 70px 5%;
+
+  }
+
+  .cierre-titulo {
+
+    font-size: 1.9rem;
+
+  }
+
+  .cierre-texto,
+  .cierre-destacado {
+
+    font-size: 1rem;
+
+  }
+
+}
+
+</style>
+
+
+<!-- ================================================== -->
+<!-- JAVASCRIPT DEL CARRUSEL -->
+<!-- ================================================== -->
+
+<script>
+
+const imagenesCamino = [
+
+  "im/carru%201.png",
+  "im/carru%202.png",
+  "im/carru%203.png"
+
+];
+
+let indiceCamino = 0;
+
+
+function seleccionarCamino(indice) {
+
+  const imagen = document.getElementById("camino-imagen");
+
+  const indicadores = document.querySelectorAll(".camino-indicador");
+
+  indiceCamino = indice;
+
+  imagen.style.opacity = "0";
+
+  const nuevaImagen = new Image();
+
+  nuevaImagen.onload = function() {
+
+    imagen.src = nuevaImagen.src;
+
+    imagen.style.opacity = "1";
+
+  };
+
+  nuevaImagen.onerror = function() {
+
+    imagen.style.opacity = "1";
+
+    console.error(
+      "No se pudo cargar la imagen: " + imagenesCamino[indiceCamino]
+    );
+
+  };
+
+  nuevaImagen.src = imagenesCamino[indiceCamino];
+
+
+  indicadores.forEach(function(indicador, i) {
+
+    indicador.classList.remove("activo");
+
+    if (i === indiceCamino) {
+
+      indicador.classList.add("activo");
+
+    }
+
+  });
+
+}
+
+
+function cambiarCamino(direccion) {
+
+  indiceCamino = indiceCamino + direccion;
+
+  if (indiceCamino >= imagenesCamino.length) {
+
+    indiceCamino = 0;
+
+  }
+
+  if (indiceCamino < 0) {
+
+    indiceCamino = imagenesCamino.length - 1;
+
+  }
+
+  seleccionarCamino(indiceCamino);
+
+}
+
+</script>
+
 
 </body>
 
