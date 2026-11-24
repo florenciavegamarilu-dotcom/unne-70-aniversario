@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,168 +15,1556 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* =========================================
+   ESTILOS GENERALES
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-font-family:'Lato',sans-serif;
-overflow-x:hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-/* ---------------- INICIO ---------------- */
-
-.hero{
-
-height:100vh;
-
-background-image:url("im/01.jpg");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-display:flex;
-align-items:flex-end;
-
-padding-left:7%;
-padding-bottom:10%;
+body {
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
 }
 
-.contenido{
-
-max-width:900px;
+img {
+  max-width: 100%;
 }
 
-h1{
 
-font-family:'Merriweather',serif;
-font-size:5rem;
-font-weight:400;
-color:white;
-line-height:1;
+/* =========================================
+   PRIMERA SECCION - PORTADA
+   CONSERVADA
+========================================= */
 
-margin-bottom:15px;
+.hero {
+
+  height: 100vh;
+
+  background-image: url("im/01.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding-left: 7%;
+  padding-bottom: 10%;
 }
 
-h1 em{
-
-font-style:italic;
-font-weight:300;
+.contenido {
+  max-width: 900px;
 }
 
-.subtitulo{
+h1 {
 
-font-family:'Merriweather',serif;
-font-size:2rem;
-font-style:italic;
+  font-family: 'Merriweather', serif;
+  font-size: 5rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1;
 
-color:#E3B539;
-
-margin-bottom:25px;
+  margin-bottom: 15px;
 }
 
-.descripcion{
-
-font-size:1.25rem;
-line-height:1.5;
-
-color:white;
-
-max-width:650px;
+h1 em {
+  font-style: italic;
+  font-weight: 300;
 }
 
-/* ---------------- SEGUNDA SECCION ---------------- */
+.subtitulo {
 
-.regional{
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  font-style: italic;
 
-min-height:100vh;
+  color: #E3B539;
 
-background-image:url("im/02.jpg");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-display:flex;
-align-items:center;
-
-padding-left:7%;
-padding-right:7%;
+  margin-bottom: 25px;
 }
 
-.regional-contenido{
+.descripcion {
 
-    grid-column:2 / 7;
+  font-size: 1.25rem;
+  line-height: 1.5;
 
-    max-width:520px;
+  color: white;
 
-    margin-left:0;
-
-    text-align:left;
+  max-width: 650px;
 }
 
-.regional h2{
 
-font-family:'Merriweather',serif;
-font-size:2.4rem;
-font-weight:700;
+/* =========================================
+   BARRA DE NAVEGACION
+========================================= */
 
-color:#1f1f1f;
+.navbar {
 
-margin-bottom:40px;
+  width: 100%;
+
+  background: rgba(26, 38, 42, 0.90);
+
+  padding: 13px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
 }
 
-.regional p{
+.navbar-logo {
 
-font-family:'Lato',sans-serif;
-font-size:1.05rem;
-line-height:1.8;
+  display: flex;
+  align-items: center;
 
-color:#1f1f1f;
+  flex-shrink: 0;
 }
 
-.regional strong{
+.navbar-logo img {
 
-font-weight:700;
+  display: block;
+
+  width: auto;
+  height: 48px;
+
+  object-fit: contain;
 }
 
-@media(max-width:768px){
+.navbar-links {
 
-.hero{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-padding-left:30px;
-padding-bottom:80px;
+  gap: 25px;
+
+  flex-wrap: wrap;
 }
 
-h1{
-font-size:3.3rem;
+.navbar-links a {
+
+  color: #E6E7E6;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+
 }
 
-.subtitulo{
-font-size:1.5rem;
+.navbar-links a:hover {
+  color: #E3B539;
 }
 
-.descripcion{
-font-size:1rem;
+
+/* =========================================
+   SEGUNDA SECCION
+   UNA UNIVERSIDAD PARA EL NORDESTE
+========================================= */
+
+.regional {
+
+  min-height: 85vh;
+
+  background-image: url("im/new02.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  align-items: center;
+
+  padding: 75px 7%;
 }
 
-.regional{
+.regional-contenido {
 
-padding:40px 30px;
+  grid-column: 3 / 11;
+
+  width: 100%;
+  max-width: 850px;
+
+  justify-self: center;
+
+  text-align: left;
 }
 
-.regional h2{
+.regional h2 {
 
-font-size:2rem;
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 25px;
 }
 
-.regional p{
+.regional p {
 
-font-size:1rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
 }
+
+.regional strong {
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TERCERA SECCION
+   ALCANCE REGIONAL
+========================================= */
+
+.alcance {
+
+  background-image: url("im/03.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  padding: 65px 7%;
+}
+
+.alcance-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+.alcance-titulo {
+
+  grid-column: 3 / 11;
+
+  width: 100%;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: #1f1f1f;
+
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.alcance-grilla {
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 25px;
+
+  align-items: center;
+}
+
+.alcance-referencia {
+
+  grid-column: span 4;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 400px;
+
+  justify-self: center;
+}
+
+.refe-imagen {
+
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* BOTONES INVISIBLES */
+
+.refe-links {
+
+  position: absolute;
+
+  left: 2.5%;
+  width: 84%;
+
+  top: 68%;
+  height: 29%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.refe-link {
+
+  display: block;
+
+  cursor: pointer;
+
+  transition: background 0.3s;
+}
+
+.refe-link:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+/* CARRUSEL */
+
+.alcance-carrusel {
+
+  grid-column: span 8;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  justify-self: center;
+
+  overflow: hidden;
+}
+
+.carrusel-slide {
+  display: none;
+}
+
+.carrusel-slide.activo {
+  display: block;
+}
+
+.carrusel-slide img {
+
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* FLECHAS */
+
+.carrusel-btn {
+
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: rgba(25,40,40,0.65);
+
+  color: white;
+
+  font-size: 22px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  z-index: 5;
+}
+
+.carrusel-btn:hover {
+  background: rgba(25,40,40,0.9);
+}
+
+.anterior {
+  left: 12px;
+}
+
+.siguiente {
+  right: 12px;
+}
+
+
+/* INDICADORES */
+
+.carrusel-indicadores {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 15px 0;
+}
+
+.indicador {
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #999;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.indicador.activo {
+
+  background: #007b8a;
+
+  transform: scale(1.2);
+}
+
+
+/* =========================================
+   CUARTA SECCION
+   PILARES
+========================================= */
+
+.alcance-pilares-seccion {
+
+  background-image: url("im/04.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  padding: 55px 7%;
+}
+
+.pilares-contenedor {
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  position: relative;
+}
+
+.pilares-imagen {
+
+  display: block;
+
+  width: 96%;
+  height: auto;
+
+  margin: auto;
+}
+
+
+/* ANCLAS */
+
+.pilares-anclas {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.pilar-ancla {
+
+  display: block;
+
+  scroll-margin-top: 40px;
+}
+
+
+/* =========================================
+   QUINTA SECCION
+   EDUCACION CON PROPOSITO
+========================================= */
+
+.educacion {
+
+  background-image: url("im/05.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 65px 7%;
+}
+
+.educacion-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* TITULO Y TEXTOS */
+
+.educacion-intro {
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin-bottom: 20px;
+}
+
+.educacion-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  text-align: left;
+
+  margin-bottom: 18px;
+}
+
+.educacion-descripcion {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 10px;
+}
+
+.educacion-destacada {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* IMAGEN Y GIF */
+
+.educacion-grilla {
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 25px;
+
+  align-items: center;
+}
+
+.educacion-imagen {
+
+  grid-column: 2 / 7;
+
+  width: 94%;
+}
+
+.educacion-imagen img {
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.educacion-animacion {
+
+  grid-column: 7 / 12;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: start;
+
+  margin-top: -120px;
+}
+
+.educacion-animacion img {
+
+  display: block;
+
+  width: 78%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SEXTA SECCION
+   UNA COMUNIDAD QUE CRECE
+========================================= */
+
+.comunidad {
+
+  background-image: url("im/06.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 70px 7%;
+}
+
+.comunidad-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* TITULO Y TEXTOS */
+
+.comunidad-intro {
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin-bottom: 30px;
+}
+
+.comunidad-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  text-align: left;
+
+  margin-bottom: 18px;
+}
+
+.comunidad-descripcion {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 15px;
+}
+
+.comunidad-informe {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* DISTRIBUCION VISUAL */
+
+.comunidad-visual {
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+
+/* LAPIZ */
+
+.comunidad-lapiz {
+
+  grid-column: 1 / 10;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comunidad-lapiz-imagen {
+
+  display: block;
+
+  width: 94%;
+  max-width: none;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* BOTONES */
+
+.comunidad-botones {
+
+  width: 72%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.comunidad-boton {
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  width: 30%;
+
+  flex: 0 0 30%;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.comunidad-boton img {
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.comunidad-boton:hover {
+  transform: scale(1.04);
+}
+
+.comunidad-boton.seleccionado {
+  transform: scale(1.04);
+}
+
+
+/* AREA DE DATOS */
+
+.comunidad-interaccion {
+
+  grid-column: 10 / 13;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.comunidad-dato-contenedor {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.comunidad-dato-imagen {
+
+  display: none;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.comunidad-dato-imagen.visible {
+  display: block;
+}
+
+
+/* =========================================
+   SEPTIMA SECCION
+   EL CAMINO DE UN ESTUDIANTE
+========================================= */
+
+.camino {
+
+  background-image: url("im/07.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 65px 7%;
+}
+
+.camino-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* TITULO Y TEXTO */
+
+.camino-intro {
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin-bottom: 25px;
+}
+
+.camino-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  text-align: left;
+
+  margin-bottom: 18px;
+}
+
+.camino-descripcion {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* CARRUSEL REDUCIDO */
+
+.camino-carrusel {
+
+  width: 68%;
+  max-width: 850px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+.camino-marco {
+
+  width: 100%;
+  max-width: 760px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.camino-marco img {
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  transition: opacity 0.3s ease;
+}
+
+
+/* FLECHAS */
+
+.camino-flecha {
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.75);
+
+  color: #333;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.3s ease,
+              transform 0.3s ease;
+}
+
+.camino-flecha:hover {
+
+  background: rgba(255,255,255,0.95);
+
+  transform: scale(1.08);
+}
+
+
+/* INDICADORES */
+
+.camino-indicadores {
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-top: 20px;
+}
+
+.camino-indicador {
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(50,50,50,0.35);
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease,
+              background 0.3s ease;
+}
+
+.camino-indicador.activo {
+
+  background: #333;
+
+  transform: scale(1.25);
+}
+
+
+/* =========================================
+   OCTAVA SECCION
+   CIERRE
+========================================= */
+
+.cierre {
+
+  background-image: url("im/new08.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 90px 7%;
+}
+
+.cierre-contenedor {
+
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+}
+
+
+/* TITULO */
+
+.cierre-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 25px;
+}
+
+
+/* PRIMER TEXTO */
+
+.cierre-texto {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 20px;
+}
+
+
+/* SEGUNDO TEXTO */
+
+.cierre-destacado {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* =========================================
+   PIE DE PAGINA
+========================================= */
+
+.footer {
+
+  background-color: #1A262A;
+
+  padding: 30px 7%;
+}
+
+.footer-contenedor {
+
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* DATOS DE LA CREADORA */
+
+.footer-creditos {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.footer-nombre {
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  color: #E6E7E6;
+}
+
+.footer-comision {
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+
+  color: #E6E7E6;
+}
+
+
+/* LOGOS */
+
+.footer-logos {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 25px;
+}
+
+.footer-logos img {
+
+  display: block;
+
+  width: auto;
+  max-width: 150px;
+  height: 65px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+  /* NAVEGACION */
+
+  .navbar {
+
+    flex-direction: column;
+
+    padding: 18px 5%;
+
+    gap: 15px;
+  }
+
+  .navbar-links {
+
+    justify-content: center;
+
+    gap: 15px 20px;
+  }
+
+
+  /* TEXTOS CENTRADOS */
+
+  .regional-contenido,
+  .educacion-titulo,
+  .educacion-descripcion,
+  .educacion-destacada,
+  .comunidad-titulo,
+  .comunidad-descripcion,
+  .comunidad-informe,
+  .camino-titulo,
+  .camino-descripcion,
+  .cierre-titulo,
+  .cierre-texto,
+  .cierre-destacado {
+
+    grid-column: 2 / 12;
+  }
+
+
+  /* ALCANCE */
+
+  .alcance-grilla {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .alcance-referencia {
+    grid-column: 2 / 12;
+    max-width: 420px;
+  }
+
+  .alcance-carrusel {
+    grid-column: 2 / 12;
+  }
+
+
+  /* EDUCACION */
+
+  .educacion-grilla {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .educacion-imagen {
+    grid-column: 2 / 7;
+  }
+
+  .educacion-animacion {
+    grid-column: 7 / 12;
+    margin-top: -60px;
+  }
+
+
+  /* COMUNIDAD */
+
+  .comunidad-lapiz {
+    grid-column: 1 / 10;
+  }
+
+  .comunidad-interaccion {
+    grid-column: 10 / 13;
+  }
+
+
+  /* CARRUSEL CAMINO */
+
+  .camino-carrusel {
+    width: 80%;
+  }
+
+
+  /* FOOTER */
+
+  .footer-logos img {
+    max-width: 120px;
+    height: 55px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* PORTADA */
+
+  .hero {
+    padding-left: 30px;
+    padding-bottom: 80px;
+  }
+
+  h1 {
+    font-size: 3.3rem;
+  }
+
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+  }
+
+
+  /* NAVEGACION */
+
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .navbar-logo img {
+    height: 42px;
+  }
+
+  .navbar-links {
+    gap: 12px 16px;
+  }
+
+  .navbar-links a {
+    font-size: 0.78rem;
+  }
+
+
+  /* SEGUNDA SECCION */
+
+  .regional {
+
+    min-height: auto;
+
+    padding: 60px 6%;
+
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .regional-contenido {
+    grid-column: 1 / 13;
+  }
+
+  .regional h2 {
+    font-size: 1.8rem;
+  }
+
+  .regional p {
+    font-size: 0.95rem;
+  }
+
+
+  /* ALCANCE */
+
+  .alcance {
+    padding: 50px 5%;
+  }
+
+  .alcance-titulo {
+    font-size: 1.8rem;
+  }
+
+  .alcance-referencia,
+  .alcance-carrusel {
+    grid-column: 1 / 13;
+  }
+
+  .carrusel-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+  }
+
+
+  /* PILARES */
+
+  .alcance-pilares-seccion {
+    padding: 35px 5%;
+  }
+
+  .pilares-imagen {
+    width: 100%;
+  }
+
+
+  /* EDUCACION */
+
+  .educacion {
+    padding: 55px 5%;
+  }
+
+  .educacion-titulo,
+  .educacion-descripcion,
+  .educacion-destacada {
+    grid-column: 1 / 13;
+  }
+
+  .educacion-titulo {
+    font-size: 1.8rem;
+  }
+
+  .educacion-descripcion,
+  .educacion-destacada {
+    font-size: 0.95rem;
+  }
+
+  .educacion-grilla {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .educacion-imagen {
+    grid-column: 1 / 13;
+    width: 95%;
+    margin: auto;
+  }
+
+  .educacion-animacion {
+    grid-column: 1 / 13;
+    margin-top: 0;
+  }
+
+  .educacion-animacion img {
+    width: 75%;
+  }
+
+
+  /* COMUNIDAD */
+
+  .comunidad {
+    padding: 55px 5%;
+  }
+
+  .comunidad-titulo,
+  .comunidad-descripcion,
+  .comunidad-informe {
+    grid-column: 1 / 13;
+  }
+
+  .comunidad-titulo {
+    font-size: 1.8rem;
+  }
+
+  .comunidad-descripcion,
+  .comunidad-informe {
+    font-size: 0.95rem;
+  }
+
+  .comunidad-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .comunidad-lapiz {
+    width: 100%;
+  }
+
+  .comunidad-lapiz-imagen {
+    width: 95%;
+  }
+
+  .comunidad-botones {
+    width: 78%;
+    gap: 12px;
+  }
+
+  .comunidad-boton {
+    width: 29%;
+    flex-basis: 29%;
+  }
+
+  .comunidad-interaccion {
+    width: 100%;
+  }
+
+  .comunidad-dato-imagen {
+    max-width: 100%;
+  }
+
+
+  /* CAMINO */
+
+  .camino {
+    padding: 55px 5%;
+  }
+
+  .camino-titulo,
+  .camino-descripcion {
+    grid-column: 1 / 13;
+  }
+
+  .camino-titulo {
+    font-size: 1.8rem;
+  }
+
+  .camino-descripcion {
+    font-size: 0.95rem;
+  }
+
+  .camino-carrusel {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .camino-marco {
+    width: 100%;
+  }
+
+  .camino-flecha {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .camino-indicadores {
+    margin-top: 18px;
+  }
+
+
+  /* CIERRE */
+
+  .cierre {
+    padding: 65px 5%;
+  }
+
+  .cierre-titulo,
+  .cierre-texto,
+  .cierre-destacado {
+    grid-column: 1 / 13;
+  }
+
+  .cierre-titulo {
+    font-size: 1.8rem;
+  }
+
+  .cierre-texto,
+  .cierre-destacado {
+    font-size: 0.95rem;
+  }
+
+
+  /* FOOTER */
+
+  .footer {
+    padding: 28px 6%;
+  }
+
+  .footer-contenedor {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .footer-logos {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .footer-logos img {
+    max-width: 110px;
+    height: 48px;
+  }
 
 }
 
@@ -183,843 +1572,301 @@ font-size:1rem;
 
 </head>
 
+
 <body>
+
+
+<!-- =========================================
+     PRIMERA SECCION - PORTADA
+========================================= -->
 
 <section class="hero">
 
-<div class="contenido">
+  <div class="contenido">
 
-<h1>
-Donde empieza<br>
-<em>el futuro</em>
-</h1>
+    <h1>
+      Donde empieza<br>
+      <em>el futuro</em>
+    </h1>
 
-<p class="subtitulo">
-Estudiar sin mudarse
-</p>
+    <p class="subtitulo">
+      Estudiar sin mudarse
+    </p>
 
-<p class="descripcion">
-Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
-</p>
+    <p class="descripcion">
+      Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
+    </p>
 
-</div>
-
-</section>
-
-<section class="regional">
-
-<div class="regional-contenido">
-
-<h2>
-Una universidad para el Nordeste
-</h2>
-
-<p>
-
-Cuando el decreto de 1956 creó la
-<strong>Universidad Nacional del Nordeste</strong>,
-no se hablaba de dos ciudades, sino de cuatro provincias:
-Chaco, Corrientes, Formosa y Misiones.
-
-<br><br>
-
-<strong>
-Su objetivo era claro: evitar que los jóvenes tuvieran que abandonar su lugar de origen para acceder a estudios universitarios.
-</strong>
-
-<br><br>
-
-Con el tiempo, su núcleo quedó repartido entre Corrientes y Resistencia, con dos campus en cada ciudad capital.
-
-<strong>
-Esa red es la base desde la que la UNNE salió después hacia múltiples ciudades del nordeste argentino
-</strong>
-
-y dio forma a su perfil regional con diversas modalidades.
-
-</p>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- ---------------- TERCERA SECCION: ALCANCE REGIONAL ---------------- -->
+<!-- =========================================
+     BARRA DE NAVEGACION
+========================================= -->
+
+<nav class="navbar" aria-label="Navegación principal">
+
+  <a href="#inicio" class="navbar-logo" aria-label="Inicio">
+    <img src="im/logo.png" alt="Logo institucional de la UNNE">
+  </a>
+
+  <div class="navbar-links">
+
+    <a href="#regional">Una universidad para el Nordeste</a>
+
+    <a href="#alcance">Alcance regional</a>
+
+    <a href="#educacion">Educación con propósito</a>
+
+    <a href="#comunidad">Una comunidad que crece</a>
+
+    <a href="#camino">El camino de un estudiante</a>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================================
+     SEGUNDA SECCION
+========================================= -->
+
+<section class="regional" id="regional">
+
+  <div class="regional-contenido">
+
+    <h2>
+      Una universidad para el Nordeste
+    </h2>
+
+    <p>
+
+      Cuando el decreto de 1956 creó la
+      <strong>Universidad Nacional del Nordeste</strong>,
+      no se hablaba de dos ciudades, sino de cuatro provincias:
+      Chaco, Corrientes, Formosa y Misiones.
+
+      <br><br>
+
+      <strong>
+        Su objetivo era claro: evitar que los jóvenes tuvieran que abandonar su lugar de origen para acceder a estudios universitarios.
+      </strong>
+
+      <br><br>
+
+      Con el tiempo, su núcleo quedó repartido entre Corrientes y Resistencia, con dos campus en cada ciudad capital.
+
+      <strong>
+        Esa red es la base desde la que la UNNE salió después hacia múltiples ciudades del nordeste argentino
+      </strong>
+
+      y dio forma a su perfil regional con diversas modalidades.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     TERCERA SECCION
+     ALCANCE REGIONAL
+========================================= -->
 
 <section class="alcance" id="alcance">
 
-    <div class="alcance-contenedor">
+  <div class="alcance-contenedor">
 
-        <h2 class="alcance-titulo">Alcance regional</h2>
+    <h2 class="alcance-titulo">
+      Alcance regional
+    </h2>
 
-        <!-- GRILLA: REFERENCIA + CARRUSEL -->
+    <div class="alcance-grilla">
 
-        <div class="alcance-grilla">
+      <!-- REFERENCIA -->
 
-            <!-- IMAGEN REFERENCIA -->
+      <div class="alcance-referencia">
 
-            <div class="alcance-referencia">
+        <img
+          src="im/refe.png"
+          alt="Mapa de la distribución territorial de la UNNE"
+          class="refe-imagen"
+        >
 
-                <img src="im/refe.png" alt="Mapa de la distribución territorial de la UNNE" class="refe-imagen">
+        <div class="refe-links">
 
-                <!-- BOTONES INVISIBLES SOBRE LOS 4 BOTONES DE REFE.PNG -->
+          <a href="#pilar-centros" class="refe-link" aria-label="Centros Regionales Universitarios"></a>
 
-                <div class="refe-links">
+          <a href="#pilar-extensiones" class="refe-link" aria-label="Extensiones Áulicas"></a>
 
-                    <a href="#pilar-centros" class="refe-link" aria-label="Centros Regionales Universitarios"></a>
+          <a href="#pilar-sedes" class="refe-link" aria-label="Sedes Principales"></a>
 
-                    <a href="#pilar-extensiones" class="refe-link" aria-label="Extensiones Áulicas"></a>
-
-                    <a href="#pilar-sedes" class="refe-link" aria-label="Sedes Principales"></a>
-
-                    <a href="#pilar-unidad" class="refe-link" aria-label="Unidad Especial"></a>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARRUSEL -->
-
-            <div class="alcance-carrusel">
-
-                <div class="carrusel-slide activo">
-                    <img src="im/map 1.jpg" alt="Mapa territorial de la UNNE, primera vista">
-                </div>
-
-                <div class="carrusel-slide">
-                    <img src="im/map 2.jpg" alt="Mapa territorial de la UNNE, segunda vista">
-                </div>
-
-                <div class="carrusel-slide">
-                    <img src="im/map 3.jpg" alt="Mapa territorial de la UNNE, tercera vista">
-                </div>
-
-                <div class="carrusel-slide">
-                    <img src="im/map 4.jpg" alt="Mapa territorial de la UNNE, cuarta vista">
-                </div>
-
-
-                <!-- FLECHAS -->
-
-                <button class="carrusel-btn anterior" onclick="cambiarSlide(-1)" aria-label="Imagen anterior">&#10094;</button>
-
-                <button class="carrusel-btn siguiente" onclick="cambiarSlide(1)" aria-label="Imagen siguiente">&#10095;</button>
-
-
-                <!-- INDICADORES -->
-
-                <div class="carrusel-indicadores">
-
-                    <span class="indicador activo" onclick="irSlide(0)"></span>
-
-                    <span class="indicador" onclick="irSlide(1)"></span>
-
-                    <span class="indicador" onclick="irSlide(2)"></span>
-
-                    <span class="indicador" onclick="irSlide(3)"></span>
-
-                </div>
-
-            </div>
+          <a href="#pilar-unidad" class="refe-link" aria-label="Unidad Especial"></a>
 
         </div>
 
+      </div>
+
+
+      <!-- CARRUSEL -->
+
+      <div class="alcance-carrusel">
+
+        <div class="carrusel-slide activo">
+          <img src="im/map%201.jpg" alt="Mapa territorial de la UNNE, primera vista">
+        </div>
+
+        <div class="carrusel-slide">
+          <img src="im/map%202.jpg" alt="Mapa territorial de la UNNE, segunda vista">
+        </div>
+
+        <div class="carrusel-slide">
+          <img src="im/map%203.jpg" alt="Mapa territorial de la UNNE, tercera vista">
+        </div>
+
+        <div class="carrusel-slide">
+          <img src="im/map%204.jpg" alt="Mapa territorial de la UNNE, cuarta vista">
+        </div>
+
+
+        <button
+          class="carrusel-btn anterior"
+          type="button"
+          onclick="cambiarSlide(-1)"
+          aria-label="Imagen anterior"
+        >
+          &#10094;
+        </button>
+
+        <button
+          class="carrusel-btn siguiente"
+          type="button"
+          onclick="cambiarSlide(1)"
+          aria-label="Imagen siguiente"
+        >
+          &#10095;
+        </button>
+
+
+        <div class="carrusel-indicadores">
+
+          <span class="indicador activo" onclick="irSlide(0)"></span>
+
+          <span class="indicador" onclick="irSlide(1)"></span>
+
+          <span class="indicador" onclick="irSlide(2)"></span>
+
+          <span class="indicador" onclick="irSlide(3)"></span>
+
+        </div>
+
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
 
-<!-- ---------------- CUARTA SECCION: PILARES ---------------- -->
+<!-- =========================================
+     CUARTA SECCION
+     PILARES
+========================================= -->
 
 <section class="alcance-pilares-seccion" id="pilares">
 
-    <div class="pilares-contenedor">
+  <div class="pilares-contenedor">
 
-        <img src="im/pilares.png" alt="Distribución de Centros Regionales Universitarios, Extensiones Áulicas, Sedes Principales y Unidad Especial" class="pilares-imagen">
+    <img
+      src="im/pilares.png"
+      alt="Distribución de Centros Regionales Universitarios, Extensiones Áulicas, Sedes Principales y Unidad Especial"
+      class="pilares-imagen"
+    >
 
-        <!-- ANCLAS INVISIBLES SOBRE CADA BLOQUE DE PILARES.PNG -->
+    <div class="pilares-anclas">
 
-        <div class="pilares-anclas">
+      <span id="pilar-centros" class="pilar-ancla"></span>
 
-            <span id="pilar-centros" class="pilar-ancla"></span>
+      <span id="pilar-extensiones" class="pilar-ancla"></span>
 
-            <span id="pilar-extensiones" class="pilar-ancla"></span>
+      <span id="pilar-sedes" class="pilar-ancla"></span>
 
-            <span id="pilar-sedes" class="pilar-ancla"></span>
-
-            <span id="pilar-unidad" class="pilar-ancla"></span>
-
-        </div>
+      <span id="pilar-unidad" class="pilar-ancla"></span>
 
     </div>
+
+  </div>
 
 </section>
 
 
-<style>
-
-/* ---------------- ALCANCE REGIONAL ---------------- */
-
-.alcance{
-
-    background-image:url("im/03.jpg");
-
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
-
-    padding:80px 7%;
-}
-
-.alcance-contenedor{
-
-    max-width:1400px;
-    margin:auto;
-}
-
-/* ---------------- TITULO ALCANCE REGIONAL ---------------- */
-
-.alcance-titulo{
-
-    font-family:'Merriweather',serif;
-    font-size:2.4rem;
-    font-weight:700;
-
-    color:#1f1f1f;
-
-    margin-bottom:20px;
-    margin-top:30px;
-}
-
-
-/* ---------------- GRILLA ---------------- */
-
-.alcance-grilla{
-
-    display:grid;
-
-    grid-template-columns:repeat(12,1fr);
-
-    gap:25px;
-
-    align-items:center;
-}
-
-
-/* ---------------- REFERENCIA ---------------- */
-
-.alcance-referencia{
-
-    grid-column:span 4;
-
-    position:relative;
-
-    width:100%;
-}
-
-.refe-imagen{
-
-    width:100%;
-    height:auto;
-
-    display:block;
-}
-
-
-/* BOTONES SOBRE REFE.PNG */
-
-.refe-links{
-
-    position:absolute;
-
-    left:2.5%;
-    width:84%;
-
-    top:68%;
-    height:29%;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr 1fr;
-
-}
-
-.refe-link{
-
-    display:block;
-
-    cursor:pointer;
-
-    transition:background 0.3s;
-
-}
-
-.refe-link:hover{
-
-    background:rgba(255,255,255,0.15);
-
-}
-
-
-/* ---------------- CARRUSEL ---------------- */
-
-.alcance-carrusel{
-
-    grid-column:span 8;
-
-    position:relative;
-
-    width:100%;
-    overflow:hidden;
-
-}
-
-.carrusel-slide{
-
-    display:none;
-
-}
-
-.carrusel-slide.activo{
-
-    display:block;
-
-}
-
-.carrusel-slide img{
-
-    width:100%;
-    height:auto;
-
-    display:block;
-
-}
-
-
-/* FLECHAS */
-
-.carrusel-btn{
-
-    position:absolute;
-
-    top:50%;
-    transform:translateY(-50%);
-
-    border:none;
-
-    background:rgba(25,40,40,0.65);
-
-    color:white;
-
-    font-size:25px;
-
-    width:45px;
-    height:45px;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-    z-index:5;
-
-}
-
-.carrusel-btn:hover{
-
-    background:rgba(25,40,40,0.9);
-
-}
-
-.anterior{
-
-    left:15px;
-
-}
-
-.siguiente{
-
-    right:15px;
-
-}
-
-
-/* INDICADORES */
-
-.carrusel-indicadores{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-    padding:20px 0;
-
-}
-
-.indicador{
-
-    width:12px;
-    height:12px;
-
-    border-radius:50%;
-
-    background:#999;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-}
-
-.indicador.activo{
-
-    background:#007b8a;
-
-    transform:scale(1.2);
-
-}
-
-
-/* ---------------- PILARES ---------------- */
-
-.alcance-pilares-seccion{
-
-    background-image:url("im/04.jpg");
-
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
-
-    padding:70px 7%;
-
-}
-
-.pilares-contenedor{
-
-    max-width:1400px;
-
-    margin:auto;
-
-    position:relative;
-
-}
-
-.pilares-imagen{
-
-    display:block;
-
-    width:100%;
-    height:auto;
-
-}
-
-
-/* ANCLAS SOBRE PILARES */
-
-.pilares-anclas{
-
-    position:absolute;
-
-    inset:0;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr 1fr;
-
-}
-
-.pilar-ancla{
-
-    display:block;
-
-    scroll-margin-top:40px;
-
-}
-
-
-/* ---------------- RESPONSIVE ---------------- */
-
-@media(max-width:900px){
-
-    .alcance-grilla{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .alcance-referencia{
-
-        grid-column:span 12;
-
-        max-width:550px;
-
-        margin:auto;
-
-    }
-
-    .alcance-carrusel{
-
-        grid-column:span 12;
-
-    }
-
-    .alcance-titulo{
-
-        font-size:2rem;
-
-    }
-
-}
-
-
-@media(max-width:600px){
-
-    .alcance{
-
-        padding:50px 5%;
-
-    }
-
-    .alcance-pilares-seccion{
-
-        padding:40px 5%;
-
-    }
-
-    .alcance-titulo{
-
-        font-size:1.8rem;
-
-    }
-
-    .carrusel-btn{
-
-        width:35px;
-        height:35px;
-
-        font-size:18px;
-
-    }
-
-}
-
-</style>
-
-
-<script>
-
-/* ---------------- CARRUSEL ---------------- */
-
-let slideActual = 0;
-
-const slides = document.querySelectorAll(".alcance-carrusel .carrusel-slide");
-
-const indicadores = document.querySelectorAll(".alcance-carrusel .indicador");
-
-
-function mostrarSlide(numero){
-
-    slides.forEach(slide => slide.classList.remove("activo"));
-
-    indicadores.forEach(indicador => indicador.classList.remove("activo"));
-
-    slideActual = (numero + slides.length) % slides.length;
-
-    slides[slideActual].classList.add("activo");
-
-    indicadores[slideActual].classList.add("activo");
-
-}
-
-
-function cambiarSlide(direccion){
-
-    mostrarSlide(slideActual + direccion);
-
-}
-
-
-function irSlide(numero){
-
-    mostrarSlide(numero);
-
-}
-
-</script>
-
-
-<!-- ---------------- QUINTA SECCION: EDUCACION CON PROPOSITO ---------------- -->
+<!-- =========================================
+     QUINTA SECCION
+     EDUCACION CON PROPOSITO
+========================================= -->
 
 <section class="educacion" id="educacion">
 
-    <div class="educacion-contenedor">
+  <div class="educacion-contenedor">
 
-        <!-- TITULO Y TEXTO -->
+    <div class="educacion-intro">
 
-        <div class="educacion-intro">
+      <h2 class="educacion-titulo">
+        Educación con propósito
+      </h2>
 
-            <h2 class="educacion-titulo">
-                Educación con propósito
-            </h2>
+      <p class="educacion-descripcion">
+        La UNNE no solo transmite conocimientos, sino que plantea formación personal con ética, pensamiento crítico y compromiso social. Esto se transmite a través de sus pilares institucionales principales.
+      </p>
 
-            <p class="educacion-descripcion">
-                La UNNE no solo transmite conocimientos, sino que plantea formación personal con ética, pensamiento crítico y compromiso social. Esto se transmite a través de sus pilares institucionales principales.
-            </p>
-
-            <p class="educacion-destacada">
-                Porque la educación no es únicamente enseñar. También es transformar realidades.
-            </p>
-
-        </div>
-
-
-        <!-- IMAGEN Y GIF -->
-
-        <div class="educacion-grilla">
-
-            <!-- IMAGEN COLUMNAS -->
-
-            <div class="educacion-imagen">
-
-                <img
-                    src="im/columnas.png"
-                    alt="Pilares institucionales de la UNNE"
-                >
-
-            </div>
-
-
-            <!-- GIF -->
-
-            <div class="educacion-animacion">
-
-                <img
-                    src="im/gif.gif"
-                    alt="Animación institucional de la UNNE"
-                >
-
-            </div>
-
-        </div>
+      <p class="educacion-destacada">
+        Porque la educación no es únicamente enseñar. También es transformar realidades.
+      </p>
 
     </div>
+
+
+    <div class="educacion-grilla">
+
+      <div class="educacion-imagen">
+
+        <img
+          src="im/newcolumna.png"
+          alt="Pilares institucionales de la UNNE"
+        >
+
+      </div>
+
+
+      <div class="educacion-animacion">
+
+        <img
+          src="im/gif.gif"
+          alt="Animación institucional de la UNNE"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<style>
-
-/* ---------------- QUINTA SECCION ---------------- */
-
-.educacion {
-
-    background-image: url("im/05.jpg");
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    padding: 40px 7%;
-
-}
-
-.educacion-contenedor {
-
-    max-width: 1400px;
-    margin: auto;
-
-}
-
-
-/* ---------------- TITULO Y TEXTO ---------------- */
-
-.educacion-intro {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    margin-bottom: -15px;
-}
-
-.educacion-titulo {
-
-   grid-column: 1 / 7;
-
-    font-family: 'Merriweather', serif;
-    font-size: 2.4rem;
-    font-weight: 700;
-
-    color: #1f1f1f;
-
-    text-align: left;
-
-    margin-bottom: 20px;
-
-}
-
-.educacion-descripcion {
-
-grid-column: 1 / 7;
-
-    font-family: 'Lato', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-
-    line-height: 1.8;
-
-    color: #1f1f1f;
-
-    margin-bottom: 10px;
-
-}
-
-.educacion-destacada {
-
-grid-column: 1 / 7;
-
-    font-family: 'Lato', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-
-    line-height: 1.8;
-
-    color: #1f1f1f;
-
-}
-
-
-/* ---------------- IMAGEN Y GIF ---------------- */
-
-.educacion-grilla {
-
-    display: grid;
-
-    grid-template-columns: repeat(12, 1fr);
-
-    gap: 30px;
-
-    align-items: center;
-
-}
-
-
-/* IMAGEN COLUMNAS */
-
-.educacion-imagen {
-    grid-column: 1 / 7;
-    width: 110%;
-}
-
-.educacion-imagen img {
-
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-}
-
-
-/* GIF */
-
-.educacion-animacion {
-    grid-column: 7 / 13;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    align-self: start;
-margin-top: -180px;
-}
-
-.educacion-animacion img {
-    display: block;
-    width: 85%;
-    height: auto;
-    object-fit: contain;
-}
-
-
-/* ---------------- RESPONSIVE ---------------- */
-
-@media (max-width: 900px) {
-
-    .educacion-titulo,
-    .educacion-descripcion,
-    .educacion-destacada {
-
-        grid-column: 1 / 13;
-
-    }
-
-    .educacion-grilla {
-
-        grid-template-columns: repeat(12, 1fr);
-
-    }
-
-    .educacion-imagen {
-
-        grid-column: 1 / 13;
-
-    }
-
-    .educacion-animacion {
-
-        grid-column: 1 / 13;
-
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .educacion {
-
-        padding: 55px 5%;
-
-    }
-
-    .educacion-titulo {
-
-        font-size: 1.9rem;
-
-    }
-
-    .educacion-descripcion,
-    .educacion-destacada {
-
-        font-size: 1rem;
-
-    }
-
-    .educacion-grilla {
-
-        gap: 20px;
-
-    }
-
-}
-
-</style>
-
-
-</script>
-
-
-<!-- ==================== SEXTA SECCION ==================== -->
+<!-- =========================================
+     SEXTA SECCION
+     UNA COMUNIDAD QUE CRECE
+========================================= -->
 
 <section class="comunidad" id="comunidad">
 
   <div class="comunidad-contenedor">
 
-    <!-- TITULO Y TEXTOS -->
     <div class="comunidad-intro">
 
       <h2 class="comunidad-titulo">
@@ -1036,10 +1883,11 @@ margin-top: -180px;
 
     </div>
 
-    <!-- ZONA VISUAL -->
+
     <div class="comunidad-visual">
 
       <!-- LAPIZ Y BOTONES -->
+
       <div class="comunidad-lapiz">
 
         <img
@@ -1048,7 +1896,7 @@ margin-top: -180px;
           class="comunidad-lapiz-imagen"
         >
 
-        <!-- BOTONES -->
+
         <div class="comunidad-botones">
 
           <button
@@ -1082,7 +1930,9 @@ margin-top: -180px;
 
       </div>
 
-      <!-- DATOS A LA DERECHA -->
+
+      <!-- DATOS -->
+
       <div class="comunidad-interaccion">
 
         <div class="comunidad-dato-contenedor">
@@ -1104,298 +1954,15 @@ margin-top: -180px;
 </section>
 
 
-<!-- ==================== ESTILOS ==================== -->
-
-<style>
-
-/* SECCION */
-
-.comunidad {
-  background-image: url("im/06.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 90px 7%;
-}
-
-.comunidad-contenedor {
-  max-width: 1400px;
-  margin: auto;
-}
-
-
-/* TITULO Y TEXTOS */
-
-.comunidad-intro {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  margin-bottom: 35px;
-}
-
-.comunidad-titulo {
-  grid-column: 1 / 7;
-  font-family: 'Merriweather', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #1f1f1f;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.comunidad-descripcion {
-  grid-column: 1 / 7;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-  line-height: 1.8;
-  color: #1f1f1f;
-  margin-bottom: 18px;
-}
-
-.comunidad-informe {
-  grid-column: 1 / 7;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-  line-height: 1.8;
-  color: #1f1f1f;
-}
-
-
-/* DISTRIBUCION VISUAL */
-
-.comunidad-visual {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-  align-items: start;
-}
-
-
-/* LAPIZ */
-
-.comunidad-lapiz {
-  grid-column: 1 / 10;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.comunidad-lapiz-imagen {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: auto;
-  object-fit: contain;
-}
-
-
-/* BOTONES */
-
-.comunidad-botones {
-  width: 85%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0;
-  margin-top: 15px;
-}
-
-.comunidad-boton {
-  background: transparent;
-  border: none;
-  padding: 0;
-  width: 33.3333%;
-  flex: 0 0 33.3333%;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.comunidad-boton img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.comunidad-boton:hover {
-  transform: scale(1.04);
-}
-
-.comunidad-boton.seleccionado {
-  transform: scale(1.04);
-}
-
-
-/* AREA DE DATOS */
-
-.comunidad-interaccion {
-  grid-column: 10 / 13;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.comunidad-dato-contenedor {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.comunidad-dato-imagen {
-  display: none;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.comunidad-dato-imagen.visible {
-  display: block;
-}
-
-
-/* TABLETS */
-
-@media (max-width: 900px) {
-
-  .comunidad-titulo,
-  .comunidad-descripcion,
-  .comunidad-informe {
-    grid-column: 1 / 13;
-  }
-
-  .comunidad-visual {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 15px;
-  }
-
-  .comunidad-lapiz {
-    grid-column: 1 / 10;
-  }
-
-  .comunidad-interaccion {
-    grid-column: 10 / 13;
-  }
-
-}
-
-
-/* CELULARES */
-
-@media (max-width: 600px) {
-
-  .comunidad {
-    padding: 55px 5%;
-  }
-
-  .comunidad-titulo {
-    font-size: 1.9rem;
-  }
-
-  .comunidad-descripcion,
-  .comunidad-informe {
-    font-size: 1rem;
-  }
-
-  .comunidad-visual {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .comunidad-lapiz {
-    width: 100%;
-  }
-
-  .comunidad-botones {
-    width: 85%;
-  }
-
-  .comunidad-interaccion {
-    width: 100%;
-  }
-
-  .comunidad-dato-imagen {
-    max-width: 100%;
-  }
-
-}
-
-</style>
-
-
-<!-- ==================== SCRIPT INTERACTIVO ==================== -->
-
-<script>
-
-function mostrarDatoComunidad(numero) {
-
-  const imagenDato = document.getElementById("comunidad-dato-imagen");
-
-  const botones = document.querySelectorAll(".comunidad-boton");
-
-  const archivos = {
-    1: "im/dato%201.png",
-    2: "im/dato%202.png",
-    3: "im/dato%203.png"
-  };
-
-  // Ocultar imagen anterior
-  imagenDato.classList.remove("visible");
-
-  // Preparar nueva imagen
-  const nuevaImagen = new Image();
-
-  nuevaImagen.onload = function() {
-
-    imagenDato.src = nuevaImagen.src;
-
-    imagenDato.alt = "Dato estadístico número " + numero + " de la UNNE";
-
-    imagenDato.classList.add("visible");
-
-  };
-
-  nuevaImagen.onerror = function() {
-
-    console.error("Error al cargar el archivo: " + archivos[numero]);
-
-    alert("No se pudo cargar el dato. Revisá el nombre del archivo y su ubicación en la carpeta im.");
-
-  };
-
-  // Cargar archivo
-  nuevaImagen.src = archivos[numero];
-
-  // Marcar botón seleccionado
-  botones.forEach(function(boton, indice) {
-
-    boton.classList.remove("seleccionado");
-
-    if (indice === numero - 1) {
-
-      boton.classList.add("seleccionado");
-
-    }
-
-  });
-
-}
-
-</script>
-
-<!-- ================================================== -->
-<!-- SEPTIMA SECCION: EL CAMINO DE UN ESTUDIANTE -->
-<!-- ================================================== -->
+<!-- =========================================
+     SEPTIMA SECCION
+     EL CAMINO DE UN ESTUDIANTE
+========================================= -->
 
 <section class="camino" id="camino">
 
   <div class="camino-contenedor">
 
-    <!-- TITULO Y TEXTO -->
     <div class="camino-intro">
 
       <h2 class="camino-titulo">
@@ -1408,10 +1975,11 @@ function mostrarDatoComunidad(numero) {
 
     </div>
 
-    <!-- CARRUSEL DE IMAGENES -->
+
+    <!-- CARRUSEL -->
+
     <div class="camino-carrusel">
 
-      <!-- BOTON ANTERIOR -->
       <button
         class="camino-flecha camino-anterior"
         type="button"
@@ -1421,7 +1989,7 @@ function mostrarDatoComunidad(numero) {
         &#10094;
       </button>
 
-      <!-- IMAGEN PRINCIPAL -->
+
       <div class="camino-marco">
 
         <img
@@ -1432,7 +2000,7 @@ function mostrarDatoComunidad(numero) {
 
       </div>
 
-      <!-- BOTON SIGUIENTE -->
+
       <button
         class="camino-flecha camino-siguiente"
         type="button"
@@ -1444,7 +2012,7 @@ function mostrarDatoComunidad(numero) {
 
     </div>
 
-    <!-- INDICADORES DEL CARRUSEL -->
+
     <div class="camino-indicadores">
 
       <button
@@ -1475,9 +2043,10 @@ function mostrarDatoComunidad(numero) {
 </section>
 
 
-<!-- ================================================== -->
-<!-- OCTAVA SECCION: CIERRE -->
-<!-- ================================================== -->
+<!-- =========================================
+     OCTAVA SECCION
+     CIERRE
+========================================= -->
 
 <section class="cierre" id="cierre">
 
@@ -1500,409 +2069,173 @@ function mostrarDatoComunidad(numero) {
 </section>
 
 
-<!-- ================================================== -->
-<!-- ESTILOS DE LA SEPTIMA Y OCTAVA SECCION -->
-<!-- ================================================== -->
+<!-- =========================================
+     PIE DE PAGINA
+========================================= -->
 
-<style>
+<footer class="footer">
 
-/* ==========================================
-   SEPTIMA SECCION
-   EL CAMINO DE UN ESTUDIANTE
-========================================== */
+  <div class="footer-contenedor">
 
-.camino {
+    <div class="footer-creditos">
 
-  background-image: url("im/07.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+      <p class="footer-nombre">
+        Lezcano Florencia Marilú
+      </p>
 
-  padding: 90px 7%;
+      <p class="footer-comision">
+        COM3
+      </p>
 
-}
+    </div>
 
-.camino-contenedor {
 
-  max-width: 1400px;
-  margin: auto;
+    <div class="footer-logos">
 
-}
+      <img
+        src="im/70%20a%C3%B1os.png"
+        alt="Logo 70 años"
+      >
 
+      <img
+        src="im/logo%20une.png"
+        alt="Logo institucional"
+      >
 
-/* TITULO */
+    </div>
 
-.camino-intro {
+  </div>
 
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+</footer>
 
-  margin-bottom: 40px;
 
-}
-
-.camino-titulo {
-
-  grid-column: 1 / 7;
-
-  font-family: 'Merriweather', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-
-  color: #1f1f1f;
-
-  text-align: left;
-
-  margin-bottom: 20px;
-
-}
-
-
-/* DESCRIPCION */
-
-.camino-descripcion {
-
-  grid-column: 1 / 7;
-
-  font-family: 'Lato', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-
-  line-height: 1.8;
-
-  color: #1f1f1f;
-
-}
-
-
-/* CARRUSEL */
-
-.camino-carrusel {
-
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 25px;
-
-}
-
-.camino-marco {
-
-  width: 85%;
-  max-width: 1100px;
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  overflow: hidden;
-
-}
-
-.camino-marco img {
-
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  object-fit: contain;
-
-  opacity: 1;
-
-  transition: opacity 0.3s ease;
-
-}
-
-
-/* FLECHAS */
-
-.camino-flecha {
-
-  width: 45px;
-  height: 45px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: rgba(255,255,255,0.75);
-
-  color: #333;
-
-  font-size: 1.2rem;
-
-  cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  transition: background 0.3s ease,
-              transform 0.3s ease;
-
-}
-
-.camino-flecha:hover {
-
-  background: rgba(255,255,255,0.95);
-
-  transform: scale(1.08);
-
-}
-
-
-/* INDICADORES */
-
-.camino-indicadores {
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 12px;
-
-  margin-top: 30px;
-
-}
-
-.camino-indicador {
-
-  width: 12px;
-  height: 12px;
-
-  border-radius: 50%;
-
-  border: none;
-
-  background: rgba(50,50,50,0.35);
-
-  cursor: pointer;
-
-  transition: transform 0.3s ease,
-              background 0.3s ease;
-
-}
-
-.camino-indicador.activo {
-
-  background: #333;
-
-  transform: scale(1.25);
-
-}
-
-
-/* RESPONSIVE SEPTIMA */
-
-@media (max-width: 900px) {
-
-  .camino-titulo,
-  .camino-descripcion {
-
-    grid-column: 1 / 13;
-
-  }
-
-  .camino-carrusel {
-
-    gap: 12px;
-
-  }
-
-  .camino-marco {
-
-    width: 90%;
-
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .camino {
-
-    padding: 55px 5%;
-
-  }
-
-  .camino-titulo {
-
-    font-size: 1.9rem;
-
-  }
-
-  .camino-descripcion {
-
-    font-size: 1rem;
-
-  }
-
-  .camino-carrusel {
-
-    gap: 8px;
-
-  }
-
-  .camino-marco {
-
-    width: 85%;
-
-  }
-
-  .camino-flecha {
-
-    width: 35px;
-    height: 35px;
-
-    font-size: 1rem;
-
-  }
-
-  .camino-indicadores {
-
-    margin-top: 20px;
-
-  }
-
-}
-
-
-/* ==========================================
-   OCTAVA SECCION
-   70 AÑOS ACERCANDO OPORTUNIDADES
-========================================== */
-
-.cierre {
-
-  background-image: url("im/08.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  padding: 120px 7%;
-
-}
-
-.cierre-contenedor {
-
-  max-width: 1400px;
-
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns: repeat(12, 1fr);
-
-}
-
-
-/* TITULO DEL CIERRE */
-
-.cierre-titulo {
-
-  grid-column: 1 / 9;
-
-  font-family: 'Merriweather', serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-
-  color: #1f1f1f;
-
-  margin-bottom: 30px;
-
-}
-
-
-/* PRIMER TEXTO */
-
-.cierre-texto {
-
-  grid-column: 1 / 9;
-
-  font-family: 'Lato', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-
-  line-height: 1.9;
-
-  color: #1f1f1f;
-
-  margin-bottom: 25px;
-
-}
-
-
-/* SEGUNDO TEXTO DESTACADO */
-
-.cierre-destacado {
-
-  grid-column: 1 / 9;
-
-  font-family: 'Lato', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-
-  line-height: 1.9;
-
-  color: #1f1f1f;
-
-}
-
-
-/* RESPONSIVE OCTAVA */
-
-@media (max-width: 900px) {
-
-  .cierre-titulo,
-  .cierre-texto,
-  .cierre-destacado {
-
-    grid-column: 1 / 13;
-
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .cierre {
-
-    padding: 70px 5%;
-
-  }
-
-  .cierre-titulo {
-
-    font-size: 1.9rem;
-
-  }
-
-  .cierre-texto,
-  .cierre-destacado {
-
-    font-size: 1rem;
-
-  }
-
-}
-
-</style>
-
-
-<!-- ================================================== -->
-<!-- JAVASCRIPT DEL CARRUSEL -->
-<!-- ================================================== -->
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
 <script>
+
+/* =========================================
+   CARRUSEL DE ALCANCE REGIONAL
+========================================= */
+
+let slideActual = 0;
+
+const slides = document.querySelectorAll(
+  ".alcance-carrusel .carrusel-slide"
+);
+
+const indicadores = document.querySelectorAll(
+  ".alcance-carrusel .indicador"
+);
+
+
+function mostrarSlide(numero) {
+
+  if (!slides.length) return;
+
+  slides.forEach(function(slide) {
+    slide.classList.remove("activo");
+  });
+
+  indicadores.forEach(function(indicador) {
+    indicador.classList.remove("activo");
+  });
+
+  slideActual = (numero + slides.length) % slides.length;
+
+  slides[slideActual].classList.add("activo");
+
+  if (indicadores[slideActual]) {
+    indicadores[slideActual].classList.add("activo");
+  }
+
+}
+
+
+function cambiarSlide(direccion) {
+
+  mostrarSlide(slideActual + direccion);
+
+}
+
+
+function irSlide(numero) {
+
+  mostrarSlide(numero);
+
+}
+
+
+/* =========================================
+   INTERACCION DE LA SEXTA SECCION
+========================================= */
+
+function mostrarDatoComunidad(numero) {
+
+  const imagenDato = document.getElementById(
+    "comunidad-dato-imagen"
+  );
+
+  const botones = document.querySelectorAll(
+    ".comunidad-boton"
+  );
+
+  const archivos = {
+
+    1: "im/dato%201.png",
+    2: "im/dato%202.png",
+    3: "im/dato%203.png"
+
+  };
+
+  if (!imagenDato || !archivos[numero]) return;
+
+  imagenDato.classList.remove("visible");
+
+  const nuevaImagen = new Image();
+
+  nuevaImagen.onload = function() {
+
+    imagenDato.src = nuevaImagen.src;
+
+    imagenDato.alt = "Dato estadístico número " + numero + " de la UNNE";
+
+    imagenDato.classList.add("visible");
+
+  };
+
+  nuevaImagen.onerror = function() {
+
+    console.error(
+      "Error al cargar el archivo: " + archivos[numero]
+    );
+
+    alert(
+      "No se pudo cargar el dato. Revisá el nombre del archivo y su ubicación en la carpeta im."
+    );
+
+  };
+
+  nuevaImagen.src = archivos[numero];
+
+
+  botones.forEach(function(boton, indice) {
+
+    boton.classList.remove("seleccionado");
+
+    if (indice === numero - 1) {
+      boton.classList.add("seleccionado");
+    }
+
+  });
+
+}
+
+
+/* =========================================
+   CARRUSEL DE LA SEPTIMA SECCION
+========================================= */
 
 const imagenesCamino = [
 
@@ -1917,11 +2250,17 @@ let indiceCamino = 0;
 
 function seleccionarCamino(indice) {
 
-  const imagen = document.getElementById("camino-imagen");
+  const imagen = document.getElementById(
+    "camino-imagen"
+  );
 
-  const indicadores = document.querySelectorAll(".camino-indicador");
+  const indicadoresCamino = document.querySelectorAll(
+    ".camino-indicador"
+  );
 
-  indiceCamino = indice;
+  if (!imagen) return;
+
+  indiceCamino = (indice + imagenesCamino.length) % imagenesCamino.length;
 
   imagen.style.opacity = "0";
 
@@ -1948,14 +2287,12 @@ function seleccionarCamino(indice) {
   nuevaImagen.src = imagenesCamino[indiceCamino];
 
 
-  indicadores.forEach(function(indicador, i) {
+  indicadoresCamino.forEach(function(indicador, i) {
 
     indicador.classList.remove("activo");
 
     if (i === indiceCamino) {
-
       indicador.classList.add("activo");
-
     }
 
   });
@@ -1965,18 +2302,14 @@ function seleccionarCamino(indice) {
 
 function cambiarCamino(direccion) {
 
-  indiceCamino = indiceCamino + direccion;
+  indiceCamino += direccion;
 
   if (indiceCamino >= imagenesCamino.length) {
-
     indiceCamino = 0;
-
   }
 
   if (indiceCamino < 0) {
-
     indiceCamino = imagenesCamino.length - 1;
-
   }
 
   seleccionarCamino(indiceCamino);
@@ -1987,5 +2320,4 @@ function cambiarCamino(direccion) {
 
 
 </body>
-
 </html>
