@@ -1012,15 +1012,14 @@ margin-top: -180px;
 
 </script>
 
-<!-- ---------------- SEXTA SECCION: UNA COMUNIDAD QUE CRECE ---------------- -->
-
 
 <!-- ==================== SEXTA SECCION ==================== -->
+
 <section class="comunidad" id="comunidad">
 
   <div class="comunidad-contenedor">
 
-    <!-- TITULO Y TEXTO -->
+    <!-- TITULO Y TEXTOS -->
     <div class="comunidad-intro">
 
       <h2 class="comunidad-titulo">
@@ -1037,77 +1036,79 @@ margin-top: -180px;
 
     </div>
 
-   
-<!-- AREA VISUAL -->
-<div class="comunidad-visual">
+    <!-- ZONA VISUAL -->
+    <div class="comunidad-visual">
 
-  <!-- LAPIZ Y BOTONES A LA IZQUIERDA -->
-  <div class="comunidad-lapiz">
+      <!-- LAPIZ Y BOTONES -->
+      <div class="comunidad-lapiz">
 
-    <img
-      src="im/lapizxd.png"
-      alt="Lápiz representativo de la comunidad universitaria"
-      class="comunidad-lapiz-imagen"
-    >
+        <img
+          src="im/lapizxd.png"
+          alt="Lápiz representativo de la comunidad universitaria"
+          class="comunidad-lapiz-imagen"
+        >
 
-    <!-- BOTONES DEBAJO DEL LAPIZ -->
-    <div class="comunidad-botones">
+        <!-- BOTONES -->
+        <div class="comunidad-botones">
 
-      <button
-        class="comunidad-boton"
-        type="button"
-        onclick="mostrarDatoComunidad(1)"
-        aria-label="Mostrar dato 1"
-      >
-        <img src="im/b1.png" alt="Botón 1">
-      </button>
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(1)"
+            aria-label="Mostrar dato 1"
+          >
+            <img src="im/b1.png" alt="Mostrar dato 1">
+          </button>
 
-      <button
-        class="comunidad-boton"
-        type="button"
-        onclick="mostrarDatoComunidad(2)"
-        aria-label="Mostrar dato 2"
-      >
-        <img src="im/b2.png" alt="Botón 2">
-      </button>
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(2)"
+            aria-label="Mostrar dato 2"
+          >
+            <img src="im/b2.png" alt="Mostrar dato 2">
+          </button>
 
-      <button
-        class="comunidad-boton"
-        type="button"
-        onclick="mostrarDatoComunidad(3)"
-        aria-label="Mostrar dato 3"
-      >
-        <img src="im/b3.png" alt="Botón 3">
-      </button>
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(3)"
+            aria-label="Mostrar dato 3"
+          >
+            <img src="im/b3.png" alt="Mostrar dato 3">
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- DATOS A LA DERECHA -->
+      <div class="comunidad-interaccion">
+
+        <div class="comunidad-dato-contenedor">
+
+          <img
+            id="comunidad-dato-imagen"
+            class="comunidad-dato-imagen"
+            alt="Información estadística de la UNNE"
+          >
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
-
-  <!-- DATOS A LA DERECHA -->
-  <div class="comunidad-interaccion">
-
-    <div
-      class="comunidad-dato-contenedor"
-      id="comunidad-dato-contenedor"
-    >
-
-      <img
-        alt="Dato estadístico de la UNNE"
-        class="comunidad-dato-imagen"
-        id="comunidad-dato-imagen"
-      >
-
-    </div>
-
-  </div>
-
-</div>
 
 </section>
 
-<!-- ==================== ESTILOS SEXTA SECCION ==================== -->
+
+<!-- ==================== ESTILOS ==================== -->
+
 <style>
+
+/* SECCION */
 
 .comunidad {
   background-image: url("im/06.jpg");
@@ -1122,7 +1123,8 @@ margin-top: -180px;
   margin: auto;
 }
 
-/* TITULO Y TEXTO */
+
+/* TITULO Y TEXTOS */
 
 .comunidad-intro {
   display: grid;
@@ -1160,7 +1162,7 @@ margin-top: -180px;
 }
 
 
-/* DISTRIBUCION DEL LAPIZ Y DATOS */
+/* DISTRIBUCION VISUAL */
 
 .comunidad-visual {
   display: grid;
@@ -1169,7 +1171,8 @@ margin-top: -180px;
   align-items: start;
 }
 
-/* LAPIZ Y BOTONES */
+
+/* LAPIZ */
 
 .comunidad-lapiz {
   grid-column: 1 / 10;
@@ -1187,7 +1190,8 @@ margin-top: -180px;
   object-fit: contain;
 }
 
-/* BOTONES DEBAJO DEL LAPIZ */
+
+/* BOTONES */
 
 .comunidad-botones {
   width: 85%;
@@ -1207,6 +1211,7 @@ margin-top: -180px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
 .comunidad-boton img {
   display: block;
   width: 100%;
@@ -1222,7 +1227,8 @@ margin-top: -180px;
   transform: scale(1.04);
 }
 
-/* AREA DE DATOS A LA DERECHA */
+
+/* AREA DE DATOS */
 
 .comunidad-interaccion {
   grid-column: 10 / 13;
@@ -1234,30 +1240,32 @@ margin-top: -180px;
 
 .comunidad-dato-contenedor {
   width: 100%;
-  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .comunidad-dato-imagen {
-  display: block;
+  display: none;
   width: 100%;
   height: auto;
   object-fit: contain;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease;
 }
 
 .comunidad-dato-imagen.visible {
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
+
 
 /* TABLETS */
 
 @media (max-width: 900px) {
+
+  .comunidad-titulo,
+  .comunidad-descripcion,
+  .comunidad-informe {
+    grid-column: 1 / 13;
+  }
 
   .comunidad-visual {
     grid-template-columns: repeat(12, 1fr);
@@ -1272,11 +1280,8 @@ margin-top: -180px;
     grid-column: 10 / 13;
   }
 
-  .comunidad-dato-contenedor {
-    min-height: 200px;
-  }
-
 }
+
 
 /* CELULARES */
 
@@ -1305,43 +1310,31 @@ margin-top: -180px;
     width: 100%;
   }
 
-  .comunidad-interaccion {
-    width: 100%;
+  .comunidad-botones {
+    width: 85%;
   }
 
-  .comunidad-dato-contenedor {
-    min-height: auto;
+  .comunidad-interaccion {
+    width: 100%;
   }
 
   .comunidad-dato-imagen {
     max-width: 100%;
   }
 
-  .comunidad-botones {
-    width: 100%;
-    gap: 0;
-  }
-
-  .comunidad-boton {
-    width: 33.3333%;
-    flex: 0 0 33.3333%;
-  }
-
 }
+
 </style>
 
-<!-- ==================== INTERACCION ==================== -->
-<script>
 
-
-<script>
-
+<!-- ==================== SCRIPT INTERACTIVO ==================== -->
 
 <script>
 
 function mostrarDatoComunidad(numero) {
 
   const imagenDato = document.getElementById("comunidad-dato-imagen");
+
   const botones = document.querySelectorAll(".comunidad-boton");
 
   const archivos = {
@@ -1350,65 +1343,42 @@ function mostrarDatoComunidad(numero) {
     3: "im/dato%203.png"
   };
 
-  // Cambiar la ruta de la imagen
-  imagenDato.src = archivos[numero];
-
-  // Mostrar la imagen
-  imagenDato.style.display = "block";
-  imagenDato.style.visibility = "visible";
-  imagenDato.style.opacity = "1";
-  imagenDato.classList.add("visible");
-
-  // Marcar el boton seleccionado
-  botones.forEach(function(boton, indice) {
-
-    boton.classList.remove("seleccionado");
-
-    if (indice === numero - 1) {
-      boton.classList.add("seleccionado");
-    }
-
-  });
-
-}
-
-</script>
-
-<script>
-
-function mostrarDatoComunidad(numero) {
-
-  const imagenDato = document.getElementById("comunidad-dato-imagen");
-
-  const botones = document.querySelectorAll(".comunidad-boton");
-
-  const archivos = {
-    1: "im/dato1.png",
-    2: "im/dato2.png",
-    3: "im/dato3.png"
-  };
-
-  // Preparar la imagen antes de mostrarla
+  // Ocultar imagen anterior
   imagenDato.classList.remove("visible");
 
-  imagenDato.onload = function() {
+  // Preparar nueva imagen
+  const nuevaImagen = new Image();
+
+  nuevaImagen.onload = function() {
+
+    imagenDato.src = nuevaImagen.src;
+
+    imagenDato.alt = "Dato estadístico número " + numero + " de la UNNE";
+
     imagenDato.classList.add("visible");
+
   };
 
-  imagenDato.onerror = function() {
-    console.error("No se pudo cargar la imagen: " + archivos[numero]);
+  nuevaImagen.onerror = function() {
+
+    console.error("Error al cargar el archivo: " + archivos[numero]);
+
+    alert("No se pudo cargar el dato. Revisá el nombre del archivo y su ubicación en la carpeta im.");
+
   };
 
-  // Cargar el dato correspondiente
-  imagenDato.src = archivos[numero];
+  // Cargar archivo
+  nuevaImagen.src = archivos[numero];
 
-  // Marcar el boton seleccionado
+  // Marcar botón seleccionado
   botones.forEach(function(boton, indice) {
 
     boton.classList.remove("seleccionado");
 
     if (indice === numero - 1) {
+
       boton.classList.add("seleccionado");
+
     }
 
   });
