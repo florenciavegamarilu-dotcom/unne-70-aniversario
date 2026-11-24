@@ -1037,72 +1037,72 @@ margin-top: -180px;
 
     </div>
 
-    <!-- AREA VISUAL -->
-    <div class="comunidad-visual">
+   
+<!-- AREA VISUAL -->
+<div class="comunidad-visual">
 
-      <!-- LAPIZ IZQUIERDA -->
-      <div class="comunidad-lapiz">
+  <!-- LAPIZ Y BOTONES A LA IZQUIERDA -->
+  <div class="comunidad-lapiz">
 
-        <img
-          src="im/lapizxd.png"
-          alt="Lápiz representativo de la comunidad universitaria"
-          class="comunidad-lapiz-imagen"
-        >
+    <img
+      src="im/lapizxd.png"
+      alt="Lápiz representativo de la comunidad universitaria"
+      class="comunidad-lapiz-imagen"
+    >
 
-      </div>
+    <!-- BOTONES DEBAJO DEL LAPIZ -->
+    <div class="comunidad-botones">
 
-      <!-- AREA DERECHA: DATOS Y BOTONES -->
-      <div class="comunidad-interaccion">
+      <button
+        class="comunidad-boton"
+        type="button"
+        onclick="mostrarDatoComunidad(1)"
+        aria-label="Mostrar dato 1"
+      >
+        <img src="im/b1.png" alt="Botón 1">
+      </button>
 
-        <!-- IMAGEN DEL DATO -->
-        <div class="comunidad-dato-contenedor">
+      <button
+        class="comunidad-boton"
+        type="button"
+        onclick="mostrarDatoComunidad(2)"
+        aria-label="Mostrar dato 2"
+      >
+        <img src="im/b2.png" alt="Botón 2">
+      </button>
 
-          <img
-            src=""
-            alt="Dato estadístico de la UNNE"
-            class="comunidad-dato-imagen"
-            id="comunidad-dato-imagen"
-          >
-
-        </div>
-
-        <!-- BOTONES -->
-        <div class="comunidad-botones">
-
-          <button
-            class="comunidad-boton"
-            type="button"
-            onclick="mostrarDatoComunidad(1)"
-            aria-label="Mostrar dato 1"
-          >
-            <img src="im/b1.png" alt="Botón 1">
-          </button>
-
-          <button
-            class="comunidad-boton"
-            type="button"
-            onclick="mostrarDatoComunidad(2)"
-            aria-label="Mostrar dato 2"
-          >
-            <img src="im/b2.png" alt="Botón 2">
-          </button>
-
-          <button
-            class="comunidad-boton"
-            type="button"
-            onclick="mostrarDatoComunidad(3)"
-            aria-label="Mostrar dato 3"
-          >
-            <img src="im/b3.png" alt="Botón 3">
-          </button>
-
-        </div>
-
-      </div>
+      <button
+        class="comunidad-boton"
+        type="button"
+        onclick="mostrarDatoComunidad(3)"
+        aria-label="Mostrar dato 3"
+      >
+        <img src="im/b3.png" alt="Botón 3">
+      </button>
 
     </div>
 
   </div>
+
+  <!-- DATOS A LA DERECHA -->
+  <div class="comunidad-interaccion">
+
+    <div
+      class="comunidad-dato-contenedor"
+      id="comunidad-dato-contenedor"
+    >
+
+      <img
+        alt="Dato estadístico de la UNNE"
+        class="comunidad-dato-imagen"
+        id="comunidad-dato-imagen"
+      >
+
+    </div>
+
+  </div>
+
+</div>
 
 </section>
 
@@ -1159,8 +1159,6 @@ margin-top: -180px;
   color: #1f1f1f;
 }
 
-/* DISTRIBUCION DEL LAPIZ Y DATOS */
-
 
 /* DISTRIBUCION DEL LAPIZ Y DATOS */
 
@@ -1171,7 +1169,7 @@ margin-top: -180px;
   align-items: start;
 }
 
-/* LAPIZ Y BOTONES: 75% */
+/* LAPIZ Y BOTONES */
 
 .comunidad-lapiz {
   grid-column: 1 / 10;
@@ -1207,7 +1205,7 @@ margin-top: -180px;
   width: 33.3333%;
   flex: 0 0 33.3333%;
   cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .comunidad-boton img {
@@ -1225,14 +1223,14 @@ margin-top: -180px;
   transform: scale(1.04);
 }
 
-/* DATOS A LA DERECHA */
+/* AREA DE DATOS A LA DERECHA */
 
 .comunidad-interaccion {
   grid-column: 10 / 13;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .comunidad-dato-contenedor {
@@ -1246,7 +1244,6 @@ margin-top: -180px;
 .comunidad-dato-imagen {
   display: block;
   width: 100%;
-  max-width: none;
   height: auto;
   object-fit: contain;
   opacity: 0;
@@ -1315,7 +1312,6 @@ margin-top: -180px;
 
   .comunidad-dato-contenedor {
     min-height: auto;
-    margin-bottom: 15px;
   }
 
   .comunidad-dato-imagen {
@@ -1333,87 +1329,6 @@ margin-top: -180px;
   }
 
 }
-
-/* TABLETS */
-
-@media (max-width: 900px) {
-
-  .comunidad-titulo,
-  .comunidad-descripcion,
-  .comunidad-informe {
-    grid-column: 1 / 13;
-  }
-
-  .comunidad-visual {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
-  }
-
-  .comunidad-lapiz {
-    grid-column: 1 / 6;
-  }
-
-  .comunidad-interaccion {
-    grid-column: 6 / 13;
-  }
-
-  .comunidad-dato-contenedor {
-    min-height: 230px;
-  }
-
-}
-
-/* CELULARES */
-
-@media (max-width: 600px) {
-
-  .comunidad {
-    padding: 55px 5%;
-  }
-
-  .comunidad-titulo {
-    font-size: 1.9rem;
-  }
-
-  .comunidad-descripcion,
-  .comunidad-informe {
-    font-size: 1rem;
-  }
-
-  .comunidad-visual {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .comunidad-lapiz {
-    width: 85%;
-  }
-
-  .comunidad-interaccion {
-    width: 100%;
-  }
-
-  .comunidad-dato-contenedor {
-    min-height: 180px;
-    margin-bottom: 20px;
-  }
-
-  .comunidad-dato-imagen {
-    max-width: 100%;
-    max-height: 350px;
-  }
-
-  .comunidad-botones {
-    gap: 12px;
-  }
-
-  .comunidad-boton {
-    width: 30%;
-  }
-
-}
-
 </style>
 
 <!-- ==================== INTERACCION ==================== -->
@@ -1439,6 +1354,48 @@ function mostrarDatoComunidad(numero) {
 
   // Mostrar la imagen
   imagenDato.classList.add("visible");
+
+  // Marcar el boton seleccionado
+  botones.forEach(function(boton, indice) {
+
+    boton.classList.remove("seleccionado");
+
+    if (indice === numero - 1) {
+      boton.classList.add("seleccionado");
+    }
+
+  });
+
+}
+
+
+<script>
+
+function mostrarDatoComunidad(numero) {
+
+  const imagenDato = document.getElementById("comunidad-dato-imagen");
+
+  const botones = document.querySelectorAll(".comunidad-boton");
+
+  const archivos = {
+    1: "im/dato1.png",
+    2: "im/dato2.png",
+    3: "im/dato3.png"
+  };
+
+  // Preparar la imagen antes de mostrarla
+  imagenDato.classList.remove("visible");
+
+  imagenDato.onload = function() {
+    imagenDato.classList.add("visible");
+  };
+
+  imagenDato.onerror = function() {
+    console.error("No se pudo cargar la imagen: " + archivos[numero]);
+  };
+
+  // Cargar el dato correspondiente
+  imagenDato.src = archivos[numero];
 
   // Marcar el boton seleccionado
   botones.forEach(function(boton, indice) {
