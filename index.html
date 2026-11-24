@@ -1190,7 +1190,7 @@ margin-top: -180px;
 /* BOTONES DEBAJO DEL LAPIZ */
 
 .comunidad-botones {
-  width: 100%;
+  width: 85%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1207,7 +1207,6 @@ margin-top: -180px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .comunidad-boton img {
   display: block;
   width: 100%;
@@ -1337,22 +1336,27 @@ margin-top: -180px;
 
 <script>
 
+
+<script>
+
 function mostrarDatoComunidad(numero) {
 
   const imagenDato = document.getElementById("comunidad-dato-imagen");
-
   const botones = document.querySelectorAll(".comunidad-boton");
 
   const archivos = {
-    1: "im/dato1.png",
-    2: "im/dato2.png",
-    3: "im/dato3.png"
+    1: "im/dato%201.png",
+    2: "im/dato%202.png",
+    3: "im/dato%203.png"
   };
 
-  // Cambiar la imagen del dato
+  // Cambiar la ruta de la imagen
   imagenDato.src = archivos[numero];
 
   // Mostrar la imagen
+  imagenDato.style.display = "block";
+  imagenDato.style.visibility = "visible";
+  imagenDato.style.opacity = "1";
   imagenDato.classList.add("visible");
 
   // Marcar el boton seleccionado
@@ -1368,6 +1372,7 @@ function mostrarDatoComunidad(numero) {
 
 }
 
+</script>
 
 <script>
 
