@@ -1,1167 +1,2352 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>70 años de la UNNE</title>
-
-  <!-- Tipografías -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Lato', sans-serif;
-      background: #1A262A;
-      color: rgb(230, 231, 230);
-      overflow-x: hidden;
-    }
-
-    section {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 100px 5%;
-    }
-
-    h2 {
-      font-family: 'Merriweather', serif;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    p {
-      font-family: 'Lato', sans-serif;
-      font-weight: 400;
-      line-height: 1.65;
-    }
-
-    /* =========================
-       MENÚ DE NAVEGACIÓN
-    ========================= */
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(26, 38, 42, 0.82);
-      padding: 12px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      backdrop-filter: blur(5px);
-    }
-
-    .navbar-logo img {
-      display: block;
-      width: 65px;
-      height: auto;
-    }
-
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .navbar-links a {
-      color: rgb(230, 231, 230);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      transition: opacity 0.3s;
-    }
-
-    .navbar-links a:hover {
-      opacity: 0.65;
-    }
-
-    /* =========================
-       PORTADA - SECCIÓN 1
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-      background-image: url("im/01.jpg");
-      justify-content: flex-start;
-      text-align: left;
-      padding-left: 10%;
-      padding-top: 130px;
-    }
-
-    .hero-contenido {
-      max-width: 650px;
-      color: white;
-    }
-
-    .hero h1 {
-      font-family: 'Merriweather', serif;
-      font-size: clamp(38px, 5vw, 70px);
-      line-height: 1.15;
-      margin-bottom: 25px;
-    }
-
-    .hero h2 {
-      font-size: clamp(22px, 2.5vw, 34px);
-      text-align: left;
-      margin-bottom: 18px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 550px;
-    }
-
-    /* =========================
-       SECCIÓN 2 - REGIONAL
-    ========================= */
-
-    .regional {
-      background-image: url("im/new02.jpg");
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      align-content: center;
-    }
-
-    .regional-contenido {
-      grid-column: 3 / 11;
-      text-align: center;
-    }
-
-    .regional h2 {
-      font-size: clamp(26px, 3vw, 42px);
-      margin-bottom: 30px;
-      color: rgb(230, 231, 230);
-    }
-
-    .regional p {
-      font-size: 17px;
-      color: rgb(230, 231, 230);
-      margin-bottom: 18px;
-    }
-
-    /* =========================
-       SECCIÓN 3 - ALCANCE REGIONAL
-    ========================= */
-
-    .alcance {
-      background-image: url("im/03.jpg");
-      flex-direction: column;
-      text-align: center;
-      gap: 25px;
-    }
-
-    .alcance-titulo {
-      width: 100%;
-      font-size: clamp(28px, 3vw, 42px);
-      color: rgb(230, 231, 230);
-    }
-
-    .alcance-referencia {
-      width: min(220px, 35vw);
-      height: auto;
-      object-fit: contain;
-    }
-
-    .mapa-carrusel {
-      width: min(760px, 85%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-    }
-
-    .mapa-marco {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mapa-marco img {
-      width: 100%;
-      max-height: 390px;
-      object-fit: contain;
-      display: none;
-    }
-
-    .mapa-marco img.activa {
-      display: block;
-    }
-
-    .flecha {
-      border: none;
-      background: rgba(26, 38, 42, 0.75);
-      color: white;
-      font-size: 27px;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: background 0.3s;
-    }
-
-    .flecha:hover {
-      background: rgba(26, 38, 42, 1);
-    }
-
-    .indicadores {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .indicador {
-      width: 10px;
-      height: 10px;
-      border: none;
-      border-radius: 50%;
-      background: rgba(230, 231, 230, 0.45);
-      cursor: pointer;
-    }
-
-    .indicador.activo {
-      background: rgb(230, 231, 230);
-    }
-
-    /* =========================
-       SECCIÓN 4 - PILARES
-    ========================= */
-
-    .alcance-pilares-seccion {
-      background-image: url("im/04.jpg");
-      flex-direction: column;
-      gap: 25px;
-    }
-
-    .pilares-imagen {
-      width: min(850px, 90%);
-      height: auto;
-      object-fit: contain;
-    }
-
-    .pilares-enlaces {
-      width: min(900px, 95%);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .pilares-enlaces a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 55px;
-      padding: 12px;
-      color: rgb(230, 231, 230);
-      background: rgba(26, 38, 42, 0.75);
-      text-decoration: none;
-      text-align: center;
-      font-weight: 700;
-      font-size: 14px;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-
-    .pilares-enlaces a:hover {
-      background: rgba(26, 38, 42, 1);
-    }
-
-    /* =========================
-       SECCIÓN 5 - EDUCACIÓN
-    ========================= */
-
-    .educacion {
-      background-image: url("im/05.jpg");
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      align-content: center;
-      align-items: center;
-      column-gap: 15px;
-      row-gap: 25px;
-    }
-
-    .educacion-intro {
-      grid-column: 3 / 11;
-      text-align: center;
-      margin-bottom: 5px;
-    }
-
-    .educacion-titulo {
-      color: rgb(230, 231, 230);
-      font-size: clamp(28px, 3vw, 42px);
-      margin-bottom: 20px;
-    }
-
-    .educacion-texto {
-      color: rgb(230, 231, 230);
-      font-size: 17px;
-    }
-
-    .educacion-frase {
-      font-weight: 700;
-      margin-top: 15px;
-    }
-
-    .educacion-imagen {
-      grid-column: 3 / 8;
-      width: 90%;
-      max-height: 390px;
-      object-fit: contain;
-      justify-self: center;
-    }
-
-    .educacion-animacion {
-      grid-column: 8 / 12;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-self: center;
-    }
-
-    .educacion-animacion img {
-      display: block;
-      width: 75%;
-      max-height: 340px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    /* =========================
-       SECCIÓN 6 - COMUNIDAD
-    ========================= */
-
-    .comunidad {
-      background-image: url("im/06.jpg");
-      flex-direction: column;
-      gap: 25px;
-      text-align: center;
-    }
-
-    .comunidad-contenido {
-      width: min(850px, 90%);
-    }
-
-    .comunidad-titulo {
-      color: rgb(230, 231, 230);
-      font-size: clamp(28px, 3vw, 42px);
-      margin-bottom: 20px;
-    }
-
-    .comunidad-texto {
-      color: rgb(230, 231, 230);
-      font-size: 17px;
-      margin-bottom: 15px;
-    }
-
-    .comunidad-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 35px;
-      width: min(850px, 95%);
-    }
-
-    .comunidad-lapiz {
-      width: 28%;
-      max-width: 220px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .comunidad-datos {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      width: 65%;
-    }
-
-    .comunidad-botones {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .comunidad-boton {
-      border: none;
-      background: transparent;
-      padding: 0;
-      cursor: pointer;
-      transition: transform 0.25s;
-    }
-
-    .comunidad-boton:hover {
-      transform: scale(1.06);
-    }
-
-    .comunidad-boton img {
-      display: block;
-      width: 105px;
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .comunidad-boton.seleccionado {
-      transform: scale(1.05);
-    }
-
-    .comunidad-dato-imagen {
-      display: none;
-      width: 75%;
-      max-width: 430px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .comunidad-dato-imagen.visible {
-      display: block;
-    }
-
-    /* =========================
-       SECCIÓN 7 - CAMINO
-    ========================= */
-
-    .camino {
-      background-image: url("im/07.jpg");
-      flex-direction: column;
-      gap: 25px;
-      text-align: center;
-    }
-
-    .camino-contenido {
-      width: min(850px, 90%);
-    }
-
-    .camino-titulo {
-      color: rgb(230, 231, 230);
-      font-size: clamp(28px, 3vw, 42px);
-      margin-bottom: 20px;
-    }
-
-    .camino-texto {
-      color: rgb(230, 231, 230);
-      font-size: 17px;
-    }
-
-    .camino-carrusel {
-      width: 48%;
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .camino-marco {
-      width: 100%;
-      max-width: 540px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .camino-marco img {
-      display: none;
-      width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-    }
-
-    .camino-marco img.activa {
-      display: block;
-    }
-
-    /* =========================
-       SECCIÓN 8 - CIERRE
-    ========================= */
-
-    .cierre {
-      background-image: url("im/new08.jpg");
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .cierre-contenido {
-      width: min(850px, 90%);
-    }
-
-    .cierre-titulo {
-      color: rgb(230, 231, 230);
-      font-size: clamp(28px, 3vw, 42px);
-      margin-bottom: 25px;
-    }
-
-    .cierre-texto {
-      color: rgb(230, 231, 230);
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .cierre-frase {
-      color: rgb(230, 231, 230);
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    /* =========================
-       PIE DE PÁGINA
-    ========================= */
-
-    .footer {
-      min-height: 130px;
-      padding: 25px 6%;
-      background: #1A262A;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      color: rgb(230, 231, 230);
-    }
-
-    .footer-creditos {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 14px;
-    }
-
-    .footer-logos {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .footer-logos img {
-      width: auto;
-      max-width: 140px;
-      max-height: 65px;
-      object-fit: contain;
-    }
-
-    /* =========================
-       DESPLAZAMIENTO DE ANCLAS
-    ========================= */
-
-    #regional,
-    #alcance,
-    #educacion,
-    #comunidad,
-    #camino {
-      scroll-margin-top: 85px;
-    }
-
-    /* =========================
-       RESPONSIVE - TABLET
-    ========================= */
-
-    @media (max-width: 900px) {
-      .navbar {
-        padding: 10px 3%;
-      }
-
-      .navbar-links {
-        gap: 12px;
-      }
-
-      .navbar-links a {
-        font-size: 11px;
-      }
-
-      .regional-contenido {
-        grid-column: 2 / 12;
-      }
-
-      .educacion-intro {
-        grid-column: 2 / 12;
-      }
-
-      .educacion-imagen {
-        grid-column: 2 / 7;
-        width: 100%;
-      }
-
-      .educacion-animacion {
-        grid-column: 7 / 12;
-      }
-
-      .educacion-animacion img {
-        width: 90%;
-      }
-
-      .camino-carrusel {
-        width: 65%;
-      }
-    }
-
-    /* =========================
-       RESPONSIVE - CELULARES
-    ========================= */
-
-    @media (max-width: 600px) {
-      section {
-        min-height: 100vh;
-        padding: 120px 6% 60px;
-      }
-
-      .navbar {
-        flex-direction: column;
-        gap: 8px;
-        padding: 8px 3%;
-      }
-
-      .navbar-logo img {
-        width: 45px;
-      }
-
-      .navbar-links {
-        justify-content: center;
-        gap: 8px 14px;
-      }
-
-      .navbar-links a {
-        font-size: 10px;
-      }
-
-      .hero {
-        padding-left: 7%;
-        padding-top: 150px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .hero h2 {
-        font-size: 23px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .regional-contenido {
-        grid-column: 1 / 13;
-      }
-
-      .regional p,
-      .educacion-texto,
-      .comunidad-texto,
-      .camino-texto {
-        font-size: 15px;
-      }
-
-      .mapa-carrusel {
-        width: 100%;
-        gap: 8px;
-      }
-
-      .mapa-marco img {
-        max-height: 260px;
-      }
-
-      .flecha {
-        width: 34px;
-        height: 34px;
-        font-size: 21px;
-      }
-
-      .pilares-imagen {
-        width: 100%;
-      }
-
-      .pilares-enlaces {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pilares-enlaces a {
-        font-size: 12px;
-      }
-
-      .educacion {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-      }
-
-      .educacion-intro {
-        grid-column: 1 / 13;
-      }
-
-      .educacion-imagen {
-        grid-column: 1 / 13;
-        width: 85%;
-        max-height: 260px;
-      }
-
-      .educacion-animacion {
-        grid-column: 1 / 13;
-        margin-top: 0;
-      }
-
-      .educacion-animacion img {
-        width: 55%;
-        max-height: 200px;
-      }
-
-      .comunidad-visual {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .comunidad-lapiz {
-        width: 35%;
-      }
-
-      .comunidad-datos {
-        width: 100%;
-      }
-
-      .comunidad-botones {
-        gap: 10px;
-      }
-
-      .comunidad-boton img {
-        width: 75px;
-      }
-
-      .comunidad-dato-imagen {
-        width: 90%;
-      }
-
-      .camino-carrusel {
-        width: 90%;
-        gap: 8px;
-      }
-
-      .camino-marco img {
-        max-height: 220px;
-      }
-
-      .footer {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-logos {
-        justify-content: center;
-      }
-
-      .footer-logos img {
-        max-width: 110px;
-        max-height: 55px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>70 años de la UNNE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   ESTILOS GENERALES
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* =========================================
+   PRIMERA SECCION - PORTADA
+   CONSERVADA
+========================================= */
+
+.hero {
+
+  height: 100vh;
+
+  background-image: url("im/01.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding-left: 7%;
+  padding-bottom: 10%;
+}
+
+.contenido {
+  max-width: 900px;
+}
+
+h1 {
+
+  font-family: 'Merriweather', serif;
+  font-size: 5rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1;
+
+  margin-bottom: 15px;
+}
+
+h1 em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.subtitulo {
+
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  font-style: italic;
+
+  color: #E3B539;
+
+  margin-bottom: 25px;
+}
+
+.descripcion {
+
+  font-size: 1.25rem;
+  line-height: 1.5;
+
+  color: white;
+
+  max-width: 650px;
+}
+
+
+/* =========================================
+   BARRA DE NAVEGACION
+========================================= */
+
+.navbar {
+
+  width: 100%;
+
+  background: rgba(26, 38, 42, 0.90);
+
+  padding: 13px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+}
+
+.navbar-logo {
+
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.navbar-logo img {
+
+  display: block;
+
+  width: auto;
+  height: 48px;
+
+  object-fit: contain;
+}
+
+.navbar-links {
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+}
+
+.navbar-links a {
+
+  color: #E6E7E6;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+
+}
+
+.navbar-links a:hover {
+  color: #E3B539;
+}
+
+/* =========================================
+   BARRA DE NAVEGACION FIJA Y TRANSPARENTE
+========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background: rgba(26, 38, 42, 0.72);
+
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar a {
+  font-family: 'Lato', sans-serif;
+}
+/* =========================================
+   SEGUNDA SECCION
+   UNA UNIVERSIDAD PARA EL NORDESTE
+========================================= */
+
+.regional {
+
+  min-height: 85vh;
+
+  background-image: url("im/new02.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  align-items: center;
+
+  padding: 75px 7%;
+}
+
+.regional-contenido {
+
+  grid-column: 3 / 11;
+
+  width: 100%;
+  max-width: 850px;
+
+  justify-self: center;
+
+  text-align: left;
+}
+
+.regional h2 {
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 25px;
+}
+
+.regional p {
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+.regional strong {
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TERCERA SECCION
+   ALCANCE REGIONAL
+========================================= */
+
+.alcance {
+
+  background-image: url("im/03.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  padding: 65px 7%;
+}
+
+.alcance-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+.alcance-titulo {
+
+  grid-column: 3 / 11;
+
+  width: 100%;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: #1f1f1f;
+
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.alcance-grilla {
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 25px;
+
+  align-items: center;
+}
+
+.alcance-referencia {
+
+  grid-column: span 4;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 400px;
+
+  justify-self: center;
+}
+
+.refe-imagen {
+
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* BOTONES INVISIBLES */
+
+.refe-links {
+
+  position: absolute;
+
+  left: 2.5%;
+  width: 84%;
+
+  top: 68%;
+  height: 29%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.refe-link {
+
+  display: block;
+
+  cursor: pointer;
+
+  transition: background 0.3s;
+}
+
+.refe-link:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+/* CARRUSEL */
+
+.alcance-carrusel {
+
+  grid-column: span 8;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  justify-self: center;
+
+  overflow: hidden;
+}
+
+.carrusel-slide {
+  display: none;
+}
+
+.carrusel-slide.activo {
+  display: block;
+}
+
+.carrusel-slide img {
+
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* FLECHAS */
+
+.carrusel-btn {
+
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: rgba(25,40,40,0.65);
+
+  color: white;
+
+  font-size: 22px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  z-index: 5;
+}
+
+.carrusel-btn:hover {
+  background: rgba(25,40,40,0.9);
+}
+
+.anterior {
+  left: 12px;
+}
+
+.siguiente {
+  right: 12px;
+}
+
+
+/* INDICADORES */
+
+.carrusel-indicadores {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 15px 0;
+}
+
+.indicador {
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #999;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.indicador.activo {
+
+  background: #007b8a;
+
+  transform: scale(1.2);
+}
+
+
+/* =========================================
+   CUARTA SECCION
+   PILARES
+========================================= */
+
+.alcance-pilares-seccion {
+
+  background-image: url("im/04.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  padding: 55px 7%;
+}
+
+.pilares-contenedor {
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  position: relative;
+}
+
+.pilares-imagen {
+
+  display: block;
+
+  width: 96%;
+  height: auto;
+
+  margin: auto;
+}
+
+
+/* ANCLAS */
+
+.pilares-anclas {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.pilar-ancla {
+
+  display: block;
+
+  scroll-margin-top: 40px;
+}
+
+
+/* =========================================
+   QUINTA SECCION
+   EDUCACION CON PROPOSITO
+========================================= */
+
+.educacion {
+
+  background-image: url("im/05.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 65px 7%;
+}
+
+.educacion-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* TITULO Y TEXTOS */
+
+.educacion-intro {
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin-bottom: 20px;
+}
+
+.educacion-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  text-align: left;
+
+  margin-bottom: 18px;
+}
+
+.educacion-descripcion {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 10px;
+}
+
+.educacion-destacada {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* IMAGEN Y GIF */
+
+.educacion-grilla {
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 25px;
+
+  align-items: center;
+}
+
+.educacion-imagen {
+
+  grid-column: 3 / 8;
+
+  width: 94%;
+}
+
+.educacion-imagen img {
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.educacion-animacion {
+
+  grid-column: 8 / 13;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+
+  margin-top: 0;
+}
+
+.educacion-animacion img {
+
+  display: block;
+
+  width: 78%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SEXTA SECCION
+   UNA COMUNIDAD QUE CRECE
+========================================= */
+
+.comunidad {
+
+  background-image: url("im/06.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 70px 7%;
+}
+
+.comunidad-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* TITULO Y TEXTOS */
+
+.comunidad-intro {
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin-bottom: 30px;
+}
+
+.comunidad-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  text-align: left;
+
+  margin-bottom: 18px;
+}
+
+.comunidad-descripcion {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 15px;
+}
+
+.comunidad-informe {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* DISTRIBUCION VISUAL */
+
+.comunidad-visual {
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+
+/* LAPIZ */
+
+.comunidad-lapiz {
+
+  grid-column: 1 / 10;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comunidad-lapiz-imagen {
+
+  display: block;
+
+  width: 94%;
+  max-width: none;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* BOTONES */
+
+.comunidad-botones {
+
+  width: 72%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.comunidad-boton {
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  width: 30%;
+
+  flex: 0 0 30%;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.comunidad-boton img {
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.comunidad-boton:hover {
+  transform: scale(1.04);
+}
+
+.comunidad-boton.seleccionado {
+  transform: scale(1.04);
+}
+
+
+/* AREA DE DATOS */
+
+.comunidad-interaccion {
+
+  grid-column: 10 / 13;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.comunidad-dato-contenedor {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.comunidad-dato-imagen {
+
+  display: none;
+
+  width: 80%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.comunidad-dato-imagen.visible {
+  display: block;
+}
+
+
+/* =========================================
+   SEPTIMA SECCION
+   EL CAMINO DE UN ESTUDIANTE
+========================================= */
+
+.camino {
+
+  background-image: url("im/07.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 65px 7%;
+}
+
+.camino-contenedor {
+
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* TITULO Y TEXTO */
+
+.camino-intro {
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin-bottom: 25px;
+}
+
+.camino-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  text-align: left;
+
+  margin-bottom: 18px;
+}
+
+.camino-descripcion {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* CARRUSEL REDUCIDO */
+
+.camino-carrusel {
+
+  width: 45%;
+  max-width: 550px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+.camino-marco {
+
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.camino-marco img {
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  transition: opacity 0.3s ease;
+}
+
+
+/* FLECHAS */
+
+.camino-flecha {
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.75);
+
+  color: #333;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.3s ease,
+              transform 0.3s ease;
+}
+
+.camino-flecha:hover {
+
+  background: rgba(255,255,255,0.95);
+
+  transform: scale(1.08);
+}
+
+
+/* INDICADORES */
+
+.camino-indicadores {
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-top: 20px;
+}
+
+.camino-indicador {
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(50,50,50,0.35);
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease,
+              background 0.3s ease;
+}
+
+.camino-indicador.activo {
+
+  background: #333;
+
+  transform: scale(1.25);
+}
+
+
+/* =========================================
+   OCTAVA SECCION
+   CIERRE
+========================================= */
+
+.cierre {
+
+  background-image: url("im/new08.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 90px 7%;
+}
+
+.cierre-contenedor {
+
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+}
+
+
+/* TITULO */
+
+.cierre-titulo {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Merriweather', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 25px;
+}
+
+
+/* PRIMER TEXTO */
+
+.cierre-texto {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+
+  margin-bottom: 20px;
+}
+
+
+/* SEGUNDO TEXTO */
+
+.cierre-destacado {
+
+  grid-column: 3 / 11;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  line-height: 1.8;
+
+  color: rgb(230, 231, 230);
+}
+
+
+/* =========================================
+   PIE DE PAGINA
+========================================= */
+
+.footer {
+
+  background-color: #1A262A;
+
+  padding: 30px 7%;
+}
+
+.footer-contenedor {
+
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* DATOS DE LA CREADORA */
+
+.footer-creditos {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.footer-nombre {
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  color: #E6E7E6;
+}
+
+.footer-comision {
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+
+  color: #E6E7E6;
+}
+
+
+/* LOGOS */
+
+.footer-logos {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 25px;
+}
+
+.footer-logos img {
+
+  display: block;
+
+  width: auto;
+  max-width: 150px;
+  height: 65px;
+
+  object-fit: contain;
+}
+
+  /* =========================================
+   ALINEACIÓN CENTRADA DE LOS SUBTÍTULOS
+========================================= */
+
+.regional h2,
+.alcance-titulo,
+.educacion-titulo,
+.comunidad-titulo,
+.camino-titulo,
+.cierre-titulo {
+  text-align: center;
+}
+
+/* =========================================
+   RESPONSIVE - TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+  /* NAVEGACION */
+
+  .navbar {
+
+    flex-direction: column;
+
+    padding: 18px 5%;
+
+    gap: 15px;
+  }
+
+  .navbar-links {
+
+    justify-content: center;
+
+    gap: 15px 20px;
+  }
+
+
+  /* TEXTOS CENTRADOS */
+
+  .regional-contenido,
+  .educacion-titulo,
+  .educacion-descripcion,
+  .educacion-destacada,
+  .comunidad-titulo,
+  .comunidad-descripcion,
+  .comunidad-informe,
+  .camino-titulo,
+  .camino-descripcion,
+  .cierre-titulo,
+  .cierre-texto,
+  .cierre-destacado {
+
+    grid-column: 2 / 12;
+  }
+
+
+  /* ALCANCE */
+
+  .alcance-grilla {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .alcance-referencia {
+    grid-column: 2 / 12;
+    max-width: 420px;
+  }
+
+  .alcance-carrusel {
+    grid-column: 2 / 12;
+  }
+
+
+  /* EDUCACION */
+
+  .educacion-grilla {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .educacion-imagen {
+    grid-column: 2 / 7;
+  }
+
+  .educacion-animacion {
+    grid-column: 7 / 12;
+    margin-top: -60px;
+  }
+
+
+  /* COMUNIDAD */
+
+  .comunidad-lapiz {
+    grid-column: 1 / 10;
+  }
+
+  .comunidad-interaccion {
+    grid-column: 10 / 13;
+  }
+
+
+  /* CARRUSEL CAMINO */
+
+  .camino-carrusel {
+    width: 80%;
+  }
+
+
+  /* FOOTER */
+
+  .footer-logos img {
+    max-width: 120px;
+    height: 55px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* PORTADA */
+
+  .hero {
+    padding-left: 30px;
+    padding-bottom: 80px;
+  }
+
+  h1 {
+    font-size: 3.3rem;
+  }
+
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+  }
+
+
+  /* NAVEGACION */
+
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .navbar-logo img {
+    height: 42px;
+  }
+
+  .navbar-links {
+    gap: 12px 16px;
+  }
+
+  .navbar-links a {
+    font-size: 0.78rem;
+  }
+
+
+  /* SEGUNDA SECCION */
+
+  .regional {
+
+    min-height: auto;
+
+    padding: 60px 6%;
+
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .regional-contenido {
+    grid-column: 1 / 13;
+  }
+
+  .regional h2 {
+    font-size: 1.8rem;
+  }
+
+  .regional p {
+    font-size: 0.95rem;
+  }
+
+
+  /* ALCANCE */
+
+  .alcance {
+    padding: 50px 5%;
+  }
+
+  .alcance-titulo {
+    font-size: 1.8rem;
+  }
+
+  .alcance-referencia,
+  .alcance-carrusel {
+    grid-column: 1 / 13;
+  }
+
+  .carrusel-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+  }
+
+
+  /* PILARES */
+
+  .alcance-pilares-seccion {
+    padding: 35px 5%;
+  }
+
+  .pilares-imagen {
+    width: 100%;
+  }
+
+
+  /* EDUCACION */
+
+  .educacion {
+    padding: 55px 5%;
+  }
+
+  .educacion-titulo,
+  .educacion-descripcion,
+  .educacion-destacada {
+    grid-column: 1 / 13;
+  }
+
+  .educacion-titulo {
+    font-size: 1.8rem;
+  }
+
+  .educacion-descripcion,
+  .educacion-destacada {
+    font-size: 0.95rem;
+  }
+
+  .educacion-grilla {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .educacion-imagen {
+    grid-column: 1 / 13;
+    width: 95%;
+    margin: auto;
+  }
+
+  .educacion-animacion {
+    grid-column: 1 / 13;
+    margin-top: 0;
+  }
+
+  .educacion-animacion img {
+    width: 75%;
+  }
+
+
+  /* COMUNIDAD */
+
+  .comunidad {
+    padding: 55px 5%;
+  }
+
+  .comunidad-titulo,
+  .comunidad-descripcion,
+  .comunidad-informe {
+    grid-column: 1 / 13;
+  }
+
+  .comunidad-titulo {
+    font-size: 1.8rem;
+  }
+
+  .comunidad-descripcion,
+  .comunidad-informe {
+    font-size: 0.95rem;
+  }
+
+  .comunidad-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .comunidad-lapiz {
+    width: 100%;
+  }
+
+  .comunidad-lapiz-imagen {
+    width: 95%;
+  }
+
+  .comunidad-botones {
+    width: 78%;
+    gap: 12px;
+  }
+
+  .comunidad-boton {
+    width: 29%;
+    flex-basis: 29%;
+  }
+
+  .comunidad-interaccion {
+    width: 100%;
+  }
+
+  .comunidad-dato-imagen {
+    max-width: 100%;
+  }
+
+
+  /* CAMINO */
+
+  .camino {
+    padding: 55px 5%;
+  }
+
+  .camino-titulo,
+  .camino-descripcion {
+    grid-column: 1 / 13;
+  }
+
+  .camino-titulo {
+    font-size: 1.8rem;
+  }
+
+  .camino-descripcion {
+    font-size: 0.95rem;
+  }
+
+  .camino-carrusel {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .camino-marco {
+    width: 100%;
+  }
+
+  .camino-flecha {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .camino-indicadores {
+    margin-top: 18px;
+  }
+
+
+  /* CIERRE */
+
+  .cierre {
+    padding: 65px 5%;
+  }
+
+  .cierre-titulo,
+  .cierre-texto,
+  .cierre-destacado {
+    grid-column: 1 / 13;
+  }
+
+  .cierre-titulo {
+    font-size: 1.8rem;
+  }
+
+  .cierre-texto,
+  .cierre-destacado {
+    font-size: 0.95rem;
+  }
+
+
+  /* FOOTER */
+
+  .footer {
+    padding: 28px 6%;
+  }
+
+  .footer-contenedor {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .footer-logos {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .footer-logos img {
+    max-width: 110px;
+    height: 48px;
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <!-- MENÚ -->
-  <nav class="navbar">
-    <a class="navbar-logo" href="#inicio">
-      <img src="im/logo.png" alt="Logo">
-    </a>
 
-    <div class="navbar-links">
-      <a href="#regional">Una universidad para el Nordeste</a>
-      <a href="#alcance">Alcance regional</a>
-      <a href="#educacion">Educación con propósito</a>
-      <a href="#comunidad">Una comunidad que crece</a>
-      <a href="#camino">El camino de un estudiante</a>
-    </div>
-  </nav>
+<!-- =========================================
+     PRIMERA SECCION - PORTADA
+========================================= -->
 
+<section class="hero">
 
-  <!-- SECCIÓN 1: PORTADA -->
-  <section class="hero" id="inicio">
-    <div class="hero-contenido">
-      <h1>Donde empieza el futuro</h1>
-      <h2>Estudiar sin mudarse</h2>
-      <p>
-        Hace 70 años, la UNNE nació para acercar la universidad
-        a una región que la necesitaba.
-      </p>
-    </div>
-  </section>
+  <div class="contenido">
+
+    <h1>
+      Donde empieza<br>
+      <em>el futuro</em>
+    </h1>
+
+    <p class="subtitulo">
+      Estudiar sin mudarse
+    </p>
+
+    <p class="descripcion">
+      Hace 70 años, la UNNE nació para acercar la universidad a una región que la necesitaba.
+    </p>
+
+  </div>
+
+</section>
 
 
-  <!-- SECCIÓN 2: UNA UNIVERSIDAD PARA EL NORDESTE -->
-  <section class="regional" id="regional">
-    <div class="regional-contenido">
-      <h2>Una universidad para el Nordeste</h2>
+<!-- =========================================
+     BARRA DE NAVEGACION
+========================================= -->
 
-      <p>
-        Cuando el decreto de 1956 creó la Universidad Nacional del Nordeste,
-        no se hablaba de dos ciudades, sino de cuatro provincias:
-        Chaco, Corrientes, Formosa y Misiones.
-      </p>
+<nav class="navbar" aria-label="Navegación principal">
 
-      <p>
-        Su objetivo era claro: evitar que los jóvenes tuvieran que abandonar
-        su lugar de origen para acceder a estudios universitarios.
-      </p>
+  <a href="#inicio" class="navbar-logo" aria-label="Inicio">
+    <img src="im/logo.png" alt="Logo institucional de la UNNE">
+  </a>
 
-      <p>
-        Con el tiempo, su núcleo quedó repartido entre Corrientes y Resistencia,
-        con dos campus en cada ciudad capital. Esa red es la base desde la que
-        la UNNE salió después hacia múltiples ciudades del nordeste argentino
-        y dio forma a su perfil regional con diversas modalidades.
-      </p>
-    </div>
-  </section>
+  <div class="navbar-links">
+
+    <a href="#regional">Una universidad para el Nordeste</a>
+
+    <a href="#alcance">Alcance regional</a>
+
+    <a href="#educacion">Educación con propósito</a>
+
+    <a href="#comunidad">Una comunidad que crece</a>
+
+    <a href="#camino">El camino de un estudiante</a>
+
+  </div>
+
+</nav>
 
 
-  <!-- SECCIÓN 3: ALCANCE REGIONAL -->
-  <section class="alcance" id="alcance">
-    <h2 class="alcance-titulo">Alcance regional</h2>
+<!-- =========================================
+     SEGUNDA SECCION
+========================================= -->
 
-    <img
-      class="alcance-referencia"
-      src="im/refe.png"
-      alt="Referencia del alcance regional"
-    >
+<section class="regional" id="regional">
 
-    <div class="mapa-carrusel">
-      <button class="flecha" onclick="cambiarMapa(-1)" aria-label="Imagen anterior">
-        &#10094;
-      </button>
+  <div class="regional-contenido">
 
-      <div class="mapa-marco">
-        <img src="im/map%201.jpg" alt="Mapa regional 1" class="activa">
-        <img src="im/map%202.jpg" alt="Mapa regional 2">
-        <img src="im/map%203.jpg" alt="Mapa regional 3">
-        <img src="im/map%204.jpg" alt="Mapa regional 4">
+    <h2>
+      Una universidad para el Nordeste
+    </h2>
+
+    <p>
+
+      Cuando el decreto de 1956 creó la
+      <strong>Universidad Nacional del Nordeste</strong>,
+      no se hablaba de dos ciudades, sino de cuatro provincias:
+      Chaco, Corrientes, Formosa y Misiones.
+
+      <br><br>
+
+      <strong>
+        Su objetivo era claro: evitar que los jóvenes tuvieran que abandonar su lugar de origen para acceder a estudios universitarios.
+      </strong>
+
+      <br><br>
+
+      Con el tiempo, su núcleo quedó repartido entre Corrientes y Resistencia, con dos campus en cada ciudad capital.
+
+      <strong>
+        Esa red es la base desde la que la UNNE salió después hacia múltiples ciudades del nordeste argentino
+      </strong>
+
+      y dio forma a su perfil regional con diversas modalidades.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     TERCERA SECCION
+     ALCANCE REGIONAL
+========================================= -->
+
+<section class="alcance" id="alcance">
+
+  <div class="alcance-contenedor">
+
+    <h2 class="alcance-titulo">
+      Alcance regional
+    </h2>
+
+    <div class="alcance-grilla">
+
+      <!-- REFERENCIA -->
+
+      <div class="alcance-referencia">
+
+        <img
+          src="im/refe.png"
+          alt="Mapa de la distribución territorial de la UNNE"
+          class="refe-imagen"
+        >
+
+        <div class="refe-links">
+
+          <a href="#pilar-centros" class="refe-link" aria-label="Centros Regionales Universitarios"></a>
+
+          <a href="#pilar-extensiones" class="refe-link" aria-label="Extensiones Áulicas"></a>
+
+          <a href="#pilar-sedes" class="refe-link" aria-label="Sedes Principales"></a>
+
+          <a href="#pilar-unidad" class="refe-link" aria-label="Unidad Especial"></a>
+
+        </div>
+
       </div>
 
-      <button class="flecha" onclick="cambiarMapa(1)" aria-label="Imagen siguiente">
-        &#10095;
-      </button>
+
+      <!-- CARRUSEL -->
+
+      <div class="alcance-carrusel">
+
+        <div class="carrusel-slide activo">
+          <img src="im/map%201.jpg" alt="Mapa territorial de la UNNE, primera vista">
+        </div>
+
+        <div class="carrusel-slide">
+          <img src="im/map%202.jpg" alt="Mapa territorial de la UNNE, segunda vista">
+        </div>
+
+        <div class="carrusel-slide">
+          <img src="im/map%203.jpg" alt="Mapa territorial de la UNNE, tercera vista">
+        </div>
+
+        <div class="carrusel-slide">
+          <img src="im/map%204.jpg" alt="Mapa territorial de la UNNE, cuarta vista">
+        </div>
+
+
+        <button
+          class="carrusel-btn anterior"
+          type="button"
+          onclick="cambiarSlide(-1)"
+          aria-label="Imagen anterior"
+        >
+          &#10094;
+        </button>
+
+        <button
+          class="carrusel-btn siguiente"
+          type="button"
+          onclick="cambiarSlide(1)"
+          aria-label="Imagen siguiente"
+        >
+          &#10095;
+        </button>
+
+
+        <div class="carrusel-indicadores">
+
+          <span class="indicador activo" onclick="irSlide(0)"></span>
+
+          <span class="indicador" onclick="irSlide(1)"></span>
+
+          <span class="indicador" onclick="irSlide(2)"></span>
+
+          <span class="indicador" onclick="irSlide(3)"></span>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="indicadores" id="indicadores-mapa">
-      <button class="indicador activo" onclick="irMapa(0)" aria-label="Ver mapa 1"></button>
-      <button class="indicador" onclick="irMapa(1)" aria-label="Ver mapa 2"></button>
-      <button class="indicador" onclick="irMapa(2)" aria-label="Ver mapa 3"></button>
-      <button class="indicador" onclick="irMapa(3)" aria-label="Ver mapa 4"></button>
-    </div>
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- SECCIÓN 4: PILARES INSTITUCIONALES -->
-  <section class="alcance-pilares-seccion" id="pilares">
+<!-- =========================================
+     CUARTA SECCION
+     PILARES
+========================================= -->
+
+<section class="alcance-pilares-seccion" id="pilares">
+
+  <div class="pilares-contenedor">
+
     <img
-      class="pilares-imagen"
       src="im/pilares.png"
-      alt="Pilares institucionales de la UNNE"
+      alt="Distribución de Centros Regionales Universitarios, Extensiones Áulicas, Sedes Principales y Unidad Especial"
+      class="pilares-imagen"
     >
 
-    <div class="pilares-enlaces">
-      <a id="pilar-centros" href="#pilar-centros">Centros regionales</a>
-      <a id="pilar-extensiones" href="#pilar-extensiones">Extensiones áulicas</a>
-      <a id="pilar-sedes" href="#pilar-sedes">Sedes</a>
-      <a id="pilar-unidad" href="#pilar-unidad">Unidad académica</a>
+    <div class="pilares-anclas">
+
+      <span id="pilar-centros" class="pilar-ancla"></span>
+
+      <span id="pilar-extensiones" class="pilar-ancla"></span>
+
+      <span id="pilar-sedes" class="pilar-ancla"></span>
+
+      <span id="pilar-unidad" class="pilar-ancla"></span>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- SECCIÓN 5: EDUCACIÓN CON PROPÓSITO -->
-  <section class="educacion" id="educacion">
+<!-- =========================================
+     QUINTA SECCION
+     EDUCACION CON PROPOSITO
+========================================= -->
+
+<section class="educacion" id="educacion">
+
+  <div class="educacion-contenedor">
 
     <div class="educacion-intro">
-      <h2 class="educacion-titulo">Educación con propósito</h2>
 
-      <p class="educacion-texto">
-        La UNNE no solo transmite conocimientos, sino que plantea formación
-        personal con ética, pensamiento crítico y compromiso social.
-        Esto se transmite a través de sus pilares institucionales principales.
+      <h2 class="educacion-titulo">
+        Educación con propósito
+      </h2>
+
+      <p class="educacion-descripcion">
+        La UNNE no solo transmite conocimientos, sino que plantea formación personal con ética, pensamiento crítico y compromiso social. Esto se transmite a través de sus pilares institucionales principales.
       </p>
 
-      <p class="educacion-texto educacion-frase">
-        Porque la educación no es únicamente enseñar.
-        También es transformar realidades.
+      <p class="educacion-destacada">
+        Porque la educación no es únicamente enseñar. También es transformar realidades.
       </p>
+
     </div>
 
-    <img
-      class="educacion-imagen"
-      src="im/newcolumna.png"
-      alt="Imagen de columnas"
-    >
 
-    <div class="educacion-animacion">
-      <img src="im/gif.gif" alt="Animación educativa">
+    <div class="educacion-grilla">
+
+      <div class="educacion-imagen">
+
+        <img
+          src="im/newcolumna.png"
+          alt="Pilares institucionales de la UNNE"
+        >
+
+      </div>
+
+
+      <div class="educacion-animacion">
+
+        <img
+          src="im/gif.gif"
+          alt="Animación institucional de la UNNE"
+        >
+
+      </div>
+
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- SECCIÓN 6: UNA COMUNIDAD QUE CRECE -->
-  <section class="comunidad" id="comunidad">
+<!-- =========================================
+     SEXTA SECCION
+     UNA COMUNIDAD QUE CRECE
+========================================= -->
 
-    <div class="comunidad-contenido">
-      <h2 class="comunidad-titulo">Una comunidad que crece</h2>
+<section class="comunidad" id="comunidad">
 
-      <p class="comunidad-texto">
-        La presencia de la UNNE puede verse reflejada a través de las personas
-        que forman parte de ella.
+  <div class="comunidad-contenedor">
+
+    <div class="comunidad-intro">
+
+      <h2 class="comunidad-titulo">
+        Una comunidad que crece
+      </h2>
+
+      <p class="comunidad-descripcion">
+        La presencia de la UNNE puede verse reflejada a través de las personas que forman parte de ella.
       </p>
 
-      <p class="comunidad-texto">
-        El presente informe constituye una herramienta fundamental de
-        transparencia y gestión institucional, permitiendo una lectura
-        cuantitativa del volumen de la UNNE 2025.
+      <p class="comunidad-informe">
+        El presente informe constituye una herramienta fundamental de transparencia y gestión institucional, permitiendo una lectura cuantitativa del volumen de la UNNE 2025.
       </p>
+
     </div>
+
 
     <div class="comunidad-visual">
 
-      <img
-        class="comunidad-lapiz"
-        src="im/lapizxd.png"
-        alt="Ilustración de lápiz"
-      >
+      <!-- LAPIZ Y BOTONES -->
 
-      <div class="comunidad-datos">
+      <div class="comunidad-lapiz">
+
+        <img
+          src="im/lapizxd.png"
+          alt="Lápiz representativo de la comunidad universitaria"
+          class="comunidad-lapiz-imagen"
+        >
+
 
         <div class="comunidad-botones">
 
-          <button class="comunidad-boton" onclick="mostrarDatoComunidad(1)" aria-label="Mostrar dato 1">
-            <img src="im/b1.png" alt="Dato 1">
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(1)"
+            aria-label="Mostrar dato 1"
+          >
+            <img src="im/b1.png" alt="Mostrar dato 1">
           </button>
 
-          <button class="comunidad-boton" onclick="mostrarDatoComunidad(2)" aria-label="Mostrar dato 2">
-            <img src="im/b2.png" alt="Dato 2">
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(2)"
+            aria-label="Mostrar dato 2"
+          >
+            <img src="im/b2.png" alt="Mostrar dato 2">
           </button>
 
-          <button class="comunidad-boton" onclick="mostrarDatoComunidad(3)" aria-label="Mostrar dato 3">
-            <img src="im/b3.png" alt="Dato 3">
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(3)"
+            aria-label="Mostrar dato 3"
+          >
+            <img src="im/b3.png" alt="Mostrar dato 3">
           </button>
 
         </div>
 
-        <img
-          id="comunidad-dato-imagen"
-          class="comunidad-dato-imagen"
-          src=""
-          alt="Dato estadístico de la UNNE"
-        >
+      </div>
+
+
+      <!-- DATOS -->
+
+      <div class="comunidad-interaccion">
+
+        <div class="comunidad-dato-contenedor">
+
+          <img
+            id="comunidad-dato-imagen"
+            class="comunidad-dato-imagen"
+            alt="Información estadística de la UNNE"
+          >
+
+        </div>
 
       </div>
+
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- SECCIÓN 7: EL CAMINO DE UN ESTUDIANTE -->
-  <section class="camino" id="camino">
+<!-- =========================================
+     SEPTIMA SECCION
+     EL CAMINO DE UN ESTUDIANTE
+========================================= -->
 
-    <div class="camino-contenido">
-      <h2 class="camino-titulo">El camino de un estudiante</h2>
+<section class="camino" id="camino">
 
-      <p class="camino-texto">
-        Análisis cuantitativo de la cantidad de estudiantes que superan
-        las diferentes etapas del universitario, desde su ingreso como
-        aspirante, su continuidad o reinscripción para seguir la trayectoria,
-        hasta su graduación.
+  <div class="camino-contenedor">
+
+    <div class="camino-intro">
+
+      <h2 class="camino-titulo">
+        El camino de un estudiante
+      </h2>
+
+      <p class="camino-descripcion">
+        Análisis cuantitativo de la cantidad de estudiantes que superan las diferentes etapas del universitario, desde su ingreso como aspirante, su continuidad o reinscripción para seguir la trayectoria, hasta su graduación.
       </p>
+
     </div>
+
+
+    <!-- CARRUSEL -->
 
     <div class="camino-carrusel">
 
-      <button class="flecha" onclick="cambiarCamino(-1)" aria-label="Imagen anterior">
+      <button
+        class="camino-flecha camino-anterior"
+        type="button"
+        onclick="cambiarCamino(-1)"
+        aria-label="Imagen anterior"
+      >
         &#10094;
       </button>
 
+
       <div class="camino-marco">
-        <img src="im/carru%201.png" alt="Trayectoria estudiantil 1" class="activa">
-        <img src="im/carru%202.png" alt="Trayectoria estudiantil 2">
-        <img src="im/carru%203.png" alt="Trayectoria estudiantil 3">
+
+        <img
+          id="camino-imagen"
+          src="im/carru%201.png"
+          alt="El camino de un estudiante de la UNNE"
+        >
+
       </div>
 
-      <button class="flecha" onclick="cambiarCamino(1)" aria-label="Imagen siguiente">
+
+      <button
+        class="camino-flecha camino-siguiente"
+        type="button"
+        onclick="cambiarCamino(1)"
+        aria-label="Imagen siguiente"
+      >
         &#10095;
       </button>
 
     </div>
 
-    <div class="indicadores" id="indicadores-camino">
-      <button class="indicador activo" onclick="irCamino(0)" aria-label="Ver imagen 1"></button>
-      <button class="indicador" onclick="irCamino(1)" aria-label="Ver imagen 2"></button>
-      <button class="indicador" onclick="irCamino(2)" aria-label="Ver imagen 3"></button>
+
+    <div class="camino-indicadores">
+
+      <button
+        class="camino-indicador activo"
+        type="button"
+        onclick="seleccionarCamino(0)"
+        aria-label="Mostrar imagen 1"
+      ></button>
+
+      <button
+        class="camino-indicador"
+        type="button"
+        onclick="seleccionarCamino(1)"
+        aria-label="Mostrar imagen 2"
+      ></button>
+
+      <button
+        class="camino-indicador"
+        type="button"
+        onclick="seleccionarCamino(2)"
+        aria-label="Mostrar imagen 3"
+      ></button>
+
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- SECCIÓN 8: CIERRE -->
-  <section class="cierre" id="cierre">
+<!-- =========================================
+     OCTAVA SECCION
+     CIERRE
+========================================= -->
 
-    <div class="cierre-contenido">
-      <h2 class="cierre-titulo">70 años acercando oportunidades</h2>
+<section class="cierre" id="cierre">
 
-      <p class="cierre-texto">
-        Porque la UNNE sigue escribiéndose en cada estudiante, docente,
-        graduado y ciudadano que encuentra en ella una oportunidad para crecer.
-      </p>
+  <div class="cierre-contenedor">
 
-      <p class="cierre-frase">
-        Y porque, cada aula, cada proyecto y cada historia personal son parte
-        de una misión que trasciende generaciones: acercar educación,
-        conocimiento y futuro a toda la región.
-      </p>
-    </div>
+    <h2 class="cierre-titulo">
+      70 años acercando oportunidades
+    </h2>
 
-  </section>
+    <p class="cierre-texto">
+      Porque la UNNE sigue escribiéndose en cada estudiante, docente, graduado y ciudadano que encuentra en ella una oportunidad para crecer.
+    </p>
+
+    <p class="cierre-destacado">
+      Y porque, cada aula, cada proyecto y cada historia personal son parte de una misión que trasciende generaciones: acercar educación, conocimiento y futuro a toda la región.
+    </p>
+
+  </div>
+
+</section>
 
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="footer">
+<!-- =========================================
+     PIE DE PAGINA
+========================================= -->
+
+<footer class="footer">
+
+  <div class="footer-contenedor">
 
     <div class="footer-creditos">
-      <p>Lezcano Florencia Marilú</p>
-      <p>COM3</p>
+
+      <p class="footer-nombre">
+        Lezcano Florencia Marilú
+      </p>
+
+      <p class="footer-comision">
+        COM3
+      </p>
+
     </div>
+
 
     <div class="footer-logos">
-      <img src="im/70%20a%C3%B1os.png" alt="70 años">
-      <img src="im/logo%20une.png" alt="Logo UNNE">
+
+      <img
+        src="im/70%20a%C3%B1os.png"
+        alt="Logo 70 años"
+      >
+
+      <img
+        src="im/logo%20une.png"
+        alt="Logo institucional"
+      >
+
     </div>
 
-  </footer>
+  </div>
+
+</footer>
 
 
-  <!-- JAVASCRIPT -->
-  <script>
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
-    /* CARRUSEL DE LA SECCIÓN 3 */
+<script>
 
-    let indiceMapa = 0;
+/* =========================================
+   CARRUSEL DE ALCANCE REGIONAL
+========================================= */
 
-    function mostrarMapa() {
-      const imagenes = document.querySelectorAll(".mapa-marco img");
-      const indicadores = document.querySelectorAll("#indicadores-mapa .indicador");
+let slideActual = 0;
 
-      imagenes.forEach((imagen, indice) => {
-        imagen.classList.toggle("activa", indice === indiceMapa);
-      });
+const slides = document.querySelectorAll(
+  ".alcance-carrusel .carrusel-slide"
+);
 
-      indicadores.forEach((indicador, indice) => {
-        indicador.classList.toggle("activo", indice === indiceMapa);
-      });
+const indicadores = document.querySelectorAll(
+  ".alcance-carrusel .indicador"
+);
+
+
+function mostrarSlide(numero) {
+
+  if (!slides.length) return;
+
+  slides.forEach(function(slide) {
+    slide.classList.remove("activo");
+  });
+
+  indicadores.forEach(function(indicador) {
+    indicador.classList.remove("activo");
+  });
+
+  slideActual = (numero + slides.length) % slides.length;
+
+  slides[slideActual].classList.add("activo");
+
+  if (indicadores[slideActual]) {
+    indicadores[slideActual].classList.add("activo");
+  }
+
+}
+
+
+function cambiarSlide(direccion) {
+
+  mostrarSlide(slideActual + direccion);
+
+}
+
+
+function irSlide(numero) {
+
+  mostrarSlide(numero);
+
+}
+
+
+/* =========================================
+   INTERACCION DE LA SEXTA SECCION
+========================================= */
+
+function mostrarDatoComunidad(numero) {
+
+  const imagenDato = document.getElementById(
+    "comunidad-dato-imagen"
+  );
+
+  const botones = document.querySelectorAll(
+    ".comunidad-boton"
+  );
+
+  const archivos = {
+
+    1: "im/dato%201.png",
+    2: "im/dato%202.png",
+    3: "im/dato%203.png"
+
+  };
+
+  if (!imagenDato || !archivos[numero]) return;
+
+  imagenDato.classList.remove("visible");
+
+  const nuevaImagen = new Image();
+
+  nuevaImagen.onload = function() {
+
+    imagenDato.src = nuevaImagen.src;
+
+    imagenDato.alt = "Dato estadístico número " + numero + " de la UNNE";
+
+    imagenDato.classList.add("visible");
+
+  };
+
+  nuevaImagen.onerror = function() {
+
+    console.error(
+      "Error al cargar el archivo: " + archivos[numero]
+    );
+
+    alert(
+      "No se pudo cargar el dato. Revisá el nombre del archivo y su ubicación en la carpeta im."
+    );
+
+  };
+
+  nuevaImagen.src = archivos[numero];
+
+
+  botones.forEach(function(boton, indice) {
+
+    boton.classList.remove("seleccionado");
+
+    if (indice === numero - 1) {
+      boton.classList.add("seleccionado");
     }
 
-    function cambiarMapa(direccion) {
-      const imagenes = document.querySelectorAll(".mapa-marco img");
+  });
 
-      indiceMapa = (indiceMapa + direccion + imagenes.length) % imagenes.length;
-      mostrarMapa();
+}
+
+
+/* =========================================
+   CARRUSEL DE LA SEPTIMA SECCION
+========================================= */
+
+const imagenesCamino = [
+
+  "im/carru%201.png",
+  "im/carru%202.png",
+  "im/carru%203.png"
+
+];
+
+let indiceCamino = 0;
+
+
+function seleccionarCamino(indice) {
+
+  const imagen = document.getElementById(
+    "camino-imagen"
+  );
+
+  const indicadoresCamino = document.querySelectorAll(
+    ".camino-indicador"
+  );
+
+  if (!imagen) return;
+
+  indiceCamino = (indice + imagenesCamino.length) % imagenesCamino.length;
+
+  imagen.style.opacity = "0";
+
+  const nuevaImagen = new Image();
+
+  nuevaImagen.onload = function() {
+
+    imagen.src = nuevaImagen.src;
+
+    imagen.style.opacity = "1";
+
+  };
+
+  nuevaImagen.onerror = function() {
+
+    imagen.style.opacity = "1";
+
+    console.error(
+      "No se pudo cargar la imagen: " + imagenesCamino[indiceCamino]
+    );
+
+  };
+
+  nuevaImagen.src = imagenesCamino[indiceCamino];
+
+
+  indicadoresCamino.forEach(function(indicador, i) {
+
+    indicador.classList.remove("activo");
+
+    if (i === indiceCamino) {
+      indicador.classList.add("activo");
     }
 
-    function irMapa(indice) {
-      indiceMapa = indice;
-      mostrarMapa();
-    }
+  });
+
+}
 
 
-    /* BOTONES DE DATOS DE LA SECCIÓN 6 */
+function cambiarCamino(direccion) {
 
-    function mostrarDatoComunidad(numero) {
-      const imagenDato = document.getElementById("comunidad-dato-imagen");
-      const botones = document.querySelectorAll(".comunidad-boton");
+  indiceCamino += direccion;
 
-      const archivos = {
-        1: "im/dato%201.png",
-        2: "im/dato%202.png",
-        3: "im/dato%203.png"
-      };
+  if (indiceCamino >= imagenesCamino.length) {
+    indiceCamino = 0;
+  }
 
-      if (!imagenDato || !archivos[numero]) return;
+  if (indiceCamino < 0) {
+    indiceCamino = imagenesCamino.length - 1;
+  }
 
-      imagenDato.classList.remove("visible");
+  seleccionarCamino(indiceCamino);
 
-      const nuevaImagen = new Image();
+}
 
-      nuevaImagen.onload = function() {
-        imagenDato.src = nuevaImagen.src;
-        imagenDato.alt = "Dato estadístico número " + numero + " de la UNNE";
-        imagenDato.classList.add("visible");
-      };
+</script>
 
-      nuevaImagen.onerror = function() {
-        console.error("No se pudo cargar: " + archivos[numero]);
-        alert("No se pudo cargar el dato. Revisá el nombre del archivo y su ubicación en la carpeta im.");
-      };
-
-      nuevaImagen.src = archivos[numero];
-
-      botones.forEach(function(boton, indice) {
-        boton.classList.remove("seleccionado");
-
-        if (indice === numero - 1) {
-          boton.classList.add("seleccionado");
-        }
-      });
-    }
-
-
-    /* CARRUSEL DE LA SECCIÓN 7 */
-
-    let indiceCamino = 0;
-
-    function mostrarCamino() {
-      const imagenes = document.querySelectorAll(".camino-marco img");
-      const indicadores = document.querySelectorAll("#indicadores-camino .indicador");
-
-      imagenes.forEach((imagen, indice) => {
-        imagen.classList.toggle("activa", indice === indiceCamino);
-      });
-
-      indicadores.forEach((indicador, indice) => {
-        indicador.classList.toggle("activo", indice === indiceCamino);
-      });
-    }
-
-    function cambiarCamino(direccion) {
-      const imagenes = document.querySelectorAll(".camino-marco img");
-
-      indiceCamino = (indiceCamino + direccion + imagenes.length) % imagenes.length;
-      mostrarCamino();
-    }
-
-    function irCamino(indice) {
-      indiceCamino = indice;
-      mostrarCamino();
-    }
-
-  </script>
 
 </body>
 </html>
