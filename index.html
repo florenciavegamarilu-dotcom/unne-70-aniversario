@@ -1014,255 +1014,367 @@ margin-top: -180px;
 
 <!-- ---------------- SEXTA SECCION: UNA COMUNIDAD QUE CRECE ---------------- -->
 
+
+<!-- ==================== SEXTA SECCION ==================== -->
 <section class="comunidad" id="comunidad">
 
-<div class="comunidad-contenedor">
+  <div class="comunidad-contenedor">
 
-<div class="comunidad-intro">
+    <!-- TITULO Y TEXTO -->
+    <div class="comunidad-intro">
 
-<h2 class="comunidad-titulo">
-Una comunidad que crece
-</h2>
+      <h2 class="comunidad-titulo">
+        Una comunidad que crece
+      </h2>
 
-<p class="comunidad-descripcion">
-La presencia de la UNNE puede verse reflejada a través de las personas que forman parte de ella.
-</p>
+      <p class="comunidad-descripcion">
+        La presencia de la UNNE puede verse reflejada a través de las personas que forman parte de ella.
+      </p>
 
-<p class="comunidad-informe">
-El presente informe constituye una herramienta fundamental de transparencia y gestión institucional, permitiendo una lectura cuantitativa del volumen de la UNNE 2025.
-</p>
+      <p class="comunidad-informe">
+        El presente informe constituye una herramienta fundamental de transparencia y gestión institucional, permitiendo una lectura cuantitativa del volumen de la UNNE 2025.
+      </p>
 
-</div>
+    </div>
 
-<div class="comunidad-panel">
+    <!-- AREA VISUAL -->
+    <div class="comunidad-visual">
 
-<div class="panel-lapiz">
+      <!-- LAPIZ IZQUIERDA -->
+      <div class="comunidad-lapiz">
 
-<img
-src="im/lapizxd.png"
-alt="Comunidad Académica"
-class="lapiz-principal">
+        <img
+          src="im/lapizxd.png"
+          alt="Lápiz representativo de la comunidad universitaria"
+          class="comunidad-lapiz-imagen"
+        >
 
-</div>
+      </div>
 
-<div class="panel-dato">
+      <!-- AREA DERECHA: DATOS Y BOTONES -->
+      <div class="comunidad-interaccion">
 
-<img
-id="datoActivo"
-src="im/dato 1.png"
-alt="Dato activo"
-class="dato-activo">
+        <!-- IMAGEN DEL DATO -->
+        <div class="comunidad-dato-contenedor">
 
-</div>
+          <img
+            src=""
+            alt="Dato estadístico de la UNNE"
+            class="comunidad-dato-imagen"
+            id="comunidad-dato-imagen"
+          >
 
-</div>
+        </div>
 
-<div class="panel-botones">
+        <!-- BOTONES -->
+        <div class="comunidad-botones">
 
-<button
-class="boton-comunidad activo"
-onclick="mostrarDato(1,this)"
-type="button">
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(1)"
+            aria-label="Mostrar dato 1"
+          >
+            <img src="im/b1.png" alt="Botón 1">
+          </button>
 
-<img src="im/b1.png" alt="Grado">
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(2)"
+            aria-label="Mostrar dato 2"
+          >
+            <img src="im/b2.png" alt="Botón 2">
+          </button>
 
-</button>
+          <button
+            class="comunidad-boton"
+            type="button"
+            onclick="mostrarDatoComunidad(3)"
+            aria-label="Mostrar dato 3"
+          >
+            <img src="im/b3.png" alt="Botón 3">
+          </button>
 
-<button
-class="boton-comunidad"
-onclick="mostrarDato(2,this)"
-type="button">
+        </div>
 
-<img src="im/b2.png" alt="Posgrado">
+      </div>
 
-</button>
+    </div>
 
-<button
-class="boton-comunidad"
-onclick="mostrarDato(3,this)"
-type="button">
-
-<img src="im/b3.png" alt="Graduados">
-
-</button>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
+<!-- ==================== ESTILOS SEXTA SECCION ==================== -->
 <style>
 
-.comunidad{
-
-background-image:url("im/06.jpg");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-padding:90px 7%;
+.comunidad {
+  background-image: url("im/06.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 90px 7%;
 }
 
-.comunidad-contenedor{
-
-max-width:1400px;
-margin:auto;
+.comunidad-contenedor {
+  max-width: 1400px;
+  margin: auto;
 }
 
-.comunidad-intro{
+/* TITULO Y TEXTO */
 
-max-width:650px;
-
-margin-bottom:40px;
+.comunidad-intro {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 35px;
 }
 
-.comunidad-titulo{
-
-font-family:'Merriweather',serif;
-font-size:2.4rem;
-font-weight:700;
-
-color:#1f1f1f;
-
-margin-bottom:20px;
+.comunidad-titulo {
+  grid-column: 1 / 7;
+  font-family: 'Merriweather', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
-.comunidad-descripcion,
-.comunidad-informe{
-
-font-family:'Lato',sans-serif;
-font-size:1.05rem;
-
-line-height:1.8;
-
-color:#1f1f1f;
+.comunidad-descripcion {
+  grid-column: 1 / 7;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #1f1f1f;
+  margin-bottom: 18px;
 }
 
-.comunidad-descripcion{
-
-margin-bottom:15px;
+.comunidad-informe {
+  grid-column: 1 / 7;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #1f1f1f;
 }
 
-.comunidad-panel{
+/* DISTRIBUCION DEL LAPIZ Y DATOS */
 
-display:grid;
-
-grid-template-columns:2fr 1fr;
-
-gap:50px;
-
-align-items:center;
+.comunidad-visual {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+  align-items: center;
 }
 
-.panel-lapiz img{
+/* LAPIZ */
 
-width:100%;
-
-display:block;
+.comunidad-lapiz {
+  grid-column: 1 / 6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.panel-dato{
-
-display:flex;
-
-justify-content:center;
-align-items:center;
+.comunidad-lapiz-imagen {
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: contain;
 }
 
-.dato-activo{
+/* AREA INTERACTIVA DERECHA */
 
-max-width:260px;
-
-width:100%;
-
-transition:0.3s;
+.comunidad-interaccion {
+  grid-column: 6 / 13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.panel-botones{
+/* AREA DONDE APARECEN LOS DATOS */
 
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-margin-top:30px;
+.comunidad-dato-contenedor {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
-.boton-comunidad{
-
-background:none;
-border:none;
-
-cursor:pointer;
-
-transition:0.3s;
+.comunidad-dato-imagen {
+  display: none;
+  max-width: 100%;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.boton-comunidad img{
-
-width:170px;
-
-display:block;
+.comunidad-dato-imagen.visible {
+  display: block;
+  opacity: 1;
 }
 
-.boton-comunidad:hover{
+/* BOTONES */
 
-transform:translateY(-4px);
+.comunidad-botones {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.boton-comunidad.activo{
-
-transform:scale(1.05);
-
-filter:drop-shadow(0 8px 14px rgba(0,0,0,.25));
+.comunidad-boton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 30%;
+  max-width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-@media(max-width:900px){
-
-.comunidad-panel{
-
-grid-template-columns:1fr;
+.comunidad-boton img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-.panel-botones{
-
-flex-direction:column;
-
-align-items:center;
+.comunidad-boton:hover {
+  transform: scale(1.06);
 }
+
+.comunidad-boton.seleccionado {
+  transform: scale(1.06);
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+  .comunidad-titulo,
+  .comunidad-descripcion,
+  .comunidad-informe {
+    grid-column: 1 / 13;
+  }
+
+  .comunidad-visual {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .comunidad-lapiz {
+    grid-column: 1 / 6;
+  }
+
+  .comunidad-interaccion {
+    grid-column: 6 / 13;
+  }
+
+  .comunidad-dato-contenedor {
+    min-height: 230px;
+  }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+  .comunidad {
+    padding: 55px 5%;
+  }
+
+  .comunidad-titulo {
+    font-size: 1.9rem;
+  }
+
+  .comunidad-descripcion,
+  .comunidad-informe {
+    font-size: 1rem;
+  }
+
+  .comunidad-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .comunidad-lapiz {
+    width: 85%;
+  }
+
+  .comunidad-interaccion {
+    width: 100%;
+  }
+
+  .comunidad-dato-contenedor {
+    min-height: 180px;
+    margin-bottom: 20px;
+  }
+
+  .comunidad-dato-imagen {
+    max-width: 100%;
+    max-height: 350px;
+  }
+
+  .comunidad-botones {
+    gap: 12px;
+  }
+
+  .comunidad-boton {
+    width: 30%;
+  }
 
 }
 
 </style>
 
+<!-- ==================== INTERACCION ==================== -->
 <script>
 
-function mostrarDato(numero, boton){
+function mostrarDatoComunidad(numero) {
 
-const dato =
-document.getElementById("datoActivo");
+  const imagenDato = document.getElementById("comunidad-dato-imagen");
 
-dato.style.opacity="0";
+  const botones = document.querySelectorAll(".comunidad-boton");
 
-setTimeout(()=>{
+  const archivos = {
+    1: "im/dato1.png",
+    2: "im/dato2.png",
+    3: "im/dato3.png"
+  };
 
-dato.src="im/dato " + numero + ".png";
+  imagenDato.classList.remove("visible");
 
-dato.style.opacity="1";
+  imagenDato.src = archivos[numero];
 
-},150);
+  imagenDato.onload = function() {
+    imagenDato.classList.add("visible");
+  };
 
-document
-.querySelectorAll(".boton-comunidad")
-.forEach(btn=>btn.classList.remove("activo"));
+  botones.forEach(function(boton, indice) {
+    boton.classList.remove("seleccionado");
 
-boton.classList.add("activo");
+    if (indice + 1 === numero) {
+      boton.classList.add("seleccionado");
+    }
+  });
 
 }
 
 </script>
+
 </script>
 
 </body>
