@@ -612,9 +612,9 @@ h1 em {
 
 .educacion-imagen {
 
-  grid-column: 3 / 8;
+  grid-column: 2 / 8;
 
-  width: 96%;
+  width: 100%;
 }
 
 .educacion-imagen img {
@@ -819,8 +819,8 @@ h1 em {
 
 .camino-carrusel {
 
-  width: 45%;
-  max-width: 550px;
+  width: 100%;
+  max-width: 1100px;
 
   margin: auto;
 
@@ -1069,15 +1069,19 @@ h1 em {
 
 /* LOGOS */
 
-.footer-logos {
+<div class="footer-logos">
 
-  display: flex;
+  <img
+    src="im/logounne.png"
+    alt="Logo UNNE"
+  >
 
-  align-items: center;
-  justify-content: flex-end;
+  <img
+    src="im/logo70añosunne.png"
+    alt="Logo 70 años de la UNNE"
+  >
 
-  gap: 25px;
-}
+</div>
 
 .footer-logos img {
 
@@ -1112,7 +1116,24 @@ h1 em {
   text-align: left;
 }
 
+/* =========================================
+   ACERCAR TITULOS Y TEXTOS A LA IZQUIERDA
+========================================= */
 
+.regional-contenido,
+.educacion-titulo,
+.educacion-descripcion,
+.educacion-destacada,
+.comunidad-titulo,
+.comunidad-descripcion,
+.comunidad-informe,
+.camino-titulo,
+.camino-descripcion,
+.cierre-titulo,
+.cierre-texto,
+.cierre-destacado {
+  grid-column: 1 / 13;
+}
 /* =========================================
    RESPONSIVE - TABLETS
 ========================================= */
